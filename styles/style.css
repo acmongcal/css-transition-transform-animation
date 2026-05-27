@@ -1,0 +1,599 @@
+/* AI Prompts:  what is the best practice to create responsive layouts and typography in css?
+Answer: 1. Use Relative Units: Use relative units like em, rem, %, vw, and vh for font sizes, spacing, and layout dimensions to ensure they scale appropriately across different screen sizes.
+2. Media Queries: Implement CSS media queries to apply different styles based on the device's screen size, orientation, or resolution. This allows you to create specific layouts and typography adjustments for mobile, tablet, and desktop views.
+3. Flexible Grid Systems: Use CSS Grid or Flexbox to create flexible and responsive layouts that can adapt to various screen sizes without breaking the design.
+4. Fluid Typography: Use CSS functions like clamp() to create fluid typography that scales smoothly between a minimum and maximum size based on the viewport width.
+5. Mobile-First Approach: Start designing for the smallest screen size first and then use media queries to enhance the design for larger screens. This ensures that the core content is accessible and optimized for mobile users.
+6. Test Across Devices: Regularly test your responsive design on different devices and screen sizes to ensure that it looks and functions well across all platforms. Use browser developer tools to simulate various screen sizes and orientations during development.    
+
+*/
+
+
+/* to remove browser default spacing and make layout sizing more predictable, especially for responsive design. */
+* {
+  box-sizing: border-box;
+  /*
+    box-sizing: border-box;
+
+    Used to make width and height
+    easier to calculate by including
+    padding and border inside the element size.
+
+    Reference:
+    https://css-tricks.com/box-sizing/
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries
+  
+    */
+
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* 
+   Base
+ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #080b16;
+  color: #f8fafc;
+  line-height: 1.7;
+}
+
+/* 
+   Layout
+*/
+
+.transform-section {
+    /* 2 columns layout with a gap of 3rem between them: */
+  
+    display: grid;
+    /* CSS Grid is a two-dimensional layout system for web design. Unlike → one direction (row OR column), Grid → row and column together */
+  
+    grid-template-columns: 280px 1fr;
+    /* column 1 = 280px, column 2 = remaining space   */
+
+    gap: 3rem;
+
+    /*  Reference:
+        https://css-tricks.com/snippets/css/complete-guide-grid/
+    */
+
+    /* ========================================================== */
+
+  
+
+  padding: 4rem 8%; 
+  /* = 4rem top/bottom, 8% left/right, 4rem ≈ 64px */
+
+
+/* ========================================================== */
+  
+/* stylereference : https://magicui.design/ */
+
+background:
+  radial-gradient(
+    circle at top left,
+    rgba(56,189,248,.18),
+    transparent 25%
+  ),
+  /* Blue radial glow
+   placed at top left
+   for subtle lighting effect */
+
+  radial-gradient(
+    circle at bottom right,
+    rgba(147,51,234,.18),
+    transparent 25%
+  ),
+  /* Purple radial glow
+   placed at bottom right
+   for subtle lighting effect */
+
+  #080b16;
+
+
+    /* ========================================================== */
+}
+
+/* 
+   Left Navigation
+ */
+
+.side-nav {
+  background:
+    rgba(255,255,255,.08);
+
+  border:
+    1px solid
+    rgba(255,255,255,.12);
+
+  border-radius: 28px;
+
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  height: fit-content;
+
+  position: sticky;
+  top: 2rem;
+
+  backdrop-filter: blur(12px);
+}
+
+/* Nav Title */
+
+.nav-title {
+  font-size: 1.8rem;
+  color: #38bdf8;
+  margin-bottom: 1rem;
+}
+
+/* Navigation Buttons */
+
+.nav-btn {
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #cbd5e1;
+
+  text-align: left;
+
+  padding: 1rem;
+
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  /*  Transition for smooth hover and active effects */
+  /*  Reference: 
+      CSS Transitions
+      https://css-tricks.com/almanac/properties/t/transition/ */
+
+    transition:
+        transform .3s ease,
+        background-color .3s ease,
+        color .3s ease;
+
+}
+
+/* Hover (not active) */
+
+.nav-btn:hover:not(.active) {
+  background:
+    rgba(56,189,248,.12);
+
+  color: #38bdf8;
+
+  transform:
+    translateX(8px);
+}
+
+/* 
+   Active Page
+ */
+
+.nav-btn.active {
+  /* Active button has a vibrant gradient background, white text, and a glowing animation to indicate the current page. */  
+  /* The glowPulse animation creates a subtle pulsing effect on the active button,
+   drawing attention to it without being too distracting. */  
+  /* Reference:
+   CSS Animations
+   https://css-tricks.com/almanac/properties/a/animation/ 
+   https://www.w3schools.com/csS/css3_animations.asp
+   */
+
+  background:
+    linear-gradient(
+      135deg,
+      #38bdf8,
+      #9333ea
+    );
+
+  color: white;
+
+  font-weight: 600;
+
+  animation:
+    glowPulse 1s ease-in-out 2;
+}
+
+/* Glow Animation */
+/* Creates a pulsing glow effect on the active navigation button. */
+/* The button scales up slightly and the box-shadow intensifies, 
+then returns to normal, creating a subtle attention-grabbing effect. */
+
+
+@keyframes glowPulse {
+  /* 0% and 100%: Normal state with a subtle glow. */
+  /* 50%: Scaled up with a stronger glow. */  
+  /* Reference:
+   CSS Animations
+   https://css-tricks.com/almanac/properties/a/animation/ 
+   https://www.w3schools.com/csS/css3_animations.asp
+   */
+  0% {
+    transform: scale(1);
+    box-shadow:
+      0 0 8px rgba(56,189,248,.35),
+      0 0 16px rgba(147,51,234,.25);
+  }
+
+  50% {
+    transform: scale(1.03);
+    box-shadow:
+      0 0 18px rgba(56,189,248,.75),
+      0 0 35px rgba(147,51,234,.55);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 8px rgba(56,189,248,.35),
+      0 0 16px rgba(147,51,234,.25);
+  }
+}
+/* 
+   Right Content
+ */
+
+.content-panel {
+  /* The content panel has a semi-transparent background with a blur effect, creating a frosted glass look. It also has padding and rounded corners for a modern design. */ 
+  /* Reference:
+   https://magicui.design/ 
+   https://www.apple.com/apple-vision-pro/?utm_source=chatgpt.com
+   */
+  background:
+    rgba(255,255,255,.08);
+
+  border:
+    1px solid
+    rgba(255,255,255,.12);
+
+  border-radius: 30px;
+
+  padding: 3rem;
+
+  backdrop-filter: blur(12px);
+
+  min-height: 700px;
+}
+
+/* Hide Sections */
+
+.content-section {
+  display: none;
+}
+
+.content-section.active {
+  display: block;
+  animation:
+    fadeIn .35s ease;
+    /* When a content section becomes active, it will fade in smoothly over 0.35 seconds, creating a pleasant transition effect for the user. */
+    /* Reference:
+     CSS Animations
+     https://css-tricks.com/almanac/properties/a/animation/
+     https://www.w3schools.com/csS/css3_animations.asp
+     */
+}
+
+/* Headings */
+
+.content-panel h1 {
+  /* The main heading uses a vibrant cyan color and a responsive font size that scales between 2rem and 3rem based on the viewport width, ensuring it looks great on all screen sizes. */ 
+  /* Reference:
+   CSS Colors
+   https://css-tricks.com/almanac/properties/c/color/
+   https://developer.mozilla.org/en-US/docs/Web/CSS/color
+   */
+
+   /* AI prompt:display:  what is the best way to create responsive typography in css?; 
+   4. Fluid Typography: Use CSS functions like clamp() to create fluid typography that scales smoothly between a minimum and maximum size based on the viewport width.
+  
+   
+   The clamp() function allows you to set a responsive font size that scales between a defined minimum and maximum value based on the viewport width. In this case, the font size will be 2rem on small screens, scale up to 3rem on larger screens, and adjust responsively in between. */
+   /* Reference:
+    CSS clamp() function
+    https://css-tricks.com/almanac/functions/c/clamp/
+    https://developer.mozilla.org/en-US/docs/Web/CSS/clamp
+    */
+  font-size:
+    clamp(2rem, 5vw, 3rem);
+    /* The font size will be 2rem on small screens, scale up to 3rem on larger screens, and adjust responsively in between. */  
+    /* Reference:
+
+     */
+
+  color: #38bdf8;
+
+  margin-bottom: 1.5rem;
+}
+
+.content-panel h2 {
+  color: #facc15;
+
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Paragraph */
+
+.content-panel p {
+  font-size: 1.1rem;
+  color: #dbeafe;
+
+  margin-bottom: 1.3rem;
+
+  max-width: 850px;
+}
+
+/* Lists */
+
+.content-panel ul {
+  margin-left: 1.5rem;
+}
+
+.content-panel li {
+  color: #dbeafe;
+  margin-bottom: .8rem;
+}
+
+/* 
+   Demo Box
+ */
+
+.demo-box {
+  width: 220px;
+  height: 140px;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  border-radius: 24px;
+
+  background:
+  /* A vibrant diagonal gradient background that transitions from a bright cyan to a rich purple, creating an eye-catching and modern look for the demo box. */ 
+  /* Reference:
+   CSS Gradients
+   https://css-tricks.com/almanac/properties/b/background-image/#gradients
+   https://developer.mozilla.org/en-US/docs/Web/CSS/gradients
+   */
+    linear-gradient(
+      135deg,
+      #38bdf8,
+      #9333ea
+    );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+/* Centered content with flexbox */
+/* Reference:
+   CSS Flexbox
+   https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+   https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
+   */
+
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+  /* Indicates interactivity, inviting users to hover and see the transformation. */  
+  /* Reference:
+   CSS Cursors
+   https://css-tricks.com/almanac/properties/c/cursor/
+   */
+
+  transition: .4s ease;
+  /* Smooth transition for transform and box-shadow on hover. */
+
+
+
+  box-shadow:
+    0 20px 50px
+    rgba(56,189,248,.25);
+    /* Adds a soft shadow below the box for depth and a glowing effect. */
+    /* Reference:
+     CSS Box Shadow
+     https://css-tricks.com/almanac/properties/b/box-shadow/
+     https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
+     */
+}
+
+.demo-box:hover {
+  transform:
+    translateY(-15px)
+    rotate(5deg)
+    scale(1.1);
+    /* On hover, the box will move up, rotate slightly, and scale up for a dynamic effect. */
+    /*  Reference:
+        https://css-tricks.com/almanac/properties/t/transform/*/
+}
+
+/* 
+   Code Block
+ */
+/* The code block has a dark background with light text for readability, along with padding and rounded corners to create a distinct and visually appealing section for displaying code snippets. It also allows horizontal scrolling for long lines of code. */  
+/* Reference:
+   CSS Box Model
+   https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model
+   */
+
+pre {
+  background: #020617;
+
+  color: #e0f2fe;
+
+  padding: 1.2rem;
+
+  border-radius: 18px;
+
+  overflow-x: auto;
+
+  margin-top: 1.5rem;
+
+  border:
+    1px solid
+    rgba(56,189,248,.25);
+}
+
+code {
+  font-family: monospace;
+}
+
+/* 
+   Animation
+ */
+ /* When a content section becomes active, it will fade in smoothly over 0.35 seconds, creating a pleasant transition effect for the user. */ 
+ /* Reference:
+  CSS Animations
+  https://css-tricks.com/almanac/properties/a/animation/
+  https://www.w3schools.com/csS/css3_animations.asp
+  */
+
+.content-section.active {
+  display: block;
+  animation: fadeIn 2s ease;
+}
+
+/* Fade In Animation */
+/* This animation smoothly transitions the content from being invisible and slightly shifted down to fully visible and in its original position, creating a gentle fade-in effect when a new section becomes active. */ 
+/* Reference:
+ CSS Animations
+ https://css-tricks.com/almanac/properties/a/animation/
+ https://www.w3schools.com/csS/css3_animations.asp
+ */
+
+@keyframes fadeIn {
+    
+
+  from {
+    opacity: 0;
+    transform:
+      translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+  /* 0% (from): Start with the content fully transparent and slightly shifted down. */
+  /* 100% (to): End with the content fully visible and in its original position. */
+  /* This creates a smooth fade-in effect as the content becomes active. */
+  /* Reference:
+   CSS Animations
+   https://css-tricks.com/almanac/properties/a/animation/
+   https://www.w3schools.com/csS/css3_animations.asp
+   */
+}
+
+/*
+   Tablet
+ */
+
+@media (max-width: 992px) {
+/* For tablet screens, the layout adjusts to a single column for better readability and usability. The side navigation becomes a top navigation bar, and the content panel takes up the full width below it. This ensures that the design remains clean and functional on smaller screens. */ 
+/* Reference:
+   CSS Media Queries
+   https://css-tricks.com/css-media-queries/
+   https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
+   */
+  .transform-section {
+    /* Switch to a single column layout for tablet devices, stacking the navigation and content vertically. The navigation will be at the top, followed by the content panel. This ensures that the layout is optimized for smaller screens and remains user-friendly. */
+    /* Reference:     
+      CSS Grid         
+        https://css-tricks.com/snippets/css/complete-guide-grid/
+        */
+    grid-template-columns:
+      220px 1fr;
+
+    padding: 3rem 5%;
+  }
+  /* The side navigation is made narrower to fit better on smaller screens, while still providing enough space for the navigation items. The content panel is given more padding to ensure that the content remains readable and visually appealing on tablet devices. */
+  /* Reference:
+     CSS Grid
+     https://css-tricks.com/snippets/css/complete-guide-grid/
+     */
+
+  .content-panel {
+    padding: 2rem;
+  }
+}
+
+/* 
+   Mobile
+ */
+
+@media (max-width: 768px) {
+  /* On mobile devices, the layout switches to a single column format where the side navigation becomes a horizontal top navigation bar, and the content panel is displayed below it. This ensures that the design is optimized for smaller screens, providing a user-friendly experience without sacrificing functionality. The demo box also adjusts to fit the narrower screen width while maintaining its visual appeal. */
+  /* Reference:
+   CSS Media Queries
+   https://css-tricks.com/css-media-queries/
+   https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
+   */
+
+  .transform-section {
+    /* Switch to a single column layout for mobile devices, stacking the navigation and content vertically. The navigation will be at the top, followed by the content panel. This ensures that the layout is optimized for smaller screens and remains user-friendly. */ 
+    /* Reference:
+     CSS Grid         
+      https://css-tricks.com/snippets/css/complete-guide-grid/
+      */  
+    grid-template-columns: 1fr;
+
+    gap: 2rem;
+
+    padding: 2rem 5%;
+  }
+
+  /* The side navigation is set to full width and positioned statically to create a horizontal navigation bar at the top of the page. The content panel's minimum height is removed to allow it to adjust based on the content, and padding is reduced for better fit on smaller screens. The demo box is set to a maximum width of 240px to ensure it remains visually appealing without overwhelming the screen. */
+  /* Reference:
+     CSS Grid
+     https://css-tricks.com/snippets/css/complete-guide-grid/
+     */
+
+  .side-nav {
+    position: static;
+    width: 100%;
+  }
+
+  .content-panel {
+    min-height: auto;
+    padding: 2rem;
+  }
+  /* On mobile devices, the navigation buttons have a subtle upward movement on hover to indicate interactivity, while the active button remains visually distinct with its vibrant gradient background and glowing animation. This ensures that users can easily identify the current page and interact with the navigation even on smaller screens. */
+  /* Reference:   
+   CSS Transitions
+   https://css-tricks.com/almanac/properties/t/transition/    */
+
+  .nav-btn:hover:not(.active) {
+    transform:
+      translateY(-2px);
+  }
+
+  /* The demo box is set to a maximum width of 240px to ensure it remains visually appealing without overwhelming the screen on mobile devices. This allows the box to scale appropriately while maintaining its design integrity across different screen sizes. */
+   /* Reference:
+    CSS Media Queries
+    https://css-tricks.com/css-media-queries/
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
+    */
+
+  .demo-box {
+    width: 100%;
+    max-width: 240px;
+  }
+}

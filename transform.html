@@ -1,11 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>CSS Transform Presentation</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/normalize-fwd.css">
+  <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
-    
+
+  <section class="transform-section">
+
+    <aside class="side-nav">
+      <h2 class="nav-title">CSS Transform</h2>
+
+      <button class="nav-btn active" data-section="overview">Technology Overview</button>
+      <button class="nav-btn" data-section="what">What is it</button>
+      <button class="nav-btn" data-section="does">What does it do</button>
+      <button class="nav-btn" data-section="why">Why use it</button>
+      <button class="nav-btn" data-section="where">Where use it</button>
+      <button class="nav-btn" data-section="pros">Pros and Cons</button>
+      <button class="nav-btn" data-section="demo">Code Demo</button>
+    </aside>
+
+    <main class="content-panel">
+
+      <section class="content-section active" id="overview">
+        <h1>Technology Overview</h1>
+
+        <p>
+          CSS Transform is a CSS property that allows developers to visually
+          change an element’s position, size, rotation, or shape.
+        </p>
+
+        <p>
+          It is commonly used for hover effects, animation, cards, buttons,
+          mobile interfaces, and image galleries.
+        </p>
+      </section>
+
+      <section class="content-section" id="what">
+        <h1>What is CSS Transform?</h1>
+
+        <p>
+          CSS Transform is a property that lets developers move, rotate,
+          resize, or skew HTML elements.
+        </p>
+          <!-- Example CSS code
+          showing a 15-degree
+          rotation effect -->
+
+          <pre><code>.box {
+            transform: rotate(15deg);
+          }</code></pre>
+
+      </section>
+
+      <section class="content-section" id="does">
+        <h1>What Does It Do?</h1>
+
+        <p>
+          CSS Transform changes the visual appearance of an element without
+          affecting the normal page layout.
+        </p>
+
+        <ul>
+          <li>translate() moves elements</li>
+          <li>rotate() turns elements</li>
+          <li>scale() resizes elements</li>
+          <li>skew() tilts elements</li>
+        </ul>
+      </section>
+
+      <section class="content-section" id="why">
+        <h1>Why Would You Use It?</h1>
+
+        <p>
+          CSS Transform helps create interactive and modern websites.
+        </p>
+
+        <ul>
+          <li>Smooth hover effects</li>
+          <li>Better visual feedback</li>
+          <li>Modern UI design</li>
+          <li>No layout shift</li>
+        </ul>
+      </section>
+
+      <section class="content-section" id="where">
+        <h1>Where Would You Use It?</h1>
+
+        <ul>
+          <li>Buttons</li>
+          <li>Product cards</li>
+          <li>Image galleries</li>
+          <li>Navigation menus</li>
+          <li>Loading animations</li>
+          <li>Mobile interfaces</li>
+        </ul>
+      </section>
+
+      <section class="content-section" id="pros">
+        <h1>Pros and Cons</h1>
+
+        <h2>Pros</h2>
+
+        <ul>
+          <li>Easy to use</li>
+          <li>Smooth animation effects</li>
+          <li>Modern user interface</li>
+          <li>Does not affect layout</li>
+        </ul>
+
+        <h2>Cons</h2>
+
+        <ul>
+          <li>Can distract users if overused</li>
+          <li>Rotated text may be harder to read</li>
+          <li>Complex transforms are harder to maintain</li>
+        </ul>
+      </section>
+
+      <section class="content-section" id="demo">
+        <h1>Code Demo</h1>
+
+        <p>
+          Hover over the box below to see CSS Transform in action.
+        </p>
+
+        <div class="demo-box">
+          Hover Me
+        </div>
+
+        <!-- Example CSS code
+        showing combined transform
+        effects on hover -->
+
+        <pre><code>.demo-box:hover {
+        transform:
+        translateY(-15px)
+        rotate(5deg)
+        scale(1.1);
+        }</code></pre>
+      </section>
+
+    </main>
+
+  </section>
+
+  <!-- JavaScript -->
+  <script src="scripts/script.js"></script>
+
 </body>
 </html>

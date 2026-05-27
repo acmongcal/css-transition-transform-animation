@@ -70,17 +70,18 @@
     text-align: left;
     flex: 1;
     max-width: 350px;
-    background-color: #ffffff;
+    background-color: #ffffff14;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card__title {
     margin-top: 0;
     font-size: 1.5rem;
+    color:#38bdf8 ;
 }
 
 .card__text {
-    color: #333333;
+    color: #dbeafe;
     line-height: 1.5;
 }
 
