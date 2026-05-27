@@ -3,51 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Transitions/Transform/Animations</title>
+    <title>CSS Transitions, Transforms, and Animations</title>
     <link rel="stylesheet" href="styles/normalize-fwd.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-    <header></header>
-    <body>
+    
+    <header class="site-header"></header>
+   
+    <main>
+        
         <section class="hero">
-            <h1>CSS Motion & Effects</h1>
-            <picture>
+            <h1 class="hero__title">CSS Motion & Effects</h1>
+            <picture class="hero__picture">
+                <source media="(min-width: 2000px)" srcset="images/hero-2000px.jpg">
                 <source media="(min-width: 1200px)" srcset="images/hero-1200px.jpg">
-                <source media="(min-width: 900px)" srcset="images/hero-1200px.jpg">
-                <source media="(min-width: 600px)" srcset="images/hero-900px.jpg">
-                <img src="images/hero-600px.jpg" alt="coding image">
+                <source media="(min-width: 900px)" srcset="images/hero-900px.jpg">
+                <img src="images/hero-600px.jpg" alt="coding image" class="hero__img">
             </picture>
         </section>
 
-        <section class="css-cards-container">
+        <section class="topics-section">
             
-            <h2>CSS Transitions, Transforms, Animations</h2>
+            <h2 class="topics-section__title">CSS Transitions, Transforms, Animations</h2>
 
-            <div class="css-card">
-                <h3>Transforms</h3>
-                <p>XXXXXXXXXXXXXXXXXX</p>
-                <a href="transform.html">Learn more</a>
+            <div class="topics-grid">
+
+                <article class="card">
+                    <h3 class="card__title">Transforms</h3>
+                    <p class="card__text">XXXXXXXXXXXXXXXXXX</p>
+                    <a href="transform.html" class="card__link">Learn more</a>
+                </article>
+                
+                <article class="card">
+                    <h3 class="card__title">Transitions</h3>
+                    <p class="card__text">XXXXXXXXXXXXXXXXXX</p>
+                    <a href="transition.html" class="card__link">Learn more</a>
+                </article>
+                
+                <article class="card">
+                    <h3 class="card__title">Animations</h3>
+                    <p class="card__text">XXXXXXXXXXXXXXXXXX</p>
+                    <a href="animation.html" class="card__link">Learn more</a>
+                </article>
+                
             </div>
-
-            <div class="css-card">
-                <h3>Transitions</h3>
-                <p>XXXXXXXXXXXXXXXXXX</p>
-                <a href="transition.html">Learn more</a>
-            </div>
-
-            <div class="css-card">
-                <h3>Animations</h3>
-                <p>XXXXXXXXXXXXXXXXXX</p>
-                <a href="animation.html">Learn more</a>
-            </div>
-
         </section>
-    </body>
+
+    </main>
 
     <footer class="site-footer">
         <p>Created by Alan Christopher Mongcal, Erimo Taniguchi, and Jade Liao</p>
         <a href="references.html">references</a>
     </footer>
+    
 </body>
-</html> 
+</html>
