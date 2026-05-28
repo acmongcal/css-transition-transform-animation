@@ -1,31 +1,10 @@
 
-* {
-
-  margin: 0;
-  padding: 0;
-
-  /* Reset default spacing */
-}
-
-
-
-/* 
-   Base
- */
-
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #080b16;
-  color: #f8fafc;
-  line-height: 1.7;
-}
 
 /* 
    Layout
 */
 
-.transform-section {
+.presentation-section {
     /* 2 columns layout with a gap of 3rem between them: */
   
     display: grid;
@@ -554,27 +533,6 @@ then returns to normal, creating a subtle attention-grabbing effect. */
    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model
    */
 
-pre {
-  background: #020617;
-
-  color: #e0f2fe;
-
-  padding: 1.2rem;
-
-  border-radius: 18px;
-
-  overflow-x: auto;
-
-  margin-top: 1.5rem;
-
-  border:
-    1px solid
-    rgba(56,189,248,.25);
-}
-
-code {
-  font-family: monospace;
-}
 
 /* 
    Animation
@@ -586,18 +544,7 @@ code {
   https://www.w3schools.com/csS/css3_animations.asp
   */
 
-.content-section.active {
-  display: block;
-  animation: fadeIn 2s ease;
-}
 
-/* Fade In Animation */
-/* This animation smoothly transitions the content from being invisible and slightly shifted down to fully visible and in its original position, creating a gentle fade-in effect when a new section becomes active. */ 
-/* Reference:
- CSS Animations
- https://css-tricks.com/almanac/properties/a/animation/
- https://www.w3schools.com/csS/css3_animations.asp
- */
 
 @keyframes fadeIn {
     
@@ -634,7 +581,7 @@ code {
    https://css-tricks.com/css-media-queries/
    https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
    */
-  .transform-section {
+  .presentation-section {
     /* Switch to a single column layout for tablet devices, stacking the navigation and content vertically. The navigation will be at the top, followed by the content panel. This ensures that the layout is optimized for smaller screens and remains user-friendly. */
     /* Reference:     
       CSS Grid         
@@ -668,7 +615,7 @@ code {
    https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
    */
 
-  .transform-section {
+  .presentation-section {
     /* Switch to a single column layout for mobile devices, stacking the navigation and content vertically. The navigation will be at the top, followed by the content panel. This ensures that the layout is optimized for smaller screens and remains user-friendly. */ 
     /* Reference:
      CSS Grid         
