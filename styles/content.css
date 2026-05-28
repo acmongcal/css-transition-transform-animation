@@ -135,6 +135,7 @@ background:
      directly to the edge. */
 }
 
+
 /* Nav Title */
 
 .nav-title {
@@ -143,13 +144,30 @@ background:
   margin-bottom: 1rem;
 }
 
+
+/* ========================================================== */
 /* Navigation Buttons */
+
+/*
+AI prompt: 
+Suggest CSS for navigation buttons in a dark modern tech UI.
+
+Requirements:
+- use transform on hover
+- use transition for smooth hover effects
+- use animation for the active button
+- hover should only apply to non-active buttons
+- active button should stay visually distinct
+*/
 
 .nav-btn {
   border: none;
-  outline: none;
 
   background: transparent;
+
+  /* Starts with a transparent background,
+     which changes on hover
+     and active states. */
 
   color: #cbd5e1;
 
@@ -161,32 +179,125 @@ background:
 
   cursor: pointer;
 
-  font-size: 1rem;
-  font-weight: 500;
+  /* Makes the cursor a hand
+     to indicate clickable items */
 
-  /*  Transition for smooth hover and active effects */
-  /*  Reference: 
-      CSS Transitions
-      https://css-tricks.com/almanac/properties/t/transition/ */
+  /* Transition for smooth
+     hover and active effects
 
-    transition:
-        transform .3s ease,
-        background-color .3s ease,
-        color .3s ease;
+     Reference:
+     CSS Transitions
+     https://css-tricks.com/almanac/properties/t/transition/
+  */
 
+  transition:
+    transform .3s ease,
+    background-color .3s ease,
+    color .3s ease;
+
+  /* Smooth transition effects
+     for hover and active states.
+
+     Main points:
+      transform → movement
+
+      background-color
+      → background change
+
+      color
+      → text color change
+
+     Meaning of values:
+
+      transform:
+      controls movement
+      and scaling animations
+
+      background-color:
+      smoothly changes
+      the button background color
+
+      color:
+      smoothly changes
+      the text color
+
+      .3s
+      = transition duration
+
+      ease
+      = starts and ends smoothly
+  */
 }
+
+
+
+/* ========================================================== */
 
 /* Hover (not active) */
 
+/* AI prompt: How should I write CSS hover effects for navigation buttons while keeping the active button visually distinct?
+
+I want hover styles to apply only to non-active buttons.*/
+
 .nav-btn:hover:not(.active) {
+    /* On hover, the navigation button
+     changes to a subtle background color
+     and moves slightly to the right
+     to indicate interactivity.
+
+     The :not(.active) selector ensures
+     the hover effect only applies to
+     non-active buttons, keeping the
+     active button visually distinct
+     and maintaining a clear
+     visual hierarchy. */
+
+
+
   background:
-    rgba(56,189,248,.12);
+   rgba(56,189,248,.2);
+   /* A subtle blue background appears on hover 
+   to indicate interactivity. 
+   .2 means 20% opacity */
 
   color: #38bdf8;
 
   transform:
     translateX(8px);
+    /* Moves the button 8px to the right on hover,
+     creating a dynamic and engaging effect. */
+
+
+  /* Reference:
+     CSS Transform
+     https://css-tricks.com/almanac/properties/t/transform/
+
+     CSS Pseudo-class :not()
+     https://developer.mozilla.org/en-US/docs/Web/CSS/:not
+  */
 }
+/* ========================================================== */
+
+/* Explanation:
+
+    why transition is applied in .nav-btn
+    instead of .nav-btn:hover:not(.active):
+
+    If transition is written inside :hover,
+    the animation only works when entering
+    the hover state.
+
+    When the cursor leaves the button,
+    there is no transition to animate
+    the element back to its original state.
+
+    Therefore, transition is placed in
+   .nav-btn so both hover in and
+   hover out animations stay smooth.
+*/   
+
+
+
 
 /* 
    Active Page
@@ -221,6 +332,9 @@ background:
 /* Creates a pulsing glow effect on the active navigation button. */
 /* The button scales up slightly and the box-shadow intensifies, 
 then returns to normal, creating a subtle attention-grabbing effect. */
+
+/* ========================================================== */
+
 
 
 @keyframes glowPulse {
@@ -272,8 +386,6 @@ then returns to normal, creating a subtle attention-grabbing effect. */
   border-radius: 30px;
 
   padding: 3rem;
-
-  backdrop-filter: blur(12px);
 
   min-height: 700px;
 }
