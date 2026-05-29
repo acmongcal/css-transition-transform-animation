@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Transition Presentation</title>
+  <title>CSS Transitions Presentation</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="styles/normalize-fwd.css"> <link rel="stylesheet" href="styles/base.css">          <link rel="stylesheet" href="styles/content.css">       <link rel="stylesheet" href="styles/menu.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/transition.css">
+
 </head>
 
 <body>
@@ -18,7 +19,7 @@
 
     <!-- Left Navigation -->
     <aside class="side-nav">
-      <h2 class="nav-title">CSS Transition Presentation</h2>
+      <h2 class="nav-title">CSS Transitions</h2>
 
       <button class="nav-btn active" data-section="what">What is it</button>
       <button class="nav-btn" data-section="does">What does it do</button>
@@ -40,39 +41,84 @@
         }</code>
       </section>
 
+
       <!-- What does it do -->
       <section class="content-section" id="does">
         <h1>What Does It Do?</h1>
-        <p>Add explanation here.</p>
+
+        <p>CSS Transition controls the animation speed when changing CSS properties. It creates smooth visual effects by defining:</p>
+
+        <ul>
+          <li>transition-property specifies which styles to change</li>
+          <li>transition-duration sets how long the effect takes</li>
+          <li>transition-timing-function controls the speed curve (e.g., ease-in-out)</li>
+          <li>transition-delay defines the waiting time before starting</li>
+        </ul>
+
       </section>
 
       <!-- Why use it -->
       <section class="content-section" id="why">
         <h1>Why Would You Use It?</h1>
-        <p>Add explanation here.</p>
+        <p>CSS Transition helps create interactive and modern websites.</p>
+        <ul>
+          <li>Smooth hover effects</li>
+          <li>Better visual feedback</li>
+          <li>Modern UI design</li>
+          <li>No layout shift</li>
+        </ul>
       </section>
 
       <!-- Where use it -->
       <section class="content-section" id="where">
         <h1>Where Would You Use It?</h1>
-        <p>Add explanation here.</p>
+        <ul>
+          <li>Buttons</li>
+          <li>Product cards</li>
+          <li>Image galleries</li>
+          <li>Navigation menus</li>
+          <li>Loading animations</li>
+          <li>Mobile interfaces</li>
+        </ul>
       </section>
 
       <!-- Pros and Cons -->
       <section class="content-section" id="pros">
-        <h1>Pros and Cons</h1>
 
+        <h1>Pros and Cons</h1>
+        
         <h2>Pros</h2>
-        <p>Add pros here.</p>
+        <ul>
+          <li>Easy to use</li>
+          <li>Smooth animation effects</li>
+          <li>Modern user interface</li>
+          <li>Does not affect layout</li>
+        </ul>
 
         <h2>Cons</h2>
-        <p>Add cons here.</p>
+        <ul>
+          <li>Can distract users if overused</li>
+          <li>Rotated text may be harder to read</li>
+          <li>Complex transitions are harder to maintain</li>
+        </ul>
       </section>
 
       <!-- Code Demo -->
       <section class="content-section" id="demo">
         <h1>Code Demo</h1>
-        <p>Add transition demo here.</p>
+        <p>Hover over the box below to see CSS Transition in action.</p>
+        
+        <div class="demo-box">Hover Me</div>
+
+        <code>
+        .demo-box {<br>
+        background-color: #38bdf8;
+        transition: background-color 0.5s ease;<br>
+        }<br>
+        .demo-box:hover {<br>
+          background-color: #ec4899;<br>
+        }
+        </code>
       </section>
 
     </main>
