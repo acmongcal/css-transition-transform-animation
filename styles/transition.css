@@ -1,14 +1,119 @@
-
-.demo-box {
-  background-image: none !important;
-  background-color: #38bdf8 !important;
-  transition: background-color 0.5s ease !important;
-  transform: none !important;
+.codedemo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;                 
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;            
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #1e293b; 
+  width: fit-content;      
 }
 
+.interect-box {
+  display: inline-block;
+  width: 120px;
+  padding: 10px 0;
+  background-color: #ff7a59; 
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out 0.1s,
+              width 0.5s ease-in-out 0.1s,
+              transform 0.5s ease-in-out 0.1s;
+}
+.interect-text {
+  color: #ffffff;          
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: block;
+  transition: color 0.5s ease-in-out 0.1s;
+}
 
-.demo-box:hover {
-  transform: none !important;
-  background-color: #ec4899 !important;
+.interect-box:hover {
+  background-color: #a855f7; 
+  width: 150px;             
+  transform: scale(1.05);   
+}
+
+.interect-box:hover  {
+  color: #0f172a;            
+}
+
+.btn-demo {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #ff7a59;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.4s ease-in-out 0s,
+              border-color 0.4s ease-in-out 0s,
+              color 0.4s ease-in-out 0s,
+              transform 0.4s ease-in-out 0s;
+}
+
+.btn-demo:hover {
+  background-color: transparent;
+  border-color: #a855f7;
+  color: #a855f7;
+  transform: translateY(-3px);
+}
+
+.menu-card-demo {
+  margin-top: 1rem;
+  position: relative;
+  width: 250px;
+  height: 180px;
+  background-color: #1e293b;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a855f7e6;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+              transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.menu-card-demo:hover .card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.transition-box {
+  width: 300px;
+  height: 100px;
+  background-color: #ff7a59;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  /* Shorthand Approach */
+  transition: background-color 0.5s ease-in-out 0.1s;
+}
+
+.transition-box:hover {
+  background-color: #33475b;
 }
 

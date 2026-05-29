@@ -5,16 +5,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Transitions Presentation</title>
-
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Round&family=Press+Start+2P&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Story+Script&family=Tilt+Neon&display=swap" rel="stylesheet">
+  
   <!-- CSS -->
   <link rel="stylesheet" href="styles/normalize-fwd.css"> 
-  <link rel="stylesheet" href="styles/base.css">          <link rel="stylesheet" href="styles/content.css">       <link rel="stylesheet" href="styles/menu.css">
-  <link rel="stylesheet" href="styles/content.css">
+  <link rel="stylesheet" href="styles/base.css">          
+  <link rel="stylesheet" href="styles/content.css">       
   <link rel="stylesheet" href="styles/transition.css">
+  <!-- JavaScript -->
+  <script src="scripts/scripts.js" defer></script>
 
 </head>
 
 <body>
+  <header class="site-header">
+    <div class="site-header-width">
+      <a href="index.html"><img class="home" src="images/css-home-logo.png" alt="css logo"></a>
+
+      <nav class="site-navigation" id="site-navigation">
+
+          <button class="menu-toggle" aria-controls="header-menu" aria-expanded="false" aria-label="Menu Toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24">
+              <title>Menu Icon</title>
+              <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"></path>
+          </svg>
+          </button>
+          <ul class="nav-menu" id="header-menu">
+          <li><a href="transition.html">Transition</a></li>
+          <li><a href="transform.html">Transform</a></li>
+          <li><a href="animation.html">Animation</a></li>
+          </ul>
+      </nav>
+    </div>
+  </header>
 
   <section class="presentation-section">
 
@@ -37,9 +63,15 @@
       <section class="content-section active" id="what">
         <h1>What is CSS Transitions?</h1>
         <p>CSS Transition is a property that allows developers to change property values smoothly over a specified duration, creating a gradual effect instead of an instant change.</p>
-        <pre><code>.box { 
-          transition: background-color 0.3s ease;
-        }</code></pre>
+        <h3>Basic Transition Syntax</h3>
+        <pre><code>
+          .element {
+                background-color: #ff7a59;
+                transition: background-color 0.5s ease;
+            }
+          .element:hover {
+                background-color: #33475b;
+            }</code></pre>
       </section>
 
 
@@ -47,13 +79,36 @@
       <section class="content-section" id="does">
         <h1>What Does It Do?</h1>
 
-        <p>CSS Transition controls the animation speed when changing CSS properties. It creates smooth visual effects by defining:</p>
+        <p>CSS Transition allows you to change property values smoothly, from an initial state to an end state, typically triggered by user interactions like hover or focus.</p>
 
+        <h3>The 4 Core Transition Properties</h3>
+        <p>To control exactly how the transition behaves, it utilizes these four sub-properties:</p>
+        
         <ul>
-          <li>transition-property specifies which styles to change</li>
-          <li>transition-duration sets how long the effect takes</li>
-          <li>transition-timing-function controls the speed curve (e.g., ease-in-out)</li>
-          <li>transition-delay defines the waiting time before starting</li>
+          <li>
+            <strong>transition-property:</strong> Specifies which styles to change (e.g., background-color, width, opacity).
+            <pre><code>transition-property: background-color;</code></pre>
+          </li>
+          <li>
+            <strong>transition-duration:</strong> Sets how long the effect takes to complete (e.g., 0.5s).
+            <pre><code>transition-duration: 0.5s;</code></pre>
+          </li>
+          <li>
+            <strong>transition-timing-function:</strong> Controls the speed curve of the transition (e.g., ease-in-out, linear).
+            <pre><code>transition-timing-function: ease-in-out;</code></pre>
+          </li>
+          <li>
+            <strong>transition-delay:</strong> Defines the waiting time before the transition actually starts.
+            <pre><code>transition-delay: 0.1s;</code></pre>
+          </li>
+        </ul>
+
+        <h3>Common Triggers</h3>
+        <p>Transitions require a trigger to start. They cannot play automatically on page load:</p>
+        <ul>
+          <li><code>:hover</code> (Mouse over)</li>
+          <li><code>:focus</code> (Keyboard navigation or input selection)</li>
+          <li><code>:active</code> (Clicking down on an element)</li>
         </ul>
 
       </section>
@@ -61,13 +116,21 @@
       <!-- Why use it -->
       <section class="content-section" id="why">
         <h1>Why Would You Use It?</h1>
-        <p>CSS Transition helps create interactive and modern websites.</p>
+        <p>CSS transitions are the easiest and most performant way to create subtle interactive responses without JS.</p>
         <ul>
-          <li>Smooth hover effects</li>
-          <li>Better visual feedback</li>
-          <li>Modern UI design</li>
-          <li>No layout shift</li>
+          <li><strong>Smooth Hover Effects:</strong> Prevents sudden, jarring color and size changes when users interact.</li>
+          <li><strong>Better Visual Feedback:</strong> Clearly signals to users that an element is clickable or active.</li>
+          <li><strong>No Layout Shift:</strong> Animates elements smoothly without breaking or moving the surrounding layout.</li>
         </ul>
+
+        <div class="codedemo-box">
+          Hover to 
+          <div class="interect-box">
+            <span class="interect-text">Interact</span>
+          </div>
+          Smoothly!
+        </div>
+
       </section>
 
       <!-- Where use it -->
@@ -81,6 +144,16 @@
           <li>Loading animations</li>
           <li>Mobile interfaces</li>
         </ul>
+
+        <div class="transition-container">
+          <div class="demo-button-wrapper">
+            <button class="btn-demo">Hover Me</button>
+          </div>
+          
+          <div class="menu-card-demo">
+            <div class="card-overlay">View Details</div>
+          </div>
+        </div>
       </section>
 
       <!-- Pros and Cons -->
@@ -88,19 +161,18 @@
 
         <h1>Pros and Cons</h1>
         
-        <h2>Pros</h2>
+        <h3>Pros</h3>
         <ul>
-          <li>Easy to use</li>
-          <li>Smooth animation effects</li>
-          <li>Modern user interface</li>
-          <li>Does not affect layout</li>
+          <li><strong>Performance:</strong> Hardware-accelerated by the GPU, ensuring smooth rendering without layout jank.</li>
+          <li><strong>Simplicity:</strong> Easy to implement and perfect for simple two-state micro-interactions.</li>
+          <li><strong>Maintainability:</strong> Written directly in CSS, keeping styles separate from JavaScript logic.</li>
         </ul>
 
-        <h2>Cons</h2>
+        <h3>Cons</h3>
         <ul>
-          <li>Can distract users if overused</li>
-          <li>Rotated text may be harder to read</li>
-          <li>Complex transitions are harder to maintain</li>
+          <li><strong>Limited States:</strong> Can only transition from State A to State B, making complex animations impossible.</li>
+          <li><strong>Trigger Required:</strong> Cannot run automatically on page load or loop infinitely without JavaScript.</li>
+          <li><strong>Property Restrictions:</strong> Certain CSS properties (like <code>display: none</code> to <code>block</code>) cannot be smoothly transitioned natively.</li>
         </ul>
       </section>
 
@@ -109,17 +181,37 @@
         <h1>Code Demo</h1>
         <p>Hover over the box below to see CSS Transition in action.</p>
         
-        <div class="demo-box">Hover Me</div>
+<div class="transition-box">Hover Me</div>
 
-        <pre><code>
-        .demo-box {
-        background-color: #38bdf8;
-        transition: background-color 0.5s ease;<br>
-        }
-        .demo-box:hover {
-          background-color: #ec4899;
-        }
-        </code></pre>
+        <h3>1. Longhand Approach</h3>
+        <pre>
+          <code>
+            .transition-box {
+              background-color: #ff7a59;
+
+              transition-property: background-color;
+              transition-duration: 0.5s;
+              transition-timing-function: ease-in-out;
+              transition-delay: 0.1s;
+            }
+          </code>
+        </pre>
+
+        <h3>2. Shorthand Approach</h3>
+        <pre>
+          <code>
+            .transition-box {
+              background-color: #ff7a59;
+
+              /* Order: property | duration | timing-function | delay */
+              transition: background-color 0.5s ease-in-out 0.1s;
+            }
+
+            .transition-box:hover {
+              background-color: #33475b;
+            }
+          </code>
+        </pre>     
       </section>
 
     </main>

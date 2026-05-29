@@ -7,39 +7,55 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-  <title>CSS Animation Presentation</title>
-
+  <title>CSS Animation</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Round&family=Press+Start+2P&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Story+Script&family=Tilt+Neon&display=swap" rel="stylesheet">
+  
   <!-- CSS -->
-  <link rel="stylesheet"
-        href="styles/normalize-fwd.css">
-
-  <link rel="stylesheet"
-        href="styles/base.css">
-
-  <link rel="stylesheet"
-        href="styles/content.css">
-
-  <link rel="stylesheet"
-        href="styles/menu.css">
-
-  <link rel="stylesheet"
-        href="styles/footer.css">
-
-  <link rel="stylesheet"
-        href="styles/animation.css">
+  <link rel="stylesheet" href="styles/normalize-fwd.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/content.css">
+  <link rel="stylesheet" href="styles/animation.css">
+  <!-- JavaScript -->
+  <script src="scripts/scripts.js" defer></script>
 </head>
 
 <body>
 
+
+  <header class="site-header">
+
+    <div class="site-header-width">
+
+      <a href="index.html"><img class="home" src="images/css-home-logo.png" alt="css logo"></a>
+
+      <nav class="site-navigation" id="site-navigation">
+
+        <button class="menu-toggle" aria-controls="header-menu" aria-expanded="false" aria-label="Menu Toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24">
+            <title>Menu Icon</title>
+            <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"></path>
+          </svg>
+        </button>
+
+        <ul class="nav-menu" id="header-menu">
+          <li><a href="transition.html">Transition</a></li>
+          <li><a href="transform.html">Transform</a></li>
+          <li><a href="animation.html">Animation</a></li>
+        </ul>
+
+      </nav>
+    </div>
+  </header>
+  
   <section class="presentation-section">
 
     <!-- Left Navigation -->
     <aside class="side-nav">
 
-      <h2 class="nav-title">
-        CSS Animation Presentation
-      </h2>
-
+      <h1 class="nav-title"> CSS Animation </h1>
 
       <button class="nav-btn active"
               data-section="what">
@@ -58,7 +74,7 @@
 
       <button class="nav-btn"
               data-section="where">
-        Where use it
+        Where Would You Use It
       </button>
 
       <button class="nav-btn"
@@ -75,96 +91,300 @@
 
     <!-- Right Content -->
     <main class="content-panel">
+      <section class="content-section active" id="what">
 
-     
+        <h2>What is CSS Animation?</h2>
 
-      <section class="content-section active"
-               id="what">
-
-        <h1>
-          What is CSS Animation?
-        </h1>
-
-        <p>
-          Add explanation here.
+        <p>CSS animation is a module that makes element animated without using javascript.
         </p>
+        <!-- <p>CSS animation allows developers to add smooth transitions and motion effects to elements without relying on JavaScript or external libraries. It enhances user experience by making web pages feel more interactive and engaging.</p> -->
+        <h3>Basic Animation Syntax</h3>
+        <pre>
+          <code>
+            /* Syntax 1*/
+            @keyframes example {
+              from {opacity: 0;}
+              to {opacity: 1;}
+            }
+
+            /* Syntax 2*/
+            @keyframes example {
+              0% {opacity: 0;}
+              50% {opacity: 1;}
+              100% {opacity: 1.5;}
+            }
+
+            .element {
+                animation: example 2s ease-in-out;
+            }
+          </code>
+        </pre>
 
       </section>
 
       <section class="content-section"
                id="does">
 
-        <h1>
-          What Does It Do?
-        </h1>
+        <h2>What Does It Do?</h2>
 
-        <p>
-          Add explanation here.
+        <p>CSS animation allows developers to animate the values of CSS properties over time using keyframes.
         </p>
+
+        
+        <figure>
+          <h3>Analogy</h3>
+          <img src="images/keyframes.png" alt="screenshot of an video editor window">
+        </figure>
+        <!-- <p>The animation property in CSS can be used to animate many other CSS properties such as color, background-color, height, or width. Each animation needs to be defined with the @keyframes at-rule which is then called with the animation property, like so:</p> -->
+        <h3>Basic Animation Syntax</h3>
+        <pre>
+          <code>
+            @keyframes example {
+              0% {color: red;}
+              20% {color: green;}
+              30% {color: blue;}
+              100% {color: violet;}
+            }
+            .element {
+                animation: example 2s ease-in-out;
+            }
+          </code>
+        </pre>
+        <h3>Keyframes (@keyframes)</h3>
+        <p> – Define the animation states.</p>
+        <h3>Animation Sub-properties</h3>
+        <p> – Control how the animation behaves.</p>
+        <ul>
+          <li>animation-name:</li>
+          <li>animation-duration:</li>
+          <li>animation-timing-function:</li>
+          <li>animation-delay:</li>
+          <li>animation-iteration-count:</li>
+          <li>animation-direction:</li>
+          <li>animation-fill-mode:</li>
+        </ul>
+        <!-- <h3>Values for Sub-properties</h3>
+        <ul>
+          <li>
+            <h4>animation-timing-function</h4>
+            <p>Values: ease, ease-out, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) (e.g. cubic-bezier(0.5, 0.2, 0.3, 1.0)) </p>
+          </li>
+          <li>
+            <h4>animation-duration</h4>
+            <p>Values: Xs or Xms</p>
+          </li>
+          <li>
+            <h4>animation-delay</h4>
+            <p>Values: Xs or Xms</p>
+          </li>
+          <li>
+            <h4>animation-iteration-count</h4>
+            <p>Values: n</p>
+          </li>
+          <li>
+            <h4>animation-direction</h4>
+            <p>Values: normal, alternate</p>
+          </li>
+          <li>
+            <h4>animation-fill-mode: </h4>
+            <p>Values: forwards, backwards, both, none</p>
+          </li>
+        </ul> -->
+        <!-- <h3>Different timing-functions</h3>
+        <div id="go">
+		      <a href="#go">Animate</a> <a href="#reset">Reset</a>
+          <p>All of the animations below last exactly 2 seconds</p>
+          <div class="ease">
+            <h4>ease (default)</h4>
+            <div class="box">
+            </div>
+          </div>
+          
+          <div class="linear">
+            <h4>linear</h4>
+            <div class="box">
+            </div>
+          </div>
+      
+          <div class="ease-in">
+            <h4>ease-in</h4>
+            <div class="box">
+            </div>
+          </div>
+
+          <div class="ease-out">
+            <h4>ease-out</h4>
+            <div class="box">
+            </div>
+          </div>
+
+          <div class="ease-in-out">
+            <h4>ease-in-out</h4>
+            <div class="box">
+            </div>
+          </div>
+          <div class="steps">
+            <h4>steps()</h4>
+            <div class="box">
+            </div>
+          </div>
+        </div> -->
+        <!-- <h3>Multiple animations</h3>
+        <p>You can comma-separate the values to declare multiple animations on a selector as well.</p> -->
+      </section>
+
+      <section class="content-section" id="why">
+
+        <h2>Why Would You Use It?</h2>
+
+        <p>CSS animations are primarily used to create high performance visual effects without needing to use javascript or adding videos/gifs. 
+        </p>
+        <!-- <p>By having css animations you wouldn't need to add videos  for simple visuals in your website. and it would make your website alot more interactive and professional as well. </p> -->
+
+
+        <div id=animation-1>
+          Make 
+          <div id=flip>
+            <div><div>wOrK</div></div>
+            <div><div>lifeStyle</div></div>
+            <div><div>Everything</div></div>
+          </div>
+          AweSoMe!
+        </div>
+      </section>
+
+      <section class="content-section" id="where">
+
+        <h2>Where Would You Use It?</h2>
+        <ul>
+          <li>Enhancing user interaction</li>
+          <li>Creating loading indicators</li>
+          <li>Animating Text for Visual Impact</li>
+        </ul>
+        <!-- <ul>
+          <li>
+            <h3>Enhancing user interaction</h3>
+            <p>such as adding button hover effects, menu transitions, or click responses</p>
+          </li>
+          <li>
+            <h3>Creating loading indicators</h3>
+            <p>improves usability by visually indicating that content is being processed</p>
+          </li>
+          <li>
+            <h3>Animating Text for Visual Impact</h3>
+            <p>CSS text animations make text fade, slide, or scale smoothly.</p>
+          </li>
+        </ul> -->
+        <div class="animations-container">
+          <div id="animation-2">
+            <div class="pendulum">
+              <div class="pendulum_box">
+                <div class="ball first"></div>
+                  <div class="ball"></div>
+                  <div class="ball"></div>
+                  <div class="ball"></div>
+                  <div class="ball last"></div>
+              </div>
+            </div>
+          </div>
+          <div class="ring">
+            Loading
+            <span></span>
+          </div>
+        </div>
 
       </section>
 
-      <section class="content-section"
-               id="why">
+      <section class="content-section" id="pros">
 
-        <h1>
-          Why Would You Use It?
-        </h1>
+        <h2>Pros and Cons</h2>
 
-        <p>
-          Add explanation here.
-        </p>
+        <h3>Pros</h3>
+        <ul>
+          <li>Speed and Performance</li>
+          <li>Guiding the User</li>
+          <li>Professional Feel</li>
+        </ul>
 
+        <!-- <ul>
+          <li>
+            <h4>Speed and Perfomance</h4>
+            <p>CSS animations are generally better for performance than using JavaScript or heavy video files. They use the power of the computer's graphics card (GPU). This means the movement is fluid (60 frames per second) and doesn't make the laptop fan start spinning like a jet engine.</p>
+          </li>
+          <li>
+            <h4>Guiding the User</h4>
+            <p>Good animations tell the user what to do next. For example, a button that subtly changes color on hover tells the user, "Yes, you can click me." A sidebar that slides in smoothly shows where the new content came from. This makes the site feel intuitive.</p>
+          </li>
+          <li>
+            <h4>Professional Feel</h4>
+            <p>Small, "micro-interactions" make your brand look polished. It shows that you care about details. For a big client, these details are often the difference between a "cheap" site and an "enterprise" site.</p>
+          </li>
+        </ul> -->
+
+        <h3>Cons</h3>
+        <!-- <ul>
+          <li>
+            <h4>Slowing down the user</h4>
+            <p>The biggest crime in web design is making a user wait for an animation to finish. If your menu takes 2 seconds to slide out, you are wasting people's time. In 2026, people have zero patience. If the site feels slow, they leave.</p>
+          </li>
+          <li>
+            <h4>The "Lag" Factor</h4>
+            <p>If you animate the wrong properties (like "margin" or "height"), the browser has to recalculate the whole layout of the page every single frame. This causes "jank" or lag. A laggy animation makes your expensive website look broken and cheap.</p>
+          </li>
+          <li>
+            <h4>Motion Sickness and Accessibility</h4>
+            <p>Some people are sensitive to movement on screens. Large, spinning, or zooming animations can actually make them feel sick. If your site isn't built with "Reduced Motion" options, you are ignoring a part of your audience and potentially breaking accessibility laws.</p>
+          </li>
+        </ul> -->
+        
+        <ul>
+          <li>Slowing down the user</li>
+          <li>The "Lag" Factor</li>
+          <li>Motion Sickness and Accessibility</li>
+        </ul>
       </section>
 
-      <section class="content-section"
-               id="where">
+      <section class="content-section" id="demo">
 
-        <h1>
-          Where Would You Use It?
-        </h1>
+        <h2>Code Demo</h2>
+        <div class="animation-box">
+        </div>
+        <pre>
+          <code>
+            @keyframes my-animation {
+              from {
+                background-color: #ff7a59;
+                width: 300px;
+                top: 10px;
+              }
+              to {
+                background-color: #33475b;
+                width: 50px;
+                top: 100px;
+              }
+            }
 
-        <p>
-          Add explanation here.
-        </p>
+            .animation-box {
+              /* animation properties */
+              animation-name: my-animation;
+              animation-duration: 2s;
+              animation-direction: alternate;
+              animation-iteration-count: infinite;
+              animation-timing-function: linear;
+              
+              /* other properties */
+              width: 300px;
+              height: 100px;
+              border-radius: 10px;
+              position: relative;
+              left: 0; 
+              right: 0; 
+              margin-left: auto;
+              margin-right: auto; 
+            }
 
-      </section>
-
-      <section class="content-section"
-               id="pros">
-
-        <h1>
-          Pros and Cons
-        </h1>
-
-        <h2>
-          Pros
-        </h2>
-
-        <p>
-          Add pros here.
-        </p>
-
-        <h2>
-          Cons
-        </h2>
-
-        <p>
-          Add cons here.
-        </p>
-
-      </section>
-
-      <section class="content-section"
-               id="demo">
-
-        <h1>
-          Code Demo
-        </h1>
-
-        <p>
-          Add animation demo here.
-        </p>
+          </code>
+        </pre>
 
       </section>
 
@@ -172,8 +392,7 @@
 
   </section>
 
-  <!-- JavaScript -->
-  <script src="scripts/content.js"></script>
+
 
 </body>
 </html>

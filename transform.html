@@ -7,20 +7,40 @@
 
   <title>CSS Transform Presentation</title>
 
-<link rel="stylesheet" href="styles/normalize-fwd.css">
-
-<link rel="stylesheet" href="styles/base.css">
-
-<link rel="stylesheet" href="styles/content.css">
-
-<link rel="stylesheet" href="styles/menu.css">
-
-<link rel="stylesheet" href="styles/footer.css">
-
-<link rel="stylesheet" href="styles/transform.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Round&family=Press+Start+2P&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Story+Script&family=Tilt+Neon&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/normalize-fwd.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/content.css">
+  <link rel="stylesheet" href="styles/transform.css">
+  <!-- JavaScript -->
+  <script src="scripts/scripts.js" defer></script>
 </head>
 
 <body>
+  <header class="site-header">
+    <div class="site-header-width">
+      <a href="index.html"><img class="home" src="images/css-home-logo.png" alt="css logo"></a>
+
+      <nav class="site-navigation" id="site-navigation">
+        <button class="menu-toggle" aria-controls="header-menu" aria-expanded="false" aria-label="Menu Toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24">
+            <title>Menu Icon</title>
+            <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"></path>
+        </svg>
+        </button>
+        <ul class="nav-menu" id="header-menu">
+        <li><a href="transition.html">Transition</a></li>
+        <li><a href="transform.html">Transform</a></li>
+        <li><a href="animation.html">Animation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <section class="presentation-section">
 
@@ -44,15 +64,25 @@
 
         <p>
           CSS Transform is a property that lets developers move, rotate,
-          resize, or skew HTML elements.
+          resize, or skew HTML elements. Ex, the bottom navigation buttons on this page use CSS Transform to create a dynamic hover effect.
         </p>
           <!-- Example CSS code
           showing a 15-degree
           rotation effect -->
 
-          <pre><code>.box {
-            transform: rotate(15deg);
-          }</code></pre>
+          <pre><code>
+            .nav-btn:hover:not(.active) {
+            
+              background: rgba(56,189,248,.2); 
+              color: #38bdf8;
+              <mark class="highlight-code">
+              transform: translateX(8px);
+                  
+              /* Moves the button 8px to the right on hover,
+                    creating a dynamic and engaging effect. */
+              </mark>
+            }
+          </code></pre>
 
       </section>
 
@@ -65,10 +95,62 @@
         </p>
 
         <ul>
-          <li>translate() moves elements</li>
-          <li>rotate() turns elements</li>
-          <li>scale() resizes elements</li>
-          <li>skew() tilts elements</li>
+          <li><h3>translate()</h3>
+          <p>Moves an element without affecting layout.</p>
+          <button class="demo-btn translate-btn">Translate</button>
+          <pre><code>
+          .translate-btn:hover {
+            transform: translateX(30px);
+            /* Moves the button 30px to the right on hover. */
+          } 
+          </code></pre></li>
+          <li><h3>rotate()</h3>
+          <p>Rotates an element around a fixed point.</p>
+          <button class="demo-btn rotate-btn">Rotate</button>
+          <pre><code>
+          .rotate-btn:hover {
+            transform: rotate(15deg);
+            /* Rotates the button 15 degrees clockwise on hover. */
+          }
+          </code></pre></lli>
+          <li><h3>scale()</h3>
+          <p>Resizes an element while maintaining its proportions.</p>
+          <button class="demo-btn scale-btn">Scale</button>
+          <pre><code>
+          .scale-btn:hover {
+            transform: scale(1.2);
+            /* Scales the button to 120% of its original size on hover. */
+          }
+          </code></pre></li>
+          <li><h3>skew()</h3>
+          <p>Skews an element along the X and Y axes, i.e, skew() makes an element look tilted.</p>
+          <button class="demo-btn skew-xy-btn">Skew on X and Y axes</button>
+          <pre><code>
+          .skew-xy-btn:hover {
+            transform: skew(20deg, 10deg);
+            /* Skews the button 20 degrees along the X-axis and 10 degrees along the Y-axis on hover. */
+          }
+          </code></pre>
+          <p>Skews on the X axes only</p>
+          <button class="demo-btn skew-x-btn">Skew on X axis</button>
+          <pre><code>
+          .skew-x-btn:hover {
+            transform: skewX(20deg);
+            /* Skews the button 20 degrees along the X-axis on hover. */
+          }
+          </code></pre>
+          <p>Skews on the Y axes only</p>
+          <button class="demo-btn skew-y-btn">Skew on Y axis</button>
+          <pre><code>
+          .skew-y-btn:hover {
+            transform: skewY(10deg);
+            /* Skews the button 10 degrees along the Y-axis on hover. */
+          }
+          </code></pre>       
+          
+        
+        </li>  
+
         </ul>
       </section>
 
