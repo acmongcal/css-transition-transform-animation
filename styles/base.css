@@ -1,0 +1,85 @@
+/* ============================================================================
+   Base Styles
+============================================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+
+  /* Reset default spacing */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #080b16;
+  color: #f8fafc;
+  line-height: 1.7;
+}
+
+/* ============================================================================
+   Typography
+============================================================================ */
+
+.content-panel h1 {
+  font-size:
+    clamp(2rem, 5vw, 3rem);
+
+  color: #38bdf8;
+
+  margin-bottom: 1.5rem;
+}
+
+.content-panel h2 {
+  color: #facc15;
+
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Paragraph */
+
+.content-panel p {
+  font-size: 1.1rem;
+  color: #dbeafe;
+
+  margin-bottom: 1.3rem;
+
+  max-width: 850px;
+}
+
+/* Lists */
+
+.content-panel ul {
+  margin-left: 1.5rem;
+}
+
+.content-panel li {
+  color: #dbeafe;
+  margin-bottom: .8rem;
+}
+
+/* ============================================================================
+   Code Blocks
+============================================================================ */
+
+pre {
+  background: #020617;
+
+  color: #e0f2fe;
+
+  padding: 1.2rem;
+
+  border-radius: 18px;
+
+  overflow-x: auto;
+
+  margin-top: 1.5rem;
+
+  border:
+    1px solid
+    rgba(56,189,248,.25);
+}
+
+code {
+  font-family: monospace;
+}

@@ -1,63 +1,21 @@
-/* AI Prompts:  what is the best practice to create responsive layouts and typography in css?
-Answer: 1. Use Relative Units: Use relative units like em, rem, %, vw, and vh for font sizes, spacing, and layout dimensions to ensure they scale appropriately across different screen sizes.
-2. Media Queries: Implement CSS media queries to apply different styles based on the device's screen size, orientation, or resolution. This allows you to create specific layouts and typography adjustments for mobile, tablet, and desktop views.
-3. Flexible Grid Systems: Use CSS Grid or Flexbox to create flexible and responsive layouts that can adapt to various screen sizes without breaking the design.
-4. Fluid Typography: Use CSS functions like clamp() to create fluid typography that scales smoothly between a minimum and maximum size based on the viewport width.
-5. Mobile-First Approach: Start designing for the smallest screen size first and then use media queries to enhance the design for larger screens. This ensures that the core content is accessible and optimized for mobile users.
-6. Test Across Devices: Regularly test your responsive design on different devices and screen sizes to ensure that it looks and functions well across all platforms. Use browser developer tools to simulate various screen sizes and orientations during development.    
 
-*/
-
-
-/* to remove browser default spacing and make layout sizing more predictable, especially for responsive design. */
-* {
-  box-sizing: border-box;
-  /*
-    box-sizing: border-box;
-
-    Used to make width and height
-    easier to calculate by including
-    padding and border inside the element size.
-
-    Reference:
-    https://css-tricks.com/box-sizing/
-    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries
-  
-    */
-
-  margin: 0;
-  padding: 0;
-}
-
-
-
-/* 
-   Base
- */
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #080b16;
-  color: #f8fafc;
-  line-height: 1.7;
-}
 
 /* 
    Layout
 */
 
-.transform-section {
+.presentation-section {
     /* 2 columns layout with a gap of 3rem between them: */
   
     display: grid;
-    /* CSS Grid is a two-dimensional layout system for web design. Unlike → one direction (row OR column), Grid → row and column together */
   
     grid-template-columns: 280px 1fr;
-    /* column 1 = 280px, column 2 = remaining space   */
+    /* column 1 = 280px, column 2 = remaining space   
+      <aside class="side-nav"></aside> ----> column 1
+
+      <main class="content-panel"></main> ----> column 2
+    
+    */
 
     gap: 3rem;
 
@@ -67,17 +25,32 @@ body {
         FWDP-1000-Day-09-Slides.pdf
     */
 
-    /* ========================================================== */
+ 
 
   
 
   padding: 4rem 8%; 
   /* = 4rem top/bottom, 8% left/right, 4rem ≈ 64px */
 
+  /* reference: 
+    CSS Box Model
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model
+     */
+
 
 /* ========================================================== */
   
-/* stylereference : https://magicui.design/ */
+/* Reference : 
+https://magicui.design/ 
+https://cssgradient.io/gradient-backgrounds/
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/radial-gradient
+
+Animated Aurora Gradient Background with CSS -Build a Website with Animated Aurora Background
+https://youtu.be/MxpDrULwejY?si=mtVXDCAWjr_FQN2v
+
+AI Prompt: Suggest a modern tech-style CSS design using a dark UI, an aurora-inspired gradient background,
+and subtle radial glow effects.
+*/
 
 background:
   radial-gradient(
@@ -114,7 +87,7 @@ background:
 
   border:
     1px solid
-    rgba(255,255,255,.12);
+    rgba(255,255,255,.18);
 
   border-radius: 28px;
 
@@ -124,13 +97,23 @@ background:
   flex-direction: column;
   gap: 1rem;
 
-  height: fit-content;
+  /* Use flexbox to stack
+     navigation items vertically.
+     gap adds consistent spacing
+     between each button to
+     improve readability and layout. */
 
   position: sticky;
   top: 2rem;
 
-  backdrop-filter: blur(12px);
+  /* Keeps the navigation visible
+     while scrolling through content.
+     top: 2rem adds spacing from
+     the top of the screen so the
+     navigation does not stick
+     directly to the edge. */
 }
+
 
 /* Nav Title */
 
@@ -140,13 +123,30 @@ background:
   margin-bottom: 1rem;
 }
 
+
+/* ========================================================== */
 /* Navigation Buttons */
+
+/*
+AI prompt: 
+Suggest CSS for navigation buttons in a dark modern tech UI.
+
+Requirements:
+- use transform on hover
+- use transition for smooth hover effects
+- use animation for the active button
+- hover should only apply to non-active buttons
+- active button should stay visually distinct
+*/
 
 .nav-btn {
   border: none;
-  outline: none;
 
   background: transparent;
+
+  /* Starts with a transparent background,
+     which changes on hover
+     and active states. */
 
   color: #cbd5e1;
 
@@ -158,32 +158,125 @@ background:
 
   cursor: pointer;
 
-  font-size: 1rem;
-  font-weight: 500;
+  /* Makes the cursor a hand
+     to indicate clickable items */
 
-  /*  Transition for smooth hover and active effects */
-  /*  Reference: 
-      CSS Transitions
-      https://css-tricks.com/almanac/properties/t/transition/ */
+  /* Transition for smooth
+     hover and active effects
 
-    transition:
-        transform .3s ease,
-        background-color .3s ease,
-        color .3s ease;
+     Reference:
+     CSS Transitions
+     https://css-tricks.com/almanac/properties/t/transition/
+  */
 
+  transition:
+    transform .3s ease,
+    background-color .3s ease,
+    color .3s ease;
+
+  /* Smooth transition effects
+     for hover and active states.
+
+     Main points:
+      transform → movement
+
+      background-color
+      → background change
+
+      color
+      → text color change
+
+     Meaning of values:
+
+      transform:
+      controls movement
+      and scaling animations
+
+      background-color:
+      smoothly changes
+      the button background color
+
+      color:
+      smoothly changes
+      the text color
+
+      .3s
+      = transition duration
+
+      ease
+      = starts and ends smoothly
+  */
 }
+
+
+
+/* ========================================================== */
 
 /* Hover (not active) */
 
+/* AI prompt: How should I write CSS hover effects for navigation buttons while keeping the active button visually distinct?
+
+I want hover styles to apply only to non-active buttons.*/
+
 .nav-btn:hover:not(.active) {
+    /* On hover, the navigation button
+     changes to a subtle background color
+     and moves slightly to the right
+     to indicate interactivity.
+
+     The :not(.active) selector ensures
+     the hover effect only applies to
+     non-active buttons, keeping the
+     active button visually distinct
+     and maintaining a clear
+     visual hierarchy. */
+
+
+
   background:
-    rgba(56,189,248,.12);
+   rgba(56,189,248,.2);
+   /* A subtle blue background appears on hover 
+   to indicate interactivity. 
+   .2 means 20% opacity */
 
   color: #38bdf8;
 
   transform:
     translateX(8px);
+    /* Moves the button 8px to the right on hover,
+     creating a dynamic and engaging effect. */
+
+
+  /* Reference:
+     CSS Transform
+     https://css-tricks.com/almanac/properties/t/transform/
+
+     CSS Pseudo-class :not()
+     https://developer.mozilla.org/en-US/docs/Web/CSS/:not
+  */
 }
+/* ========================================================== */
+
+/* Explanation:
+
+    why transition is applied in .nav-btn
+    instead of .nav-btn:hover:not(.active):
+
+    If transition is written inside :hover,
+    the animation only works when entering
+    the hover state.
+
+    When the cursor leaves the button,
+    there is no transition to animate
+    the element back to its original state.
+
+    Therefore, transition is placed in
+   .nav-btn so both hover in and
+   hover out animations stay smooth.
+*/   
+
+
+
 
 /* 
    Active Page
@@ -218,6 +311,9 @@ background:
 /* Creates a pulsing glow effect on the active navigation button. */
 /* The button scales up slightly and the box-shadow intensifies, 
 then returns to normal, creating a subtle attention-grabbing effect. */
+
+/* ========================================================== */
+
 
 
 @keyframes glowPulse {
@@ -270,8 +366,6 @@ then returns to normal, creating a subtle attention-grabbing effect. */
 
   padding: 3rem;
 
-  backdrop-filter: blur(12px);
-
   min-height: 700px;
 }
 
@@ -307,11 +401,15 @@ then returns to normal, creating a subtle attention-grabbing effect. */
    4. Fluid Typography: Use CSS functions like clamp() to create fluid typography that scales smoothly between a minimum and maximum size based on the viewport width.
   
    
-   The clamp() function allows you to set a responsive font size that scales between a defined minimum and maximum value based on the viewport width. In this case, the font size will be 2rem on small screens, scale up to 3rem on larger screens, and adjust responsively in between. */
+   The clamp() function allows you to set a responsive font size 
+   that scales between a defined minimum and maximum value based on the viewport width.
+    In this case, the font size will be 2rem on small screens, scale up to 3rem on larger screens, 
+    and adjust responsively in between. */
    /* Reference:
     CSS clamp() function
     https://css-tricks.com/almanac/functions/c/clamp/
     https://developer.mozilla.org/en-US/docs/Web/CSS/clamp
+    FWDP-1000-Day-06-Slides.pdf
     */
   font-size:
     clamp(2rem, 5vw, 3rem);
@@ -435,27 +533,6 @@ then returns to normal, creating a subtle attention-grabbing effect. */
    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model
    */
 
-pre {
-  background: #020617;
-
-  color: #e0f2fe;
-
-  padding: 1.2rem;
-
-  border-radius: 18px;
-
-  overflow-x: auto;
-
-  margin-top: 1.5rem;
-
-  border:
-    1px solid
-    rgba(56,189,248,.25);
-}
-
-code {
-  font-family: monospace;
-}
 
 /* 
    Animation
@@ -467,18 +544,7 @@ code {
   https://www.w3schools.com/csS/css3_animations.asp
   */
 
-.content-section.active {
-  display: block;
-  animation: fadeIn 2s ease;
-}
 
-/* Fade In Animation */
-/* This animation smoothly transitions the content from being invisible and slightly shifted down to fully visible and in its original position, creating a gentle fade-in effect when a new section becomes active. */ 
-/* Reference:
- CSS Animations
- https://css-tricks.com/almanac/properties/a/animation/
- https://www.w3schools.com/csS/css3_animations.asp
- */
 
 @keyframes fadeIn {
     
@@ -515,7 +581,7 @@ code {
    https://css-tricks.com/css-media-queries/
    https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
    */
-  .transform-section {
+  .presentation-section {
     /* Switch to a single column layout for tablet devices, stacking the navigation and content vertically. The navigation will be at the top, followed by the content panel. This ensures that the layout is optimized for smaller screens and remains user-friendly. */
     /* Reference:     
       CSS Grid         
@@ -549,7 +615,7 @@ code {
    https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
    */
 
-  .transform-section {
+  .presentation-section {
     /* Switch to a single column layout for mobile devices, stacking the navigation and content vertically. The navigation will be at the top, followed by the content panel. This ensures that the layout is optimized for smaller screens and remains user-friendly. */ 
     /* Reference:
      CSS Grid         
