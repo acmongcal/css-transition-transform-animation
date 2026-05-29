@@ -124,8 +124,9 @@ background:
 }
 
 
-/* ========================================================== */
-/* Navigation Buttons */
+/* ====================================================================================================================
+Navigation Buttons 
+====================================================================================================================*/
 
 /*
 AI prompt: 
@@ -138,6 +139,7 @@ Requirements:
 - hover should only apply to non-active buttons
 - active button should stay visually distinct
 */
+
 
 .nav-btn {
   border: none;
@@ -210,13 +212,15 @@ Requirements:
 
 
 
-/* ========================================================== */
+
 
 /* Hover (not active) */
 
 /* AI prompt: How should I write CSS hover effects for navigation buttons while keeping the active button visually distinct?
 
-I want hover styles to apply only to non-active buttons.*/
+I want hover styles to apply only to non-active buttons.
+
+the following .nav-btn:hover:not(.active) { } is modied from AI suggection to fit this project */
 
 .nav-btn:hover:not(.active) {
     /* On hover, the navigation button
@@ -345,15 +349,15 @@ then returns to normal, creating a subtle attention-grabbing effect. */
       0 0 16px rgba(147,51,234,.25);
   }
 }
-/* 
+/* ====================================================================================================================
    Right Content
- */
+ ==================================================================================================================== */
 
 .content-panel {
   /* The content panel has a semi-transparent background with a blur effect, creating a frosted glass look. It also has padding and rounded corners for a modern design. */ 
   /* Reference:
    https://magicui.design/ 
-   https://www.apple.com/apple-vision-pro/?utm_source=chatgpt.com
+   https://www.apple.com/apple-vision-pro
    */
   background:
     rgba(255,255,255,.08);
@@ -387,7 +391,9 @@ then returns to normal, creating a subtle attention-grabbing effect. */
      */
 }
 
-/* Headings */
+/* ==================================================================================================================== 
+  Headings 
+  ==================================================================================================================== */
 
 .content-panel h1 {
   /* The main heading uses a vibrant cyan color and a responsive font size that scales between 2rem and 3rem based on the viewport width, ensuring it looks great on all screen sizes. */ 
@@ -397,14 +403,13 @@ then returns to normal, creating a subtle attention-grabbing effect. */
    https://developer.mozilla.org/en-US/docs/Web/CSS/color
    */
 
-   /* AI prompt:display:  what is the best way to create responsive typography in css?; 
-   4. Fluid Typography: Use CSS functions like clamp() to create fluid typography that scales smoothly between a minimum and maximum size based on the viewport width.
-  
-   
-   The clamp() function allows you to set a responsive font size 
-   that scales between a defined minimum and maximum value based on the viewport width.
+    /*
+    The clamp() function allows you to set a responsive font size 
+    that scales between a defined minimum and maximum value based on the viewport width.
     In this case, the font size will be 2rem on small screens, scale up to 3rem on larger screens, 
-    and adjust responsively in between. */
+    and adjust responsively in between. 
+    */
+
    /* Reference:
     CSS clamp() function
     https://css-tricks.com/almanac/functions/c/clamp/
@@ -414,9 +419,7 @@ then returns to normal, creating a subtle attention-grabbing effect. */
   font-size:
     clamp(2rem, 5vw, 3rem);
     /* The font size will be 2rem on small screens, scale up to 3rem on larger screens, and adjust responsively in between. */  
-    /* Reference:
-
-     */
+  
 
   color: #38bdf8;
 
@@ -430,7 +433,9 @@ then returns to normal, creating a subtle attention-grabbing effect. */
   margin-bottom: 1rem;
 }
 
-/* Paragraph */
+/* ==================================================================================================================== 
+  Paragraph 
+  ====================================================================================================================*/
 
 .content-panel p {
   font-size: 1.1rem;
@@ -524,20 +529,22 @@ then returns to normal, creating a subtle attention-grabbing effect. */
         https://css-tricks.com/almanac/properties/t/transform/*/
 }
 
-/* 
-   Code Block
- */
+/*  ====================================================================================================================
+    Code Block
+    ==================================================================================================================== */
 /* The code block has a dark background with light text for readability, along with padding and rounded corners to create a distinct and visually appealing section for displaying code snippets. It also allows horizontal scrolling for long lines of code. */  
 /* Reference:
    CSS Box Model
    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model
-   */
+   
+*/
 
 
-/* 
-   Animation
- */
- /* When a content section becomes active, it will fade in smoothly over 0.35 seconds, creating a pleasant transition effect for the user. */ 
+/*  ====================================================================================================================
+    Animation
+    ==================================================================================================================== */
+ 
+    /* When a content section becomes active, it will fade in smoothly over 0.35 seconds, creating a pleasant transition effect for the user. */ 
  /* Reference:
   CSS Animations
   https://css-tricks.com/almanac/properties/a/animation/
@@ -570,9 +577,9 @@ then returns to normal, creating a subtle attention-grabbing effect. */
    */
 }
 
-/*
-   Tablet
- */
+/*  ====================================================================================================================
+    Tablet
+    ==================================================================================================================== */
 
 @media (max-width: 992px) {
 /* For tablet screens, the layout adjusts to a single column for better readability and usability. The side navigation becomes a top navigation bar, and the content panel takes up the full width below it. This ensures that the design remains clean and functional on smaller screens. */ 
@@ -603,9 +610,9 @@ then returns to normal, creating a subtle attention-grabbing effect. */
   }
 }
 
-/* 
+/* ====================================================================================================================
    Mobile
- */
+  ==================================================================================================================== */
 
 @media (max-width: 768px) {
   /* On mobile devices, the layout switches to a single column format where the side navigation becomes a horizontal top navigation bar, and the content panel is displayed below it. This ensures that the design is optimized for smaller screens, providing a user-friendly experience without sacrificing functionality. The demo box also adjusts to fit the narrower screen width while maintaining its visual appeal. */
