@@ -1,3 +1,25 @@
+.syntax-demo-box {
+  width: 100%;
+  max-width: 300px;
+  height: 80px;
+  background-color: #ff7a59;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin: 20px 0;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.syntax-demo-box:hover {
+  background-color: #33475b;
+}
+
+
 .codedemo-box {
   display: flex;
   align-items: center;
