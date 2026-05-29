@@ -50,23 +50,81 @@ body {
   color: #dbeafe;
   margin-bottom: .8rem;
 }
-.site-navigation ul li{
-  display: inline-block;
+
+
+.site-header {
+	background-color:  #38bdf8;
+  /* Change this to position absolute during presentation */
+	position: fixed; 
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 3;
+  height: 6.5rem;
 }
+
+.site-header-width {
+	max-width: 62.5rem;
+	margin: 0 auto;
+	padding: 0 5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+a.home {
+	width: 3rem;
+  height: 3rem;
+}
+
+.site-navigation ul {
+	list-style: none;
+	padding: 0;
+	margin-top: 1rem;
+	text-align: center;
+	display: none;
+	position: absolute;
+	top: 5.5rem;  /* Matches the height of the .site-header */
+	left: 0;
+	right: 0;
+	z-index: 2;
+	background-color: #38bdf8;
+}
+
+.site-navigation.toggled ul {
+	display: block;
+}
+
+.site-navigation a {
+	display: block;
+	padding: 1rem;
+	font-size: 1.25rem;
+	text-decoration: none;
+	color: #282828;
+}
+
+.menu-toggle {
+	display: block;
+	background-color: transparent;
+	border: 0;
+	padding: 1rem;
+  margin-top: 1rem;
+}
+
+.menu-toggle:focus {
+	border: 0;
+	outline: 1px dotted;
+}
+
+
+
+
 /* ============================================================================
    Code Blocks
 ============================================================================ */
-.site-navigation{
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  z-index: 1000;
-}
 
-.home{
-  width: 10rem;
-  height:10rem;
-}
+
+
 
 pre {
   background: #020617;
@@ -89,3 +147,34 @@ pre {
 code {
   font-family: monospace;
 }
+
+@media (min-width: 43.75em) {
+  .menu-toggle {
+		display: none;
+	}
+
+	.site-navigation {
+		flex: 1 1 auto;
+		padding: 0 1rem;
+	}
+
+	.site-navigation ul,
+	.site-navigation.toggled ul {
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+		top: 0;
+	}
+
+	.site-navigation a {
+		line-height: 4.5rem; /* Matches the height of the .site-header */
+		padding: 0 1rem;
+	}
+
+}
+
+
+
+
+
+

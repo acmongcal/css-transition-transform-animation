@@ -6,9 +6,8 @@
 
 .presentation-section {
     /* 2 columns layout with a gap of 3rem between them: */
-  
+    position: relative;
     display: grid;
-  
     grid-template-columns: 280px 1fr;
     /* column 1 = 280px, column 2 = remaining space   
       <aside class="side-nav"></aside> ----> column 1
@@ -29,7 +28,7 @@
 
   
 
-  padding: 4rem 8%; 
+  padding: 10rem 8%; 
   /* = 4rem top/bottom, 8% left/right, 4rem ≈ 64px */
 
   /* reference: 
@@ -104,7 +103,7 @@ background:
      improve readability and layout. */
 
   position: sticky;
-  top: 2rem;
+  top: 8rem;
 
   /* Keeps the navigation visible
      while scrolling through content.
@@ -118,7 +117,8 @@ background:
 /* Nav Title */
 
 .nav-title {
-  font-size:clamp(2rem, 5vw, 3rem);
+  font-size: 1.8rem;
+  /* font-size:clamp(2rem, 5vw, 3rem); */
   color: #38bdf8;
   margin-bottom: 1rem;
 }
@@ -590,7 +590,7 @@ then returns to normal, creating a subtle attention-grabbing effect. */
     grid-template-columns:
       220px 1fr;
 
-    padding: 3rem 5%;
+    padding: 10rem 5%;
   }
   /* The side navigation is made narrower to fit better on smaller screens, while still providing enough space for the navigation items. The content panel is given more padding to ensure that the content remains readable and visually appealing on tablet devices. */
   /* Reference:
@@ -624,8 +624,8 @@ then returns to normal, creating a subtle attention-grabbing effect. */
     grid-template-columns: 1fr;
 
     gap: 2rem;
-
-    padding: 2rem 5%;
+    
+    padding: 10rem 5%;
   }
 
   /* The side navigation is set to full width and positioned statically to create a horizontal navigation bar at the top of the page. The content panel's minimum height is removed to allow it to adjust based on the content, and padding is reduced for better fit on smaller screens. The demo box is set to a maximum width of 240px to ensure it remains visually appealing without overwhelming the screen. */
