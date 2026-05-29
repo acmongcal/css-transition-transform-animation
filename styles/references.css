@@ -1,60 +1,46 @@
-
-/* ==========================================================================
-   Layout & Base Styles 
-   ========================================================================== */
-
-main {
-  margin: 2rem;
-}
-
-h1 {
-  color: #ffffff;
-}
-
-/* ==========================================================================
-   Typography & Lists 
-   ========================================================================== */
-
-p {
-  margin-bottom: 0;
+body {
+    margin: 1rem;
 }
 
 ul {
-  list-style: none; 
-  padding: 0;
-  margin: 0; /* 💡 base.cssの margin-left: 1.5rem をきれいにリセット */
+    list-style: none; 
+    padding: 0;
 }
 
 li {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
-/* ==========================================================================
-   Card Component
-   ========================================================================== */
-
-.ref-credits-card {     
-  padding: 1.5rem;  
-  margin: 1rem 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px #0000000f; 
-  text-align: left;
-  width: 100%;
-  background: #ffffff14; 
-  border: 1px solid #ffffff1f; 
+h1 {
+    color: #ffffff;
 }
 
-.ref-credits-card h3 {
-  margin: 0 0 1rem 0; 
-  color: #38bdf8;
+h3 {
+    margin: 0;
+    color: #38BDF8;
+}
+
+p {
+    margin-bottom: 0;
 }
 
 .card-item {
-  padding: 0 1rem 1rem 1rem;
+    padding: 0 1rem 1rem 1rem;
 }
 
 
-.card-item:last-child {
-  padding-bottom: 0;
+.ref-credids-card {     
+    padding: 1.5rem;  
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px #00000010;;
+    text-align: left;
+    width: 100%;
+    background:
+    #ffffff14;
+    border:
+    1px solid
+    #ffffff1f;
 }
+
