@@ -89,9 +89,9 @@ body {
 	justify-content: space-between;
 }
 
-a.home {
+.home {
 	width: 3rem;
-  height: 3rem;
+	height: 3rem;
 }
 
 .site-navigation ul {
