@@ -1,11 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Transition Presentation</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/normalize-fwd.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/content.css">
+  <link rel="stylesheet" href="styles/menu.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/transition.css">
 </head>
+
 <body>
-    
+
+  <section class="presentation-section">
+
+    <!-- Left Navigation -->
+    <aside class="side-nav">
+      <h2 class="nav-title">CSS Transition Presentation</h2>
+
+      <button class="nav-btn active" data-section="what">What is it</button>
+      <button class="nav-btn" data-section="does">What does it do</button>
+      <button class="nav-btn" data-section="why">Why use it</button>
+      <button class="nav-btn" data-section="where">Where use it</button>
+      <button class="nav-btn" data-section="pros">Pros and Cons</button>
+      <button class="nav-btn" data-section="demo">Code Demo</button>
+    </aside>
+
+    <!-- Right Content -->
+    <main class="content-panel">
+
+      <!-- What is Transition -->
+      <section class="content-section active" id="what">
+        <h1>What is CSS Transition?</h1>
+        <p>Add explanation here.</p>
+      </section>
+
+      <!-- What does it do -->
+      <section class="content-section" id="does">
+        <h1>What Does It Do?</h1>
+        <p>Add explanation here.</p>
+      </section>
+
+      <!-- Why use it -->
+      <section class="content-section" id="why">
+        <h1>Why Would You Use It?</h1>
+        <p>Add explanation here.</p>
+      </section>
+
+      <!-- Where use it -->
+      <section class="content-section" id="where">
+        <h1>Where Would You Use It?</h1>
+        <p>Add explanation here.</p>
+      </section>
+
+      <!-- Pros and Cons -->
+      <section class="content-section" id="pros">
+        <h1>Pros and Cons</h1>
+
+        <h2>Pros</h2>
+        <p>Add pros here.</p>
+
+        <h2>Cons</h2>
+        <p>Add cons here.</p>
+      </section>
+
+      <!-- Code Demo -->
+      <section class="content-section" id="demo">
+        <h1>Code Demo</h1>
+        <p>Add transition demo here.</p>
+      </section>
+
+    </main>
+
+  </section>
+
+  <!-- JavaScript -->
+  <script src="scripts/content.js"></script>
+
 </body>
+
 </html>
