@@ -1,8 +1,8 @@
 
 
-/* 
+/* ==================================================================================================================== 
    Layout
-*/
+====================================================================================================================*/
 
 .presentation-section {
     /* 2 columns layout with a gap of 3rem between them: */
@@ -77,9 +77,9 @@ background:
     /* ========================================================== */
 }
 
-/* 
-   Left Navigation
- */
+/* ==================================================================================================================== 
+    Left Navigation
+ ==================================================================================================================== */
 
 .side-nav {
   background:
@@ -115,7 +115,9 @@ background:
 }
 
 
-/* Nav Title */
+/* ====================================================================================================================
+Nav Title 
+==================================================================================================================== */
 
 .nav-title {
   font-size: 1.8rem;
@@ -212,7 +214,9 @@ Requirements:
 
 /* ========================================================== */
 
-/* Hover (not active) */
+/* ====================================================================================================================
+  Hover (not active) 
+====================================================================================================================*/
 
 /* AI prompt: How should I write CSS hover effects for navigation buttons while keeping the active button visually distinct?
 
@@ -278,19 +282,14 @@ I want hover styles to apply only to non-active buttons.*/
 
 
 
-/* 
+/* ====================================================================================================================
    Active Page
- */
+ ====================================================================================================================*/
 
 .nav-btn.active {
-  /* Active button has a vibrant gradient background, white text, and a glowing animation to indicate the current page. */  
-  /* The glowPulse animation creates a subtle pulsing effect on the active button,
-   drawing attention to it without being too distracting. */  
-  /* Reference:
-   CSS Animations
-   https://css-tricks.com/almanac/properties/a/animation/ 
-   https://www.w3schools.com/csS/css3_animations.asp
-   */
+  /* Active button has a vibrant gradient background, 
+  white text, and a glowing animation to indicate the current page. */  
+
 
   background:
     linear-gradient(
@@ -298,6 +297,24 @@ I want hover styles to apply only to non-active buttons.*/
       #38bdf8,
       #9333ea
     );
+    /* A vibrant diagonal gradient background 
+    that transitions from a bright cyan to a rich purple, 
+    creating an eye-catching and modern look for the active navigation 
+    button. */ 
+
+    /* linear-gradient syntax:
+     linear-gradient(angle, color1, color2, ...);
+     135deg = diagonal gradient from top left to bottom right
+     #38bdf8 = bright cyan
+     #9333ea = rich purple
+     */
+
+    /* Reference:
+     CSS Gradients
+     https://css-tricks.com/almanac/properties/b/background-image/#gradients
+     https://developer.mozilla.org/en-US/docs/Web/CSS/gradients
+     */ 
+
 
   color: white;
 
@@ -305,18 +322,37 @@ I want hover styles to apply only to non-active buttons.*/
 
   animation:
     glowPulse 1s ease-in-out 2;
+    /* glowpulse is the name of the animation defined below, 
+    which creates a pulsing glow effect on the active button. 
+    The animation lasts for 1 second, 
+    uses an ease-in-out timing function for smoothness, 
+    and repeats 2 times to draw attention to the active page 
+    without being too distracting. */ 
+
+  /* Reference:
+   CSS Animations
+   https://css-tricks.com/almanac/properties/a/animation/ 
+   https://www.w3schools.com/csS/css3_animations.asp
+   */
 }
 
-/* Glow Animation */
-/* Creates a pulsing glow effect on the active navigation button. */
-/* The button scales up slightly and the box-shadow intensifies, 
-then returns to normal, creating a subtle attention-grabbing effect. */
-
-/* ========================================================== */
 
 
+
+
+/* ==================================================================================================================== 
+  Glow Animation
+==================================================================================================================== */
 
 @keyframes glowPulse {
+
+  /* @keyframes defines the animation named glowPulse, 
+  which creates a pulsing glow effect on the active navigation button. 
+  The animation transitions between a normal state with a subtle glow 
+  and a scaled-up state with a stronger glow, 
+  drawing attention to the active page while maintaining 
+  a modern tech-style design. */ 
+
   /* 0% and 100%: Normal state with a subtle glow. */
   /* 50%: Scaled up with a stronger glow. */  
   /* Reference:
@@ -452,77 +488,7 @@ then returns to normal, creating a subtle attention-grabbing effect. */
   margin-bottom: .8rem;
 }
 
-/* 
-   Demo Box
- */
 
-.demo-box {
-  width: 220px;
-  height: 140px;
-
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-
-  border-radius: 24px;
-
-  background:
-  /* A vibrant diagonal gradient background that transitions from a bright cyan to a rich purple, creating an eye-catching and modern look for the demo box. */ 
-  /* Reference:
-   CSS Gradients
-   https://css-tricks.com/almanac/properties/b/background-image/#gradients
-   https://developer.mozilla.org/en-US/docs/Web/CSS/gradients
-   */
-    linear-gradient(
-      135deg,
-      #38bdf8,
-      #9333ea
-    );
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-/* Centered content with flexbox */
-/* Reference:
-   CSS Flexbox
-   https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-   https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
-   */
-
-  font-size: 1.1rem;
-  font-weight: bold;
-
-  cursor: pointer;
-  /* Indicates interactivity, inviting users to hover and see the transformation. */  
-  /* Reference:
-   CSS Cursors
-   https://css-tricks.com/almanac/properties/c/cursor/
-   */
-
-  transition: .4s ease;
-  /* Smooth transition for transform and box-shadow on hover. */
-
-
-
-  box-shadow:
-    0 20px 50px
-    rgba(56,189,248,.25);
-    /* Adds a soft shadow below the box for depth and a glowing effect. */
-    /* Reference:
-     CSS Box Shadow
-     https://css-tricks.com/almanac/properties/b/box-shadow/
-     https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
-     */
-}
-
-.demo-box:hover {
-  transform:
-    translateY(-15px)
-    rotate(5deg)
-    scale(1.1);
-    /* On hover, the box will move up, rotate slightly, and scale up for a dynamic effect. */
-    /*  Reference:
-        https://css-tricks.com/almanac/properties/t/transform/*/
-}
 
 /* 
    Code Block
@@ -618,9 +584,10 @@ then returns to normal, creating a subtle attention-grabbing effect. */
   .presentation-section {
     /* Switch to a single column layout for mobile devices, stacking the navigation and content vertically. The navigation will be at the top, followed by the content panel. This ensures that the layout is optimized for smaller screens and remains user-friendly. */ 
     /* Reference:
-     CSS Grid         
-      https://css-tricks.com/snippets/css/complete-guide-grid/
-      */  
+        CSS Grid         
+        https://css-tricks.com/snippets/css/complete-guide-grid/
+
+    */  
     grid-template-columns: 1fr;
 
     gap: 2rem;
@@ -628,16 +595,9 @@ then returns to normal, creating a subtle attention-grabbing effect. */
     padding: 2rem 5%;
   }
 
-  /* The side navigation is set to full width and positioned statically to create a horizontal navigation bar at the top of the page. The content panel's minimum height is removed to allow it to adjust based on the content, and padding is reduced for better fit on smaller screens. The demo box is set to a maximum width of 240px to ensure it remains visually appealing without overwhelming the screen. */
-  /* Reference:
-     CSS Grid
-     https://css-tricks.com/snippets/css/complete-guide-grid/
-     */
+  
 
-  .side-nav {
-    position: static;
-    width: 100%;
-  }
+
 
   .content-panel {
     min-height: auto;
@@ -648,20 +608,39 @@ then returns to normal, creating a subtle attention-grabbing effect. */
    CSS Transitions
    https://css-tricks.com/almanac/properties/t/transition/    */
 
+   /* AI prompt: in css how to fix button on mobile view 
+   when it seems overflowing? */
+   /* To fix buttons that seem to be overflowing on mobile view, 
+   you can use the following CSS techniques:    
+    1. Use box-sizing: border-box; 
+    to include padding and borders in the element's 
+    total width, preventing overflow.
+
+    2. Set the button's width to 100% to make it take up the full 
+    width of its container, ensuring it fits within the screen.
+
+    3. Use media queries to adjust the button styles specifically 
+    for mobile devices, such as reducing padding or font size
+     if necessary. */  
+
+    .side-nav {
+    position: static;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+    .nav-btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  /* border-box sizing ensures the buttons take up 
+  the full width of the navigation bar without overflowing, 
+  making them easier to tap on mobile devices. */
+
   .nav-btn:hover:not(.active) {
     transform:
       translateY(-2px);
   }
 
-  /* The demo box is set to a maximum width of 240px to ensure it remains visually appealing without overwhelming the screen on mobile devices. This allows the box to scale appropriately while maintaining its design integrity across different screen sizes. */
-   /* Reference:
-    CSS Media Queries
-    https://css-tricks.com/css-media-queries/
-    https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
-    */
-
-  .demo-box {
-    width: 100%;
-    max-width: 240px;
-  }
+ 
 }
