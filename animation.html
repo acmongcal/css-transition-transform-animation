@@ -27,8 +27,29 @@
 
   <link rel="stylesheet"
         href="styles/animation.css">
+  <!-- JavaScript -->
+  <script src="scripts/content.js" defer></script>
 </head>
-
+<header>
+  <nav class="site-navigation">
+      <ul>
+          <li><a href="index.html"><img class="home" src="images/css-home-logo.png" alt="css logo"></a></li>
+          <li><a href="transition.html">Transition</a></li>
+          <li><a href="transform.html">Transform</a></li>
+          <li><a href="animation.html">Animation</a></li>
+      </ul>
+  </nav>
+  <nav>
+      <ul>
+          <li><a href="#what">What is it</a></li>
+          <li><a href="#does">What does it do</a></li>
+          <li><a href="#why">Why use it</a></li>
+          <li><a href="#where">Where to use it</a></li>
+          <li><a href="#pros">Pros and Cons</a></li>
+          <li><a href="#demo">Code Demo</a></li>
+      </ul>
+  </nav>
+</header>
 <body>
 
   <section class="presentation-section">
@@ -36,9 +57,7 @@
     <!-- Left Navigation -->
     <aside class="side-nav">
 
-      <h2 class="nav-title">
-        CSS Animation Presentation
-      </h2>
+      <h1 class="nav-title"> CSS Animation </h1>
 
 
       <button class="nav-btn active"
@@ -75,96 +94,89 @@
 
     <!-- Right Content -->
     <main class="content-panel">
+      <section class="content-section active" id="what">
 
-     
+        <h2>What is CSS Animation?</h2>
 
-      <section class="content-section active"
-               id="what">
-
-        <h1>
-          What is CSS Animation?
-        </h1>
-
-        <p>
-          Add explanation here.
+        <p>CSS animation is a technique that allows gradual changes and transitions in an element's style over a specified duration.
         </p>
+        <h3>Basic Animation Syntax</h3>
+        <pre>
+          <code>
+            /* Syntax 1*/
+            @keyframes example {
+              from {opacity: 0;}
+              to {opacity: 1;}
+            }
+
+            /* Syntax 2*/
+            @keyframes example {
+              0% {opacity: 0;}
+              10% {opacity: 1;}
+            }
+
+            .element {
+                animation: example 2s ease-in-out;
+            }
+          </code>
+        </pre>
 
       </section>
 
       <section class="content-section"
                id="does">
 
-        <h1>
-          What Does It Do?
-        </h1>
+        <h2>What Does It Do?</h2>
 
-        <p>
-          Add explanation here.
+        <p>CSS animation allows developers to add smooth transitions and motion effects to elements without relying on JavaScript or external libraries.
         </p>
 
       </section>
 
-      <section class="content-section"
-               id="why">
+      <section class="content-section" id="why">
 
-        <h1>
-          Why Would You Use It?
-        </h1>
+        <h2>Why Would You Use It?</h2>
 
-        <p>
-          Add explanation here.
+        <p>CSS animations are primarily used to create high performance visual effects without needing to use javascript or adding videos/gifs. 
         </p>
 
       </section>
 
-      <section class="content-section"
-               id="where">
+      <section class="content-section" id="where">
 
-        <h1>
-          Where Would You Use It?
-        </h1>
+        <h2>Where Would You Use It?</h2>
+        <ul>
+          <li>Enhancing user interaction </li>
+          <li>Creating loading indicators</li>
+          <li>Animating Text for Visual Impact</li>
+        </ul>
+      </section>
 
-        <p>
-          Add explanation here.
-        </p>
+      <section class="content-section" id="pros">
+
+        <h2>Pros and Cons</h2>
+
+        <h3>Pros</h3>
+
+        <ul>
+          <li>Speed and Perfomance</li>
+          <li>Guiding the User</li>
+          <li>Professional Feel</li>
+        </ul>
+
+        <h3>Cons</h3>
+        <ul>
+          <li>Slowing down the user</li>
+          <li>The "Lag" Factor</li>
+          <li>Motion Sickness and Accessibility</li>
+        </ul>
 
       </section>
 
-      <section class="content-section"
-               id="pros">
+      <section class="content-section" id="demo">
 
-        <h1>
-          Pros and Cons
-        </h1>
+        <h2>Code Demo</h2>
 
-        <h2>
-          Pros
-        </h2>
-
-        <p>
-          Add pros here.
-        </p>
-
-        <h2>
-          Cons
-        </h2>
-
-        <p>
-          Add cons here.
-        </p>
-
-      </section>
-
-      <section class="content-section"
-               id="demo">
-
-        <h1>
-          Code Demo
-        </h1>
-
-        <p>
-          Add animation demo here.
-        </p>
 
       </section>
 
@@ -172,8 +184,7 @@
 
   </section>
 
-  <!-- JavaScript -->
-  <script src="scripts/content.js"></script>
+
 
 </body>
 </html>

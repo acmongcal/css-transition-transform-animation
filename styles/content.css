@@ -118,7 +118,7 @@ background:
 /* Nav Title */
 
 .nav-title {
-  font-size: 1.8rem;
+  font-size:clamp(2rem, 5vw, 3rem);
   color: #38bdf8;
   margin-bottom: 1rem;
 }
@@ -423,7 +423,7 @@ then returns to normal, creating a subtle attention-grabbing effect. */
   margin-bottom: 1.5rem;
 }
 
-.content-panel h2 {
+.content-panel h3 {
   color: #facc15;
 
   margin-top: 2rem;

@@ -20,20 +20,13 @@ body {
    Typography
 ============================================================================ */
 
-.content-panel h1 {
+.content-panel h1, .content-panel h2 {
   font-size:
     clamp(2rem, 5vw, 3rem);
 
   color: #38bdf8;
 
   margin-bottom: 1.5rem;
-}
-
-.content-panel h2 {
-  color: #facc15;
-
-  margin-top: 2rem;
-  margin-bottom: 1rem;
 }
 
 /* Paragraph */
@@ -57,10 +50,23 @@ body {
   color: #dbeafe;
   margin-bottom: .8rem;
 }
-
+.site-navigation ul li{
+  display: inline-block;
+}
 /* ============================================================================
    Code Blocks
 ============================================================================ */
+.site-navigation{
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  z-index: 1000;
+}
+
+.home{
+  width: 10rem;
+  height:10rem;
+}
 
 pre {
   background: #020617;
