@@ -1,0 +1,248 @@
+
+
+/* Source: 1. Simple text animation https://prismic.io/blog/css-animation-examples */
+#animation-1 {
+    margin-top:8rem;
+    color:#999;
+    text-transform: uppercase;
+    font-size:36px;
+    font-weight:bold;
+    position:relative;
+    width:80%;
+    bottom:45%;
+    display:block;
+    text-align: center;
+    background-color: #fff;
+}
+
+#flip {
+    height:50px;
+    overflow:hidden;
+}
+
+#flip > div > div {
+    color:#fff;
+    padding:4px 12px;
+    height:45px;
+    margin-bottom:45px;
+    display:inline-block;
+}
+
+#flip div:first-child {
+    animation: show 5s linear infinite;
+}
+
+#flip div div {
+    background:#42c58a;
+}
+#flip div:first-child div {
+    background:#4ec7f3;
+}
+#flip div:last-child div {
+    background:#DC143C;
+}
+
+@keyframes show {
+    0% {margin-top:-270px;}
+    5% {margin-top:-180px;}
+    33% {margin-top:-180px;}
+    38% {margin-top:-90px;}
+    66% {margin-top:-90px;}
+    71% {margin-top:0px;}
+    99.99% {margin-top:0px;}
+    100% {margin-top:-270px;}
+}
+
+
+
+
+/* Source: 21. Newton’s cradle https://prismic.io/blog/css-animation-examples */
+
+#animation-2{
+  background-color: #98cfb2;
+  width: 30%;
+}
+.pendulum{
+    position:relative; 
+    width: 220px;
+    height: 180px;
+    background-color: #f8c6cf;
+    top: 5.6rem;
+    left: 10rem;
+    border-radius: 5%;
+    align-items: center;
+    border-top: 15px solid #eee7d5;
+    transform: translate(-50%, -50%);
+}
+.pendulum_box{
+    display: flex;
+    padding: 120px 0 0 10px;
+    position: absolute;
+    flex: 1;
+}
+.ball{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #455681;
+    position: relative;
+    transform-origin: 50% -300%;
+}
+.ball::before{
+    content: '';
+    width: 2px;
+    height: 120px;
+    background-color: #fffeff;
+    left: 18px;
+    top: -120px;
+    position: absolute;
+}
+
+.ball.first{
+  animation: firstball .9s alternate ease-in infinite;
+}
+
+@keyframes firstball{
+    0%{
+        transform: rotate(35deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+}
+
+.ball.last{
+    animation: lastball .9s alternate ease-out infinite;
+}
+
+@keyframes lastball{
+    50%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-35deg);
+    }
+}
+
+
+/* 22. Glowing loader ring https://prismic.io/blog/css-animation-examples */
+.ring
+{
+  position:relative;
+  top: 5.6rem;
+  left: 10rem;
+  transform:translate(-50%,-50%);
+  width:150px;
+  height:150px;
+  background:transparent;
+  border:3px solid #3c3c3c;
+  border-radius:50%;
+  text-align:center;
+  line-height:150px;
+  font-family:sans-serif;
+  font-size:20px;
+  color:#fff000;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  text-shadow:0 0 10px #fff000;
+  box-shadow:0 0 20px rgba(0,0,0,.5);
+}
+.ring:before
+{
+  content:'';
+  position:absolute;
+  top:-3px;
+  left:-3px;
+  width:100%;
+  height:100%;
+  border:3px solid transparent;
+  border-top:3px solid #fff000;
+  border-right:3px solid #fff000;
+  border-radius:50%;
+  animation:animateC 2s linear infinite;
+}
+span
+{
+  display:block;
+  position:absolute;
+  top:calc(50% - 2px);
+  left:50%;
+  width:50%;
+  height:4px;
+  background:transparent;
+  transform-origin:left;
+  animation:animate 2s linear infinite;
+}
+span:before
+{
+  content:'';
+  position:absolute;
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:#fff000;
+  top:-6px;
+  right:-8px;
+  box-shadow:0 0 20px #fff000;
+}
+@keyframes animateC
+{
+  0%
+  {
+    transform:rotate(0deg);
+  }
+  100%
+  {
+    transform:rotate(360deg);
+  }
+}
+@keyframes animate
+{
+  0%
+  {
+    transform:rotate(45deg);
+  }
+  100%
+  {
+    transform:rotate(405deg);
+  }
+}
+
+
+/* Demo code  */
+
+@keyframes my-animation {
+  from {
+    background-color: #ff7a59;
+    width: 300px;
+    top: 10px;
+  }
+  to {
+    background-color: #33475b;
+    width: 50px;
+    top: 100px;
+  }
+}
+
+.animation-box {
+  /* animation properties */
+  animation-name: my-animation;
+  animation-duration: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  
+  /* other properties */
+  width: 300px;
+  height: 100px;
+  border-radius: 10px;
+  position: relative;
+  left: 0; 
+  right: 0; 
+  margin-left: auto;
+  margin-right: auto; 
+  margin-bottom: 10rem;
+}
+
+
+

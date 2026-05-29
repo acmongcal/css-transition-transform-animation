@@ -120,7 +120,8 @@
             /* Syntax 2*/
             @keyframes example {
               0% {opacity: 0;}
-              10% {opacity: 1;}
+              50% {opacity: 1;}
+              100% {opacity: 1.5;}
             }
 
             .element {
@@ -139,6 +140,38 @@
         <p>CSS animation allows developers to animate the values of CSS properties over time using keyframes.
         </p>
 
+        
+        <figure>
+          <h3>Analogy</h3>
+          <img src="images/keyframes.png" alt="screenshot of an video editor window">
+        </figure>
+        
+        <h3>Basic Animation Syntax</h3>
+        <pre>
+          <code>
+            @keyframes example {
+              0% {color: red;}
+              20% {color: green;}
+              30% {color: blue;}
+              100% {color: violet;}
+            }
+            .element {
+                animation: example 2s ease-in-out;
+            }
+          </code>
+        </pre>
+
+        <h3>Animation Properties</h3>
+        <ul>
+          <li>animation-name: The name of the keyframes to apply.</li>
+          <li>animation-duration: Total time the animation takes to complete.</li>
+          <li>animation-timing-function: Controls the pacing of the animation.</li>
+          <li>animation-delay: Specifies a delay before the animation starts.</li>
+          <li>animation-iteration-count: Number of times the animation runs.</li>
+          <li>animation-direction: Defines the direction of the animation</li>
+          <li>animation-fill-mode: Specifies the styles applied before and after the animation.</li>
+        </ul>
+
       </section>
 
       <section class="content-section" id="why">
@@ -148,6 +181,16 @@
         <p>CSS animations are primarily used to create high performance visual effects without needing to use javascript or adding videos/gifs. 
         </p>
 
+
+        <div id=animation-1>
+          Make 
+          <div id=flip>
+            <div><div>wOrK</div></div>
+            <div><div>lifeStyle</div></div>
+            <div><div>Everything</div></div>
+          </div>
+          AweSoMe!
+        </div>
       </section>
 
       <section class="content-section" id="where">
@@ -158,6 +201,24 @@
           <li>Creating loading indicators</li>
           <li>Animating Text for Visual Impact</li>
         </ul>
+        <div class="animations-container">
+          <div id="animation-2">
+            <div class="pendulum">
+              <div class="pendulum_box">
+                <div class="ball first"></div>
+                  <div class="ball"></div>
+                  <div class="ball"></div>
+                  <div class="ball"></div>
+                  <div class="ball last"></div>
+              </div>
+            </div>
+          </div>
+          <div class="ring">
+            Loading
+            <span></span>
+          </div>
+        </div>
+
       </section>
 
       <section class="content-section" id="pros">
@@ -184,7 +245,44 @@
       <section class="content-section" id="demo">
 
         <h2>Code Demo</h2>
+        <div class="animation-box">
+        </div>
+        <pre>
+          <code>
+            @keyframes my-animation {
+              from {
+                background-color: #ff7a59;
+                width: 300px;
+                top: 10px;
+              }
+              to {
+                background-color: #33475b;
+                width: 50px;
+                top: 100px;
+              }
+            }
 
+            .animation-box {
+              /* animation properties */
+              animation-name: my-animation;
+              animation-duration: 2s;
+              animation-direction: alternate;
+              animation-iteration-count: infinite;
+              animation-timing-function: linear;
+              
+              /* other properties */
+              width: 300px;
+              height: 100px;
+              border-radius: 10px;
+              position: relative;
+              left: 0; 
+              right: 0; 
+              margin-left: auto;
+              margin-right: auto; 
+            }
+
+          </code>
+        </pre>
 
       </section>
 
