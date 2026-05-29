@@ -52,6 +52,23 @@ body {
 }
 
 
+
+.nav-menu li a,
+.nav-menu li a:visited{
+  color: #080b16;
+}
+
+
+
+.nav-menu li a:hover,
+.nav-menu li a:focus {
+	background-color: #264de4;
+  color: #ffffff;
+  border-radius: 1rem;
+}
+
+
+
 .site-header {
 	background-color:  #38bdf8;
   /* Change this to position absolute during presentation */
