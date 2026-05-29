@@ -11,9 +11,20 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #080b16;
-  color: #f8fafc;
-  line-height: 1.7;
+  background: 
+    radial-gradient(
+    circle at top left,
+    #38bdf82e,
+    transparent 25%
+  ),
+  radial-gradient(
+    circle at bottom right,
+    #9333ea2e,
+    transparent 25%
+  ),
+  #080b16; 
+  color: #f8fafc;          
+  line-height: 1.7;     
 }
 
 /* ============================================================================
@@ -25,6 +36,7 @@ body {
     clamp(2rem, 5vw, 3rem);
 
   color: #38bdf8;
+
 
   margin-bottom: 1.5rem;
 }
@@ -43,8 +55,6 @@ body {
   color: #dbeafe;
 
   margin-bottom: 1.3rem;
-
-  max-width: 850px;
 }
 
 /* Lists */
@@ -82,4 +92,51 @@ pre {
 
 code {
   font-family: monospace;
+}
+a:hover,
+a:focus {
+  color: #9333ea;            
+  text-decoration: underline; 
+  outline: none;
+}
+
+
+a:visited {
+  color: #38bdf8;
+}
+
+
+/* Global Animations  */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px); 
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Footer*/
+.site-footer {
+	margin-top: 3rem;
+  padding: 1rem 1rem;
+  text-align: center;
+  background-color: #38BDF8;
+  width: 100%;
+}
+
+.site-footer p {
+	padding: 0;
+  margin: 0;
+  color: #080b16;
+  text-align: center;
+}
+
+.site-footer a{
+  color: #f8fafc;
+  text-align: center;
 }
