@@ -74,24 +74,22 @@ body {
 
 pre {
   background: #020617;
-
-  color: #e0f2fe;
-
+  color: #e0f2fe; 
   padding: 1.2rem;
-
   border-radius: 18px;
-
   overflow-x: auto;
-
   margin-top: 1.5rem;
-
   border:
     1px solid
-    rgba(56,189,248,.25);
+    #38bdf840;
 }
 
 code {
   font-family: monospace;
+}
+
+a {
+  color: #38bdf8;
 }
 a:hover,
 a:focus {
