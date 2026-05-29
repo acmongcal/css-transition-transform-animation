@@ -33,6 +33,7 @@ body {
 .content-panel h1, .content-panel h2 {
   font-size:
     clamp(2rem, 5vw, 3rem);
+}
 
 h1 {
   font-size: clamp(2rem, 5vw, 3rem);
