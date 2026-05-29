@@ -6,9 +6,8 @@
 
 .presentation-section {
     /* 2 columns layout with a gap of 3rem between them: */
-  
+    position: relative;
     display: grid;
-  
     grid-template-columns: 280px 1fr;
     /* column 1 = 280px, column 2 = remaining space   
       <aside class="side-nav"></aside> ----> column 1
@@ -29,7 +28,7 @@
 
   
 
-  padding: 4rem 8%; 
+  padding: 10rem 8%; 
   /* = 4rem top/bottom, 8% left/right, 4rem ≈ 64px */
 
   /* reference: 
@@ -104,7 +103,7 @@ background:
      improve readability and layout. */
 
   position: sticky;
-  top: 2rem;
+  top: 8rem;
 
   /* Keeps the navigation visible
      while scrolling through content.
@@ -121,6 +120,7 @@ Nav Title
 
 .nav-title {
   font-size: 1.8rem;
+  /* font-size:clamp(2rem, 5vw, 3rem); */
   color: #38bdf8;
   margin-bottom: 1rem;
 }
@@ -459,7 +459,7 @@ I want hover styles to apply only to non-active buttons.*/
   margin-bottom: 1.5rem;
 }
 
-.content-panel h2 {
+.content-panel h3 {
   color: #facc15;
 
   margin-top: 2rem;
@@ -556,7 +556,7 @@ I want hover styles to apply only to non-active buttons.*/
     grid-template-columns:
       220px 1fr;
 
-    padding: 3rem 5%;
+    padding: 10rem 5%;
   }
   /* The side navigation is made narrower to fit better on smaller screens, while still providing enough space for the navigation items. The content panel is given more padding to ensure that the content remains readable and visually appealing on tablet devices. */
   /* Reference:
@@ -591,8 +591,8 @@ I want hover styles to apply only to non-active buttons.*/
     grid-template-columns: 1fr;
 
     gap: 2rem;
-
-    padding: 2rem 5%;
+    
+    padding: 10rem 5%;
   }
 
   
