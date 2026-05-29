@@ -246,3 +246,54 @@ span:before
 
 
 
+
+
+
+/* Timing-functions demo Source: https://stephaniewalter.design/blog/enhancing-user-experience-with-css-animations/  */
+#go {
+	/* background: #fff; */
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+	width: 25rem;
+	padding: 20px;
+}
+
+#go a {
+	padding: 5px 10px;
+	background: #38bdf8;
+    transition: all .3s;
+    color: #fff;
+	border-radius: 3px;
+	text-decoration: none;
+	font-size: 1.2em;
+	margin: 10px 0;
+	display: inline-block;
+}
+#go a:hover {
+	opacity: 0.6;
+}
+
+.box {
+	background: #38bdf8;
+    width: 20px;
+	height: 20px;
+	transition-duration: 2s;
+}
+.linear .box {
+	transition-timing-function: linear;
+}
+.ease-in .box {
+	transition-timing-function: ease-in;
+}
+.ease-out .box {
+	transition-timing-function: ease-out;
+}
+.ease-in-out .box {
+	transition-timing-function: ease-in-out;
+}
+.steps .box {
+	transition-timing-function: steps(4);
+}
+#go:target .box {
+	transform: translate(300px);
+}
