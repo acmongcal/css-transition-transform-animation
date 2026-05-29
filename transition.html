@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Transition Presentation</title>
+  <title>CSS Transitions Presentation</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="styles/normalize-fwd.css"> <link rel="stylesheet" href="styles/base.css">          <link rel="stylesheet" href="styles/content.css">       <link rel="stylesheet" href="styles/menu.css">
@@ -19,7 +19,7 @@
 
     <!-- Left Navigation -->
     <aside class="side-nav">
-      <h2 class="nav-title">CSS Transition </h2>
+      <h2 class="nav-title">CSS Transitions</h2>
 
       <button class="nav-btn active" data-section="what">What is it</button>
       <button class="nav-btn" data-section="does">What does it do</button>
@@ -34,7 +34,7 @@
 
       <!-- What is Transition -->
       <section class="content-section active" id="what">
-        <h1>What is CSS Transition?</h1>
+        <h1>What is CSS Transitions?</h1>
         <p>CSS Transition is a property that allows developers to change property values smoothly over a specified duration, creating a gradual effect instead of an instant change.</p>
         <code>.box { <br>
           transition: background-color 0.3s ease;
@@ -110,13 +110,15 @@
         
         <div class="demo-box">Hover Me</div>
 
-        <code>demo-box:hover { <br>
-        background-color:
-        #ec4899;<br>
-        transition:
-        background-color
-        0.5s ease;<br>
-        }</code>
+        <code>
+        .demo-box {<br>
+        background-color: #38bdf8;
+        transition: background-color 0.5s ease;<br>
+        }<br>
+        .demo-box:hover {<br>
+          background-color: #ec4899;<br>
+        }
+        </code>
       </section>
 
     </main>
