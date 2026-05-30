@@ -7,12 +7,11 @@
 
     .highlight-code {
 
-      display: block;
-      /*  Display block is used instead of inline-block
-          because the highlighted code spans multiple lines
-          inside a pre/code block. This ensures the border
-          wraps the entire section as one block instead of
-          breaking into separate lines. */
+      display: inline-block;
+      /* Makes the code block an inline-level element 
+      that can be styled with padding and borders, 
+      allowing it to be highlighted effectively. */  
+
 
       border: 2px solid red;
 
@@ -108,10 +107,14 @@
   .why-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    /* Creates a grid layout with two equal-width columns, 
+    each taking up 1 fraction of the available space. 
+    The repeat function is used to define the column structure, 
+    allowing for easy adjustments if needed. */    
+
     gap: 2rem;
     margin-top: 2rem;
   } 
-  /* A responsive grid layout with two equal-width columns and a 2rem gap between items. */
 
 
   .why-card {
@@ -119,6 +122,10 @@
     border: 1px solid rgba(255,255,255,.12);
     border-radius: 20px;
     padding: 1.5rem;
+    min-width: 0; 
+      /* Ensures the card can shrink properly 
+      within the grid layout without overflowing. */  
+
   
     }
     /* A modern card design with a semi-transparent background, subtle border, and rounded corners. The padding creates space inside the card for content. */ 
@@ -140,25 +147,36 @@
 .smooth-demo:hover {
   transform: translateY(-8px);
 }
+
 /* Moves the button up by 8px on hover for a smooth lifting effect. */
 
+/* AI prompt: how to add a smooth transition for transform and box-shadow properties on hover in css? 
+   The following .feedback-demo:hover is modified from AI suggestion. */
 .feedback-demo:hover {
   transform: scale(1.08);
   box-shadow: 0 0 20px rgba(56,189,248,.6);
+  /* Scales the button up to 108% of its original size 
+  and adds a glowing box shadow on hover for interactive feedback. */  
+
+  /* box-shadow: 0 0 20px rgba(56,189,248,.6); 
+  creates a glowing effect around the button by applying a shadow 
+  that is 20px blurred and has a color with 60% opacity. 
+  This enhances the visual feedback when the user hovers over the button. */  
+
+
 }
 /* Scales the button up to 108% of its original size and adds a glowing box shadow on hover for interactive feedback. */  
 
 
 .modern-card-demo {
   transition: transform .3s ease, box-shadow .3s ease;
+  /* Adds smooth transitions for transform and box-shadow properties on hover, 
+  allowing for a visually appealing animation when the card is interacted with. */ 
+
 }
 
-/* Adds a smooth transition for transform and box-shadow properties on hover. */
 
-.modern-card-demo:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(56,189,248,.2);
-}
+
 
 /* On hover, the card will move up by 8px and display a soft shadow below it for a modern lifting effect. */
 
@@ -237,6 +255,7 @@
     grid-template-columns: 1fr;
   }
 }
+
 /* On smaller screens (max-width: 768px), the grid layout changes to a single column, making it more mobile-friendly and ensuring content is stacked vertically for better readability. */
 
 /* ====================================================================================================================
@@ -311,6 +330,46 @@
         https://css-tricks.com/almanac/properties/t/transform/*/
 }
 
+/* ====================================================================================================================
+    Responsive Code Blocks
+  ==================================================================================================================== */ 
+  
+  /* AI prompt: how to make code blocks responsive in css? 
+    The following pre{} and pre code{} are modified from AI suggestions. */
+
+  /* Prevents long code examples
+   from overflowing on smaller screens.
+   Code can wrap or scroll horizontally
+   when needed. */
+
+   pre {
+    max-width: 100%;
+    /* Ensures the code block does not exceed 
+    the width of its container, allowing it to adapt 
+    to different screen sizes. */  
+
+    white-space: pre-wrap;
+    /* Allows code to wrap onto multiple lines 
+    if it exceeds the container width, preventing 
+    horizontal scrolling and improving readability on smaller screens. */  
+
+    overflow-wrap: break-word;
+    /* Breaks long words in code to prevent 
+    overflow and maintain layout integrity. */  
+
+    text-align: left;
+
+   }
+
+  pre code {
+    display: block;
+    /* Ensures the code block is treated as a block-level element, 
+    allowing it to take up the full width of its container and wrap properly. */
+
+    font-family: monospace;
+    text-align: left;
+   }
+
 
 /* ====================================================================================================================
    Mobile
@@ -322,5 +381,9 @@
   .demo-box {
     width: 100%;
     max-width: 240px;
+  }
+  pre{
+    max-width: 100%;
+    overflow-x: auto;
   }
 }

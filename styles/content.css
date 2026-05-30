@@ -29,8 +29,7 @@
   
 
   padding: 10rem 8%; 
-  /* = 4rem top/bottom, 8% left/right, 4rem ≈ 64px */
-
+  /* = 10rem top/bottom, 8% left/right */
   /* reference: 
     CSS Box Model
     https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model
@@ -352,6 +351,9 @@ then returns to normal, creating a subtle attention-grabbing effect. */
 /* ====================================================================================================================
    Right Content
  ==================================================================================================================== */
+.presentation-section, .side-nav, .content-panel, .content-section{
+  min-width: 0;
+}
 
 .content-panel {
   /* The content panel has a semi-transparent background with a blur effect, creating a frosted glass look. It also has padding and rounded corners for a modern design. */ 
@@ -457,77 +459,7 @@ then returns to normal, creating a subtle attention-grabbing effect. */
   margin-bottom: .8rem;
 }
 
-/* 
-   Demo Box
- */
 
-.demo-box {
-  width: 220px;
-  height: 140px;
-
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-
-  border-radius: 24px;
-
-  background:
-  /* A vibrant diagonal gradient background that transitions from a bright cyan to a rich purple, creating an eye-catching and modern look for the demo box. */ 
-  /* Reference:
-   CSS Gradients
-   https://css-tricks.com/almanac/properties/b/background-image/#gradients
-   https://developer.mozilla.org/en-US/docs/Web/CSS/gradients
-   */
-    linear-gradient(
-      135deg,
-      #38bdf8,
-      #9333ea
-    );
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-/* Centered content with flexbox */
-/* Reference:
-   CSS Flexbox
-   https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-   https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
-   */
-
-  font-size: 1.1rem;
-  font-weight: bold;
-
-  cursor: pointer;
-  /* Indicates interactivity, inviting users to hover and see the transformation. */  
-  /* Reference:
-   CSS Cursors
-   https://css-tricks.com/almanac/properties/c/cursor/
-   */
-
-  transition: .4s ease;
-  /* Smooth transition for transform and box-shadow on hover. */
-
-
-
-  box-shadow:
-    0 20px 50px
-    rgba(56,189,248,.25);
-    /* Adds a soft shadow below the box for depth and a glowing effect. */
-    /* Reference:
-     CSS Box Shadow
-     https://css-tricks.com/almanac/properties/b/box-shadow/
-     https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
-     */
-}
-
-.demo-box:hover {
-  transform:
-    translateY(-15px)
-    rotate(5deg)
-    scale(1.1);
-    /* On hover, the box will move up, rotate slightly, and scale up for a dynamic effect. */
-    /*  Reference:
-        https://css-tricks.com/almanac/properties/t/transform/*/
-}
 
 /*  ====================================================================================================================
     Code Block
@@ -581,33 +513,59 @@ then returns to normal, creating a subtle attention-grabbing effect. */
     Tablet
     ==================================================================================================================== */
 
-@media (max-width: 992px) {
-/* For tablet screens, the layout adjusts to a single column for better readability and usability. The side navigation becomes a top navigation bar, and the content panel takes up the full width below it. This ensures that the design remains clean and functional on smaller screens. */ 
+@media (max-width: 1100px ) {
+/* For tablet screens, the layout adjusts to a single column 
+for better readability and usability. 
+The side navigation becomes a top navigation bar, 
+and the content panel takes up the full width below it. 
+This ensures that the design remains clean 
+and functional on smaller screens. */ 
+
 /* Reference:
    CSS Media Queries
    https://css-tricks.com/css-media-queries/
    https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
    */
   .presentation-section {
-    /* Switch to a single column layout for tablet devices, stacking the navigation and content vertically. The navigation will be at the top, followed by the content panel. This ensures that the layout is optimized for smaller screens and remains user-friendly. */
+    /* Switch to a single column layout for tablet devices, 
+    stacking the navigation and content vertically. 
+    The navigation will be at the top, followed by the content panel. 
+    This ensures that the layout is optimized for smaller screens and 
+    remains user-friendly. */
+
     /* Reference:     
       CSS Grid         
         https://css-tricks.com/snippets/css/complete-guide-grid/
         */
-    grid-template-columns:
-      220px 1fr;
+      grid-template-columns: 1fr;
 
-    padding: 10rem 5%;
+      gap: 2rem;
+      padding: 9rem 1rem 3rem;
   }
-  /* The side navigation is made narrower to fit better on smaller screens, while still providing enough space for the navigation items. The content panel is given more padding to ensure that the content remains readable and visually appealing on tablet devices. */
-  /* Reference:
-     CSS Grid
-     https://css-tricks.com/snippets/css/complete-guide-grid/
-     */
+ 
+
+
+  .side-nav {
+    position: static;
+    width: 100%;
+  } 
+  /* The side navigation is set to full width 
+  and positioned statically to create a horizontal navigation 
+  bar at the top of the page. The content panel's minimum height 
+  is removed to allow it to adjust based on the content, 
+  and padding is reduced for better fit on smaller screens. 
+  The demo box is set to a maximum width of 240px to ensure 
+  it remains visually appealing without overwhelming the screen. */
+  
 
   .content-panel {
+    /* Removes the fixed minimum height and reduces
+     padding on smaller screens so the content
+     fits more naturally and remains readable. */
+    min-height: auto;
     padding: 2rem;
   }
+  
 }
 
 /* ====================================================================================================================
@@ -615,42 +573,67 @@ then returns to normal, creating a subtle attention-grabbing effect. */
   ==================================================================================================================== */
 
 @media (max-width: 768px) {
-  /* On mobile devices, the layout switches to a single column format where the side navigation becomes a horizontal top navigation bar, and the content panel is displayed below it. This ensures that the design is optimized for smaller screens, providing a user-friendly experience without sacrificing functionality. The demo box also adjusts to fit the narrower screen width while maintaining its visual appeal. */
-  /* Reference:
-   CSS Media Queries
-   https://css-tricks.com/css-media-queries/
-   https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
-   */
+  /* On mobile devices, the layout switches 
+  to a single column format where the side navigation 
+  becomes a horizontal top navigation bar, 
+  and the content panel is displayed below it. 
+  This ensures that the design is optimized for smaller 
+  screens, providing a user-friendly experience without
+  sacrificing functionality. The demo box also adjusts 
+  to fit the narrower screen width while maintaining its visual appeal. */
+ 
 
   .presentation-section {
-    /* Switch to a single column layout for mobile devices, stacking the navigation and content vertically. The navigation will be at the top, followed by the content panel. This ensures that the layout is optimized for smaller screens and remains user-friendly. */ 
-    /* Reference:
-     CSS Grid         
-      https://css-tricks.com/snippets/css/complete-guide-grid/
-      */  
+    /* Switch to a single column layout for mobile devices, 
+    stacking the navigation and content vertically.
+    The navigation will be at the top, followed by the content panel. 
+    This ensures that the layout is optimized for smaller screens 
+    and remains user-friendly. */ 
+  
     grid-template-columns: 1fr;
 
     gap: 2rem;
     
-    padding: 10rem 5%;
+    padding: 9rem 1rem 3rem;
+    /* Increases top padding to 9rem 
+    to create more space for the fixed navigation bar,
+     and reduces left/right padding to 1rem 
+     for better fit on smaller screens. */
   }
 
-  /* The side navigation is set to full width and positioned statically to create a horizontal navigation bar at the top of the page. The content panel's minimum height is removed to allow it to adjust based on the content, and padding is reduced for better fit on smaller screens. The demo box is set to a maximum width of 240px to ensure it remains visually appealing without overwhelming the screen. */
-  /* Reference:
-     CSS Grid
-     https://css-tricks.com/snippets/css/complete-guide-grid/
-     */
+
+  .side-nav, .content-panel {
+    width: 100%;
+    max-width: 100%;
+  }
 
   .side-nav {
-    position: static;
-    width: 100%;
+   padding: 1.5rem;
   }
 
   .content-panel {
+    /* Removes the fixed minimum height and reduces
+     padding on smaller screens so the content
+     fits more naturally and remains readable. */
     min-height: auto;
-    padding: 2rem;
+    padding: 1.5rem;
   }
-  /* On mobile devices, the navigation buttons have a subtle upward movement on hover to indicate interactivity, while the active button remains visually distinct with its vibrant gradient background and glowing animation. This ensures that users can easily identify the current page and interact with the navigation even on smaller screens. */
+
+  .nav-btn {
+    width: 100%;
+  }
+
+  
+ 
+
+
+
+  /* On mobile devices, the navigation buttons 
+  have a subtle upward movement on hover to indicate interactivity, 
+  while the active button remains visually distinct with its vibrant 
+  gradient background and glowing animation. This ensures that users 
+  can easily identify the current page and interact with the 
+  navigation even on smaller screens. */
   /* Reference:   
    CSS Transitions
    https://css-tricks.com/almanac/properties/t/transition/    */
@@ -660,15 +643,6 @@ then returns to normal, creating a subtle attention-grabbing effect. */
       translateY(-2px);
   }
 
-  /* The demo box is set to a maximum width of 240px to ensure it remains visually appealing without overwhelming the screen on mobile devices. This allows the box to scale appropriately while maintaining its design integrity across different screen sizes. */
-   /* Reference:
-    CSS Media Queries
-    https://css-tricks.com/css-media-queries/
-    https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
-    */
 
-  .demo-box {
-    width: 100%;
-    max-width: 240px;
-  }
+
 }
