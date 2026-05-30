@@ -62,11 +62,9 @@
       <section class="content-section active" id="what">
         <h1>What is CSS Transform?</h1>
 
-        <p>
-          CSS Transform is a property that lets developers move, rotate,
-          resize, or skew HTML elements. Ex, the bottom navigation buttons on this page use CSS Transform to create a dynamic hover effect.
-        </p>
-          <!-- Example CSS code
+        <p>CSS Transform is a property that allows developers to move, rotate, resize, or skew HTML elements. For example, the navigation buttons on this page use CSS Transform to create a dynamic hover effect.</p>
+          
+        <!-- Example CSS code
           showing a 15-degree
           rotation effect -->
 
@@ -75,12 +73,12 @@
             
               background: rgba(56,189,248,.2); 
               color: #38bdf8;
-              <mark class="highlight-code">
+              <span class="highlight-code">
               transform: translateX(8px);
                   
               /* Moves the button 8px to the right on hover,
                     creating a dynamic and engaging effect. */
-              </mark>
+              </span>
             }
           </code></pre>
 
@@ -96,78 +94,182 @@
 
         <ul>
           <li><h3>translate()</h3>
-          <p>Moves an element without affecting layout.</p>
-          <button class="demo-btn translate-btn">Translate</button>
-          <pre><code>
-          .translate-btn:hover {
-            transform: translateX(30px);
-            /* Moves the button 30px to the right on hover. */
-          } 
-          </code></pre></li>
-          <li><h3>rotate()</h3>
-          <p>Rotates an element around a fixed point.</p>
-          <button class="demo-btn rotate-btn">Rotate</button>
-          <pre><code>
-          .rotate-btn:hover {
-            transform: rotate(15deg);
-            /* Rotates the button 15 degrees clockwise on hover. */
-          }
-          </code></pre></lli>
-          <li><h3>scale()</h3>
-          <p>Resizes an element while maintaining its proportions.</p>
-          <button class="demo-btn scale-btn">Scale</button>
-          <pre><code>
-          .scale-btn:hover {
-            transform: scale(1.2);
-            /* Scales the button to 120% of its original size on hover. */
-          }
-          </code></pre></li>
-          <li><h3>skew()</h3>
-          <p>Skews an element along the X and Y axes, i.e, skew() makes an element look tilted.</p>
-          <button class="demo-btn skew-xy-btn">Skew on X and Y axes</button>
-          <pre><code>
-          .skew-xy-btn:hover {
-            transform: skew(20deg, 10deg);
-            /* Skews the button 20 degrees along the X-axis and 10 degrees along the Y-axis on hover. */
-          }
-          </code></pre>
-          <p>Skews on the X axes only</p>
-          <button class="demo-btn skew-x-btn">Skew on X axis</button>
-          <pre><code>
-          .skew-x-btn:hover {
-            transform: skewX(20deg);
-            /* Skews the button 20 degrees along the X-axis on hover. */
-          }
-          </code></pre>
-          <p>Skews on the Y axes only</p>
-          <button class="demo-btn skew-y-btn">Skew on Y axis</button>
-          <pre><code>
-          .skew-y-btn:hover {
-            transform: skewY(10deg);
-            /* Skews the button 10 degrees along the Y-axis on hover. */
-          }
-          </code></pre>       
-          
-        
-        </li>  
+            <p>Moves an element without affecting layout.</p>
+            <button class="demo-btn translate-btn">Translate</button>
+            <pre><code>
+              .translate-btn:hover {
+                transform: translateX(30px);
+                /* Moves the button 30px to the right on hover. */
+              } 
+            </code></pre>
+          </li>
 
+          <li><h3>rotate()</h3>
+            <p>Rotates an element around a fixed point.</p>
+            <button class="demo-btn rotate-btn">Rotate</button>
+            <pre><code>
+              .rotate-btn:hover {
+                transform: rotate(15deg);
+                /* Rotates the button 15 degrees clockwise on hover. */
+              }
+            </code></pre>
+          </li>
+          
+          <li><h3>scale()</h3>
+            <p>Resizes an element while maintaining its proportions.</p>
+            <button class="demo-btn scale-btn">Scale</button>
+            <pre><code>
+              .scale-btn:hover {
+                transform: scale(1.2);
+                /* Scales the button to 120% of its original size on hover. */
+              }
+            </code></pre>
+          </li>
+          
+          <li><h3>skew()</h3>
+            <p>Skews an element along the X and Y axes, i.e., skew() makes an element look tilted.</p>
+            <button class="demo-btn skew-xy-btn">Skew on X and Y axes</button>
+            <pre><code>
+              .skew-xy-btn:hover {
+                transform: skew(20deg, 10deg);
+                /* Skews the button 20 degrees along the X-axis and 10 degrees along the Y-axis on hover. */
+              }
+            </code></pre>
+            <br>
+            <p>Skews on the X axes only</p>
+            <button class="demo-btn skew-x-btn">Skew on X axis</button>
+            <pre><code>
+              .skew-x-btn:hover {
+                transform: skewX(20deg);
+                /* Skews the button 20 degrees along the X-axis on hover. */
+              }
+            </code></pre>
+            <br>
+            <p>Skews on the Y axes only</p>
+            <button class="demo-btn skew-y-btn">Skew on Y axis</button>
+            <pre><code>
+              .skew-y-btn:hover {
+              transform: skewY(10deg);
+              /* Skews the button 10 degrees along the Y-axis on hover. */
+              }
+            </code></pre>               
+        </li>  
         </ul>
       </section>
 
       <section class="content-section" id="why">
+
         <h1>Why Would You Use It?</h1>
 
-        <p>
-          CSS Transform helps create interactive and modern websites.
-        </p>
+        <p>CSS Transform helps create interactive and modern websites.</p>
 
-        <ul>
-          <li>Smooth hover effects</li>
-          <li>Better visual feedback</li>
-          <li>Modern UI design</li>
-          <li>No layout shift</li>
-        </ul>
+        <div class="why-grid">
+
+        <!-- Smooth hover effects -->
+        <div class="why-card">
+
+          <h3>Smooth hover effects</h3>
+
+          <button class="why-demo-btn smooth-demo">Hover Me</button>
+
+          <pre><code>
+            .smooth-demo:hover {
+              transform: translateY(-8px);
+
+              /*  Moves the button upward
+                  to create a smooth hover effect. */
+            }
+          </code></pre>
+
+        </div>
+
+        <!-- Better visual feedback -->
+        <div class="why-card">
+
+        <h3>Better visual feedback</h3>
+
+        <button class="why-demo-btn feedback-demo">Hover Me</button>
+
+          <pre><code>
+            .feedback-demo:hover {
+              transform: scale(1.08);
+
+                box-shadow: 0 0 20px rgba(56,189,248,.6);
+
+                /*  Enlarges the button and
+                  adds glow to improve
+                  visual feedback. */
+              }
+          </code></pre>
+
+        </div>
+
+        <!-- Modern UI design -->
+        <div class="why-card modern-card-demo">
+          <h3>Modern UI design</h3>
+
+          <p>CSS Transform helps create modern and interactive interfaces.</p>
+
+          <div class="modern-ui-card">
+            <h4>Premium Product</h4>
+            <p>Modern card hover effect</p>
+          </div>
+
+          <pre><code>
+            .modern-ui-card:hover {
+              transform: translateY(-8px);
+
+              box-shadow: 0 20px 40px rgba(56,189,248,.2);
+
+              /* Lifts the card slightly
+              for a modern UI effect. */
+            }
+          </code></pre>
+        </div>
+
+        <!-- No layout shift -->
+        <div class="why-card layout-shift-demo">
+          <h3>No layout shift</h3>
+          <p>Comparing the following two approaches: using margin vs. transform</p>
+          <div class="layout-row">
+            <button class="layout-btn margin-move">Margin</button>
+            <span>Text moves as the button is hovered</span>
+          </div>
+            <pre><code>
+              /* Causes layout shift */
+              .margin-move:hover {
+                margin-left: 20px;
+        
+                /*  Adds 20px of empty space to the
+                  left side of the button on hover.
+                  As a result, the nearby text
+                  shifts together, causing
+                  a layout shift. */
+
+              } 
+            </code></pre>
+
+            <div class="layout-row">
+              <button class="layout-btn transform-move">Transform</button>
+              <span>Text stays as the button is hovered</span>
+            </div>
+            <pre><code>
+              /* No layout shift */
+              .transform-move:hover {
+                transform: translateX(20px);
+          
+                /* Moves the button 20px 
+                to the right on hover,
+                without affecting surrounding content, 
+                preventing layout shift. */
+              }
+            </code></pre>
+          </div>
+
+        </div>
+
       </section>
+
 
       <section class="content-section" id="where">
         <h1>Where Would You Use It?</h1>
@@ -223,6 +325,7 @@
         translateY(-15px)
         rotate(5deg)
         scale(1.1);
+        /* Moves the box up 15px, rotates it 5 degrees, and scales it to 110% of its original size on hover. */
         }</code></pre>
       </section>
 

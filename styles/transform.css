@@ -3,7 +3,7 @@
     Section on What is CSS Transform?
     ==================================================================================================================== */
     /* AI prompt: what is the best way to red circle a block of code in css <pre><code> area? 
-      the following .highligh-code is modified from AI suggestion */  
+      the following .highlight-code is modified from AI suggestion */  
 
     .highlight-code {
 
@@ -38,14 +38,19 @@
 
 
   /*  ====================================================================================================================
-    Section on What Does It Do??
+    Section on What Does It Do?
     ==================================================================================================================== */
 
     .demo-btn {
       display: inline-block;
       padding: .75rem 1.5rem;
       border-radius: 12px;
-      background: #38bdf8;
+      background:
+        linear-gradient(
+          135deg,
+          #38bdf8,
+          #9333ea
+      );
       color: white;
       font-weight: bold;
       cursor: pointer;
@@ -57,8 +62,8 @@
        color: #38bdf8;
        transform: translateX(30px);
            
-       /* Moves the button 8px to the right on hover,
-             creating a dynamic and engaging effect. */
+       /* Moves the button 30px to the right on hover,
+   creating a dynamic and engaging effect. */
     } 
 
     .rotate-btn:hover {
@@ -92,8 +97,147 @@
       background: rgba(56,189,248,.2); 
       color: #38bdf8;
       transform: skewY(10deg);
-      /* Skews the button 20 degrees vertically on hover. */
+      /* Skews the button 10 degrees vertically on hover. */
     } 
+
+
+
+/*  ====================================================================================================================
+    Section on Why to Use It?
+    ==================================================================================================================== */ 
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  } 
+  /* A responsive grid layout with two equal-width columns and a 2rem gap between items. */
+
+
+  .why-card {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 20px;
+    padding: 1.5rem;
+  
+    }
+    /* A modern card design with a semi-transparent background, subtle border, and rounded corners. The padding creates space inside the card for content. */ 
+
+
+  .why-demo-btn,
+  .layout-btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    background: linear-gradient(135deg, #38bdf8, #9333ea);
+    transition: transform .3s ease, box-shadow .3s ease, margin-left .3s ease;
+  }
+  /* A stylish button design with a vibrant gradient background, rounded corners, and smooth transitions for transform, box-shadow, and margin-left on hover. */
+
+.smooth-demo:hover {
+  transform: translateY(-8px);
+}
+/* Moves the button up by 8px on hover for a smooth lifting effect. */
+
+.feedback-demo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(56,189,248,.6);
+}
+/* Scales the button up to 108% of its original size and adds a glowing box shadow on hover for interactive feedback. */  
+
+
+.modern-card-demo {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+/* Adds a smooth transition for transform and box-shadow properties on hover. */
+
+.modern-card-demo:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(56,189,248,.2);
+}
+
+/* On hover, the card will move up by 8px and display a soft shadow below it for a modern lifting effect. */
+
+.modern-ui-card {
+  margin-top: 1rem;
+  padding: 1.5rem;
+
+  border-radius: 20px;
+
+  background:
+    rgba(255,255,255,.06);
+
+  border:
+    1px solid rgba(255,255,255,.12);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+/* A modern card design with a semi-transparent background, subtle border, and rounded corners. The transition property allows for smooth animations on transform and box-shadow when the card is hovered. */
+.modern-ui-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 40px
+    rgba(56,189,248,.2);
+}
+/* On hover, the card will move up by 8px and display a soft shadow below it for a modern lifting effect. */
+.modern-card-btn {
+  margin-top: 1rem;
+
+  padding:
+    .8rem 1.5rem;
+
+  border: none;
+
+  border-radius: 14px;
+
+  color: white;
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      135deg,
+      #38bdf8,
+      #9333ea
+    );
+}
+/* A stylish button design with a vibrant gradient background, rounded corners, and no border. The margin-top creates space above the button to separate it from other content. */
+
+.layout-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+/* A horizontal layout using flexbox with centered alignment, a gap of 1rem between items, and a margin-top to create space above the row. */
+.margin-move:hover {
+  margin-left: 20px;
+}
+/* Adds 20px of empty space to the
+   left side of the element on hover.
+
+   Because margin affects the normal
+   layout flow, nearby content also
+   shifts position, causing
+   layout shift. */
+   
+   .transform-move:hover {
+  transform: translateX(20px);
+}
+/* Moves the element 20px to the right on hover using transform, which is more performant than margin for animations. This creates a smooth sliding effect without affecting the layout of surrounding elements. */
+@media (max-width: 768px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* On smaller screens (max-width: 768px), the grid layout changes to a single column, making it more mobile-friendly and ensuring content is stacked vertically for better readability. */
 
 /* ====================================================================================================================
    Demo Box
