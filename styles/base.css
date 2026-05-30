@@ -24,8 +24,8 @@ body {
     rgba(147,51,234,.18),
     transparent 25%
   ),
-  #080b16; 
-  color: #f8fafc;          
+  rgb(8, 11, 22); 
+  color: rgb(248, 250, 252);          
   line-height: 1.7;       
 }
 
@@ -37,7 +37,7 @@ body {
 
 h1 {
   font-size: clamp(2rem, 5vw, 3rem);
-  color: #38bdf8;           
+  color: rgb(56, 189, 248);           
   margin-bottom: 1.5rem;
   padding: 0 1rem;
   text-align: center;
@@ -45,14 +45,14 @@ h1 {
 
 h2 {
   font-size: clamp(1.5rem, 4vw, 2.25rem);
-  color: #dbeafe;
+  color: rgb(219, 234, 254);
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
 h3 {
   font-size: clamp(1.25rem, 3vw, 1.75rem);
-  color: #dbeafe;
+  color: rgb(219, 234, 254);
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -60,9 +60,8 @@ h3 {
 
 p {
   font-size: 1.1rem;
-  color: #dbeafe;
+  color: rgb(219, 234, 254);
   margin-bottom: 1.3rem;
-  max-width: 850px;
 }
 
 ul {
@@ -70,7 +69,7 @@ ul {
 }
 
 li {
-  color: #dbeafe;
+  color: rgb(219, 234, 254);
   margin-bottom: .8rem;
 }
 
@@ -78,7 +77,7 @@ li {
 
 .nav-menu li a,
 .nav-menu li a:visited{
-  color: #080b16;
+  color: rgb(8, 11, 22);
   text-decoration: none;
 }
 
@@ -86,8 +85,8 @@ li {
 
 .nav-menu li a:hover,
 .nav-menu li a:focus {
-	background-color: #264de4;
-  color: #ffffff;
+	background-color: rgb(38, 77, 228);
+  color: rgb(255, 255, 255);
   border-radius: 1rem;
   text-decoration: none;
 }
@@ -95,7 +94,7 @@ li {
 
 
 .site-header {
-	background-color:  #38bdf8;
+	background-color:  rgb(56, 189, 248);
   /* Change this to position absolute during presentation */
 	position: fixed; 
 	top: 0;
@@ -131,7 +130,7 @@ li {
 	left: 0;
 	right: 0;
 	z-index: 2;
-	background-color: #38bdf8;
+	background-color: rgb(56, 189, 248);
   font-family: 'Press Start 2P';
 }
 
@@ -171,15 +170,15 @@ li {
 
 
 pre {
-  background: #020617;
-  color: #e0f2fe; 
+  background: rgb(2, 6, 23);
+  color: rgb(224, 242, 254); 
   padding: 1.2rem;
   border-radius: 18px;
   overflow-x: auto;
   margin-top: 1.5rem;
   border:
     1px solid
-    #38bdf840;
+    rgba(56, 189, 248, 0.251);
 }
 
 code {
@@ -187,7 +186,7 @@ code {
 }
 
 a {
-  color: #38bdf8;            
+  color: rgb(56, 189, 248);            
   font-weight: 500;
   
   transition: color 0.2s ease, opacity 0.2s ease;
@@ -195,14 +194,14 @@ a {
 
 a:hover,
 a:focus {
-  color: #9333ea;            
+  color: rgb(147, 51, 234);            
   text-decoration: underline; 
   outline: none;
 }
 
 
 a:visited {
-  color: #38bdf8;
+  color: rgb(56, 189, 248);
 }
 
 
@@ -222,21 +221,21 @@ a:visited {
 
 /* Footer*/
 .site-footer {
-	margin-top: 2rem;
+	margin-top: 3rem;
   padding: 2rem 1rem;
   text-align: center;
-  background-color: #f8fafc;
+  background-color:  rgb(56, 189, 248);
   text-align: center;
 }
 
 .site-footer p {
 	padding: 0;
   margin: 0;
-  color: #080b1690;
+  color: rgba(8, 11, 22);
 }
 
 .site-footer a{
-  color: #f8fafc;
+  color: rgb(248, 250, 252);
   text-align: center;
 }
 @media (min-width: 57.125rem) {
