@@ -168,6 +168,15 @@
 /* Scales the button up to 108% of its original size and adds a glowing box shadow on hover for interactive feedback. */  
 
 
+/* Moves the element 20px to the right on hover using transform, which is more performant than margin for animations. This creates a smooth sliding effect without affecting the layout of surrounding elements. */
+@media (max-width: 768px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
 .modern-card-demo {
   transition: transform .3s ease, box-shadow .3s ease;
   /* Adds smooth transitions for transform and box-shadow properties on hover, 
@@ -249,12 +258,71 @@
    .transform-move:hover {
   transform: translateX(20px);
 }
-/* Moves the element 20px to the right on hover using transform, which is more performant than margin for animations. This creates a smooth sliding effect without affecting the layout of surrounding elements. */
+
+/*  ====================================================================================================================
+    Where Would You Use It?
+    ==================================================================================================================== */ 
+
+.use-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.use-card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 20px;
+  padding: 1.5rem;
+  min-width: 0;
+}
+
+
+/* AI prompt: how to add a smooth transform 
+and box-shadow transition to images in css? 
+The following .use-card img{}  and user-card img:hover{} 
+is modified from AI suggestion. */
+.use-card img {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+  margin-top: 1rem;
+  transition: transform .3s ease, box-shadow .3s ease;
+  /* transform .3s ease: Smoothly animates any transform changes 
+  (like scaling or translating) over 0.3 seconds 
+  with an easing function for a natural feel. 
+
+     box-shadow .3s ease: Smoothly animates any changes 
+     to the box-shadow property over 0.3 seconds, allowing 
+     for a gradual appearance of shadows on hover. */  
+
+}
+ /* Ensures the image fills the card width, 
+  has rounded corners, and includes smooth transitions 
+  for transform and box-shadow on hover. */ 
+
+
+
+.use-card img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 20px 40px rgba(56,189,248,.25);
+  /* On hover, the image scales up to 106% of its original size and a soft shadow appears below it for a subtle zoom effect. */ 
+
+}
+
 @media (max-width: 768px) {
-  .why-grid {
+  .use-grid {
     grid-template-columns: 1fr;
+    overflow: hidden;
+    /* Prevents horizontal overflow 
+    on smaller screens when the grid 
+    changes to a single column. */ 
+
   }
 }
+
+
 
 /* On smaller screens (max-width: 768px), the grid layout changes to a single column, making it more mobile-friendly and ensuring content is stacked vertically for better readability. */
 
@@ -370,13 +438,11 @@
     text-align: left;
    }
 
-
-/* ====================================================================================================================
-   Mobile
-  ==================================================================================================================== */
+=============================================================================================================== */
 
 @media (max-width: 768px) {
   
+
 
   .demo-box {
     width: 100%;
@@ -386,4 +452,6 @@
     max-width: 100%;
     overflow-x: auto;
   }
+
+
 }
