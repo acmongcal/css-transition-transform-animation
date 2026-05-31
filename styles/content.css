@@ -101,14 +101,14 @@ background:
   /* AI prompt: how to make the left navigation sticky while scrolling? */
   position: sticky;
   align-self: start;
-/* The position: sticky; property allows the side navigation 
-to remain visible and "stick" to the top of the viewport as 
-the user scrolls down the page. This ensures that the navigation 
-is always accessible without taking up extra space when it's not needed. 
+    /* The position: sticky; property allows the side navigation 
+    to remain visible and "stick" to the top of the viewport as 
+    the user scrolls down the page. This ensures that the navigation 
+    is always accessible without taking up extra space when it's not needed. 
 
-The align-self: start; property ensures that the sticky element aligns 
-to the top of its container, providing a consistent and user-friendly 
-navigation experience. */ 
+    The align-self: start; property ensures that the sticky element aligns 
+    to the top of its container, providing a consistent and user-friendly 
+    navigation experience. */ 
 
 
 
@@ -120,15 +120,14 @@ navigation experience. */
   }
 } 
 
-/* On tablet screens, the side navigation becomes part of the normal 
-flow of the document,
 
 
-/* Nav Title */
+/*  ====================================================================================================================
+    Nav Title 
+    ====================================================================================================================*/
 
 .nav-title {
   font-size: 1.8rem;
-  /* font-size:clamp(2rem, 5vw, 3rem); */
   color: #38bdf8;
   margin-bottom: 1rem;
 }
@@ -148,105 +147,83 @@ Requirements:
 - use animation for the active button
 - hover should only apply to non-active buttons
 - active button should stay visually distinct
+- use a gradient background and subtle glow effect
+  for the active button
+
+The following .nav-btn {},
+.nav-btn:hover:not(.active),
+.nav-btn.active {},
+and @keyframes glowPulse {}
+were modified from AI suggestions
+to fit this project.
 */
 
 
 .nav-btn {
-  border: none;
+  border: 1px solid rgba(255,255,255,.08);
+    /* Creates a subtle semi-transparent border
+     to give the button more definition
+     while keeping the soft glassmorphism look. */
 
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(56, 189, 248, .08);
+      /*Adds a soft blue glow around the button
+      to create depth and a subtle tech-style effect. */
+
+    /* box-shadow: 
+      horizontal-offset vertical-offset blur-radius color; 
+      
+      0 = no horizontal movement(left or right)
+      0 = no vertical movement (up or down)
+      8px = blur radius
+            A larger value creates
+            a softer and wider glow.
+
+      rgba(56,189,248,.08)
+      = light blue glow
+      with 8% opacity
+      for a subtle effect.
+    */
+  
   background: transparent;
-
-  /* Starts with a transparent background,
+    /* Starts with a transparent background,
      which changes on hover
      and active states. */
 
   color: #cbd5e1;
-
   text-align: left;
-
   padding: 1rem;
-
-  border-radius: 16px;
-
   cursor: pointer;
-
-  /* Makes the cursor a hand
-     to indicate clickable items */
-
-  /* Transition for smooth
-     hover and active effects
-
-     Reference:
-     CSS Transitions
-     https://css-tricks.com/almanac/properties/t/transition/
-  */
+    /* Makes the cursor a hand
+      to indicate clickable items */
 
   transition:
     transform .3s ease,
     background-color .3s ease,
     color .3s ease;
 
-  /* Smooth transition effects
+    /* Smooth transition effects
      for hover and active states.
-
      Main points:
-      transform → movement
+      transform → controls movement and scaling animations
+      background-color → smoothly changes the button background color
+      color → smoothly changes the text color
 
-      background-color
-      → background change
+      .3s = transition duration
 
-      color
-      → text color change
-
-     Meaning of values:
-
-      transform:
-      controls movement
-      and scaling animations
-
-      background-color:
-      smoothly changes
-      the button background color
-
-      color:
-      smoothly changes
-      the text color
-
-      .3s
-      = transition duration
-
-      ease
-      = starts and ends smoothly
-  */
+      ease = starts and ends smoothly
+    */
 }
 
 
 
 
 
-/* Hover (not active) */
-
-/* AI prompt: How should I write CSS hover effects for navigation buttons while keeping the active button visually distinct?
-
-I want hover styles to apply only to non-active buttons.
-
-the following .nav-btn:hover:not(.active) { } is modied from AI suggection to fit this project */
+/*  ====================================================================================================================
+    Hover (not active) 
+    ==================================================================================================================== */
 
 .nav-btn:hover:not(.active) {
-    /* On hover, the navigation button
-     changes to a subtle background color
-     and moves slightly to the right
-     to indicate interactivity.
-
-     The :not(.active) selector ensures
-     the hover effect only applies to
-     non-active buttons, keeping the
-     active button visually distinct
-     and maintaining a clear
-     visual hierarchy. */
-
-
-
   background:
    rgba(56,189,248,.2);
    /* A subtle blue background appears on hover 
@@ -269,70 +246,77 @@ the following .nav-btn:hover:not(.active) { } is modied from AI suggection to fi
      https://developer.mozilla.org/en-US/docs/Web/CSS/:not
   */
 }
-/* ========================================================== */
 
-/* Explanation:
 
-    why transition is applied in .nav-btn
-    instead of .nav-btn:hover:not(.active):
+/* Some discover want to share when writing the above code:
 
-    If transition is written inside :hover,
-    the animation only works when entering
-    the hover state.
+  why transition is applied in .nav-btn
+  instead of .nav-btn:hover:not(.active):
 
-    When the cursor leaves the button,
-    there is no transition to animate
-    the element back to its original state.
+  If transition is written inside :hover,
+  the animation only works when entering
+  the hover state.
 
-    Therefore, transition is placed in
-   .nav-btn so both hover in and
-   hover out animations stay smooth.
+  When the cursor leaves the button,
+  there is no transition to animate
+  the element back to its original state.
+
+  Therefore, transition is placed in
+  .nav-btn so both hover in and
+  hover out animations stay smooth.
 */   
 
 
 
 
-/* 
-   Active Page
- */
-
+/*  ====================================================================================================================
+    Active Buttons when the corrosponding page is active
+    ==================================================================================================================== */
 .nav-btn.active {
-  /* Active button has a vibrant gradient background, white text, and a glowing animation to indicate the current page. */  
-  /* The glowPulse animation creates a subtle pulsing effect on the active button,
-   drawing attention to it without being too distracting. */  
-  /* Reference:
-   CSS Animations
-   https://css-tricks.com/almanac/properties/a/animation/ 
-   https://www.w3schools.com/csS/css3_animations.asp
-   */
-
   background:
     linear-gradient(
-      135deg,
+      100deg,
       #38bdf8,
       #9333ea
     );
+    /*  linear-gradient()
+        = creates a smooth color transition
 
-  color: white;
+       100deg = gradient direction
+        from top-left to bottom-right
+     */
+
+
+  border: none;
+
+  box-shadow:
+    0 0 12px rgba(56,189,248,.18);
+  
+    color: white;
 
   font-weight: 600;
 
   animation:
     glowPulse 1s ease-in-out 2;
+    
+    /* glowPulse
+     = animation name
+     defined in @keyframes
+
+     1s = animation duration
+     (1 second per cycle)
+
+     ease-in-out
+     = starts slowly,
+     speeds up,
+     then slows down again
+     for a smoother effect
+
+     2 = animation repeats
+     2 times only */
+
 }
-
-/* Glow Animation */
-/* Creates a pulsing glow effect on the active navigation button. */
-/* The button scales up slightly and the box-shadow intensifies, 
-then returns to normal, creating a subtle attention-grabbing effect. */
-
-/* ========================================================== */
-
-
-
-@keyframes glowPulse {
-  /* 0% and 100%: Normal state with a subtle glow. */
-  /* 50%: Scaled up with a stronger glow. */  
+    @keyframes glowPulse { 
   /* Reference:
    CSS Animations
    https://css-tricks.com/almanac/properties/a/animation/ 
@@ -358,7 +342,31 @@ then returns to normal, creating a subtle attention-grabbing effect. */
       0 0 8px rgba(56,189,248,.35),
       0 0 16px rgba(147,51,234,.25);
   }
+
+  /* The glowPulse animation has three stages:
+
+   0%
+   = starting state.
+   The button stays at its normal size
+   with a small cyan and purple glow.
+
+   50%
+   = middle state.
+   The button becomes slightly larger
+   with scale(1.03), and the glow becomes
+   stronger and wider.
+
+   100%
+   = ending state.
+   The button returns to its normal size
+   and the glow returns to the original
+   subtle effect.
+
+   This creates a short pulsing glow effect
+   for the active navigation button. */
 }
+
+
 /* ====================================================================================================================
    Right Content
  ==================================================================================================================== */

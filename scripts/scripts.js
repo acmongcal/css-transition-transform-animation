@@ -1,3 +1,9 @@
+
+
+
+
+
+
 ( function() {
 	const siteNavigation = document.getElementById( 'site-navigation' );
 
@@ -122,8 +128,36 @@ buttons.forEach(function(button){
 
       activeSection.classList.add("active");
 
+	/* AI prompt: How to add JavaScript to smoothly scroll 
+	to .content-panel after clicking a side navigation 
+	button on tablet and mobile screens (1100px or smaller)? 
+	Please leave about 120px space from the top 
+	so the fixed header does not cover the heading.
+
+Keep the existing section switching logic unchanged. */	
+
+	  if (window.innerWidth <= 1100) {
+
+		const contentPanel = document.querySelector(".content-panel");
+		const headerOffset = 120;	
+		const panelPosition = contentPanel.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+		 window.scrollTo({
+			top: panelPosition,
+			behavior: "smooth"
+		 });
+	
+	  }	
+	  
+
+
     }
   );
 
 });
+
+
+
+
+  
 
