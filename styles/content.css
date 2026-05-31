@@ -1,54 +1,40 @@
 
 
-/* 
-   Layout
+/*  ========================================================== ==========================================================
+    Content Styles
+    ==================================================================================================================== */ 
+  
+/* Design Reference:
+   https://magicui.design/
+   https://linear.app/
+   https://cssgradient.io/gradient-backgrounds/
 */
 
+/* 2 columns layout with a gap of 3rem between them: */
 .presentation-section {
-    /* 2 columns layout with a gap of 3rem between them: */
     position: relative;
     display: grid;
     grid-template-columns: 280px 1fr;
-    /* column 1 = 280px, column 2 = remaining space   
+      /* column 1 = 280px, column 2 = remaining space   
       <aside class="side-nav"></aside> ----> column 1
 
       <main class="content-panel"></main> ----> column 2
     
-    */
+      */
 
     gap: 3rem;
 
-    /*  Reference:
-        https://css-tricks.com/snippets/css/complete-guide-grid/
-        FWDP-1000-Day-08-Slides.pdf
-        FWDP-1000-Day-09-Slides.pdf
-    */
-
- 
-
-  
-
-  padding: 10rem 8%; 
-  /* = 10rem top/bottom, 8% left/right */
-  /* reference: 
-    CSS Box Model
-    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model
-     */
+    padding: 6rem 8% 4rem;
 
 
-/* ========================================================== */
-  
-/* Reference : 
-https://magicui.design/ 
-https://cssgradient.io/gradient-backgrounds/
-https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/radial-gradient
+/* AI Prompt:
+Suggest a modern dark presentation UI
+with glass cards and gradient buttons.
 
-Animated Aurora Gradient Background with CSS -Build a Website with Animated Aurora Background
-https://youtu.be/MxpDrULwejY?si=mtVXDCAWjr_FQN2v
-
-AI Prompt: Suggest a modern tech-style CSS design using a dark UI, an aurora-inspired gradient background,
-and subtle radial glow effects.
+The following background style and left navigation style 
+was modified from the AI suggestion.
 */
+
 
 background:
   radial-gradient(
@@ -56,32 +42,48 @@ background:
     rgba(56,189,248,.18),
     transparent 25%
   ),
-  /* Blue radial glow
-   placed at top left
-   for subtle lighting effect */
+    /* 
+    creates a soft blue glow with 18% opacity,
+    while transparent 25% means the glow will fade out 
+    to transparent at 25% of the radius, creating a smooth 
+    transition from the glow to the background. 
+    This radial gradient is positioned at the top left corner,  
+    adding a subtle lighting effect.
+    */
 
   radial-gradient(
     circle at bottom right,
     rgba(147,51,234,.18),
     transparent 25%
   ),
-  /* Purple radial glow
-   placed at bottom right
-   for subtle lighting effect */
+    /* creates a purple glow with 18% opacity,
+    while transparent 25% means the glow will fade out
+    to transparent at 25% of the radius, creating a smooth
+    transition from the glow to the background.
+    This radial gradient is positioned at the bottom right corner,
+    adding a complementary lighting effect that balances the design.
+
+    */
 
   #080b16;
+    /* A very dark background color (#080b16) is used to 
+    provid a strong contrast for the glowing gradient effects. */
 
 
-    /* ========================================================== */
+
 }
 
-/* 
-   Left Navigation
- */
+/*  ====================================================================================================================
+    Left Navigation
+    ====================================================================================================================*/
 
 .side-nav {
   background:
     rgba(255,255,255,.08);
+    /* creats a semi-transparent background with 8% opacity,
+     allowing the underlying dark background and glow effects to subtly show through, 
+     creating a frosted glass effect that adds depth and visual interest to the navigation panel. */    
+
 
   border:
     1px solid
@@ -94,23 +96,32 @@ background:
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  top: 6rem;
 
-  /* Use flexbox to stack
-     navigation items vertically.
-     gap adds consistent spacing
-     between each button to
-     improve readability and layout. */
-
+  /* AI prompt: how to make the left navigation sticky while scrolling? */
   position: sticky;
-  top: 8rem;
+  align-self: start;
+/* The position: sticky; property allows the side navigation 
+to remain visible and "stick" to the top of the viewport as 
+the user scrolls down the page. This ensures that the navigation 
+is always accessible without taking up extra space when it's not needed. 
 
-  /* Keeps the navigation visible
-     while scrolling through content.
-     top: 2rem adds spacing from
-     the top of the screen so the
-     navigation does not stick
-     directly to the edge. */
+The align-self: start; property ensures that the sticky element aligns 
+to the top of its container, providing a consistent and user-friendly 
+navigation experience. */ 
+
+
+
 }
+
+@media (max-width: 1100px) {
+  .side-nav {
+    position: static;
+  }
+} 
+
+/* On tablet screens, the side navigation becomes part of the normal 
+flow of the document,
 
 
 /* Nav Title */
@@ -514,48 +525,15 @@ then returns to normal, creating a subtle attention-grabbing effect. */
     ==================================================================================================================== */
 
 @media (max-width: 1100px ) {
-/* For tablet screens, the layout adjusts to a single column 
-for better readability and usability. 
-The side navigation becomes a top navigation bar, 
-and the content panel takes up the full width below it. 
-This ensures that the design remains clean 
-and functional on smaller screens. */ 
 
-/* Reference:
-   CSS Media Queries
-   https://css-tricks.com/css-media-queries/
-   https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
-   */
   .presentation-section {
-    /* Switch to a single column layout for tablet devices, 
-    stacking the navigation and content vertically. 
-    The navigation will be at the top, followed by the content panel. 
-    This ensures that the layout is optimized for smaller screens and 
-    remains user-friendly. */
-
-    /* Reference:     
-      CSS Grid         
-        https://css-tricks.com/snippets/css/complete-guide-grid/
-        */
+  
       grid-template-columns: 1fr;
 
       gap: 2rem;
-      padding: 9rem 1rem 3rem;
+      padding: 4rem 1rem 3rem;
   }
  
-
-
-  .side-nav {
-    position: static;
-    width: 100%;
-  } 
-  /* The side navigation is set to full width 
-  and positioned statically to create a horizontal navigation 
-  bar at the top of the page. The content panel's minimum height 
-  is removed to allow it to adjust based on the content, 
-  and padding is reduced for better fit on smaller screens. 
-  The demo box is set to a maximum width of 240px to ensure 
-  it remains visually appealing without overwhelming the screen. */
   
 
   .content-panel {
@@ -573,32 +551,17 @@ and functional on smaller screens. */
   ==================================================================================================================== */
 
 @media (max-width: 768px) {
-  /* On mobile devices, the layout switches 
-  to a single column format where the side navigation 
-  becomes a horizontal top navigation bar, 
-  and the content panel is displayed below it. 
-  This ensures that the design is optimized for smaller 
-  screens, providing a user-friendly experience without
-  sacrificing functionality. The demo box also adjusts 
-  to fit the narrower screen width while maintaining its visual appeal. */
  
 
   .presentation-section {
-    /* Switch to a single column layout for mobile devices, 
-    stacking the navigation and content vertically.
-    The navigation will be at the top, followed by the content panel. 
-    This ensures that the layout is optimized for smaller screens 
-    and remains user-friendly. */ 
   
     grid-template-columns: 1fr;
 
     gap: 2rem;
     
-    padding: 9rem 1rem 3rem;
-    /* Increases top padding to 9rem 
-    to create more space for the fixed navigation bar,
-     and reduces left/right padding to 1rem 
-     for better fit on smaller screens. */
+    padding: 4rem 1rem 3rem;
+    
+    
   }
 
 
