@@ -10,14 +10,14 @@
       display: block;
       width: fit-content;
 
-      border: 2px solid red;
+      border: 2px solid #ef4444;
 
       border-radius: 12px;
 
-      padding: .75rem;
+      padding: .75rem 1rem;
 
-      margin: .5rem 0;
-      background: rgba(255,0,0,.20);
+      margin: 1rem 0;
+      background: rgba(127,29,29,.35);
   
       color: inherit;
 
@@ -86,7 +86,7 @@
 
 
 /*  ====================================================================================================================
-    Section on Why to Use It?
+    Why to Use It?
     ==================================================================================================================== */ 
   .why-grid {
     display: grid;
@@ -163,15 +163,6 @@
 
 
 
-.modern-card-demo {
-  transition: transform .3s ease, box-shadow .3s ease;
-  /* Adds smooth transitions for transform and box-shadow properties on hover, 
-  allowing for a visually appealing animation when the card is interacted with. */ 
-
-}
-
-
-
 .spinner-card {
   text-align: center;
 }
@@ -223,6 +214,10 @@
   transform: translateX(20px);
 }
 
+.layout-row {
+  margin: 2rem 0;
+}
+
 /*  ====================================================================================================================
     Where Would You Use It?
     ==================================================================================================================== */ 
@@ -245,7 +240,7 @@
 
 /* AI prompt: how to add a smooth transform 
 and box-shadow transition to images in css? 
-The following .use-card img{}  and user-card img:hover{} 
+The following .use-card img{}  and use-card img:hover{} 
 is modified from AI suggestion. */
 .use-card img {
   width: 100%;
@@ -368,14 +363,16 @@ is modified from AI suggestion. */
 
   pre code {
     display: block;
-    /* Ensures the code block is treated as a block-level element, 
-    allowing it to take up the full width of its container and wrap properly. */
-
     font-family: monospace;
     text-align: left;
+    padding: 1.5rem 2rem;
    }
 
-=============================================================================================================== */
+  .code-comment {
+    color:rgba(255, 230, 140, .75);
+  }
+
+ 
 
 @media (max-width: 768px) {
   
@@ -429,4 +426,26 @@ is modified from AI suggestion. */
 
 .pros-code pre {
   margin-top: 0;
+  padding: 1rem 1.5rem;
+}
+
+
+/*  ====================================================================================================================
+    Code Demo
+    ==================================================================================================================== */ 
+
+.demo-layout {
+  display: flex;
+
+  gap: 2rem;
+
+  align-items: flex-start;
+}
+
+.demo-preview {
+  flex: 0 0 260px;
+}
+
+.demo-code {
+  flex: 1;
 }
