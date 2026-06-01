@@ -44,11 +44,13 @@
       display: inline-block;
       padding: .75rem 1.5rem;
       border-radius: 12px;
+      border: 3px solid transparent;
       background:
         linear-gradient(
           135deg,
-          #38bdf8,
-          #9333ea
+          #7f1d1d,
+          #991b1b
+          
       );
       color: white;
       font-weight: bold;
@@ -57,44 +59,38 @@
     }
 
     .translate-btn:hover {
-       background: rgba(56,189,248,.2); 
-       color: #38bdf8;
-       transform: translateX(30px);
+
+      transform: translateX(30px);
            
        /* Moves the button 30px to the right on hover,
    creating a dynamic and engaging effect. */
     } 
 
     .rotate-btn:hover {
-      background: rgba(56,189,248,.2); 
-      color: #38bdf8;
+
       transform: rotate(15deg);
       /* Rotates the button 15 degrees on hover for a playful effect. */
     } 
 
     .scale-btn:hover {
-      background: rgba(56,189,248,.2); 
-      color: #38bdf8;
+
       transform: scale(1.2);
       /* Scales the button to 120% of its original size on hover. */
     }
     .skew-xy-btn:hover {
-      background: rgba(56,189,248,.2); 
-      color: #38bdf8;
+
       transform: skew(20deg, 10deg);
       /* Skews the button by 20 degrees horizontally and 10 degrees vertically on hover. */
     }
 
     .skew-x-btn:hover {
-      background: rgba(56,189,248,.2); 
-      color: #38bdf8;
+
       transform: skewX(20deg);
       /* Skews the button 20 degrees horizontally on hover. */
     }   
 
     .skew-y-btn:hover {
-      background: rgba(56,189,248,.2); 
-      color: #38bdf8;
+
       transform: skewY(10deg);
       /* Skews the button 10 degrees vertically on hover. */
     } 
@@ -139,7 +135,13 @@
     cursor: pointer;
     color: white;
     font-weight: 700;
-    background: linear-gradient(135deg, #38bdf8, #9333ea);
+    background:
+        linear-gradient(
+          135deg,
+          #7f1d1d,
+          #991b1b
+          
+      );
     transition: transform .3s ease, box-shadow .3s ease, margin-left .3s ease;
   }
   /* A stylish button design with a vibrant gradient background, rounded corners, and smooth transitions for transform, box-shadow, and margin-left on hover. */
@@ -196,7 +198,12 @@
   border-radius: 20px;
 
   background:
-    rgba(255,255,255,.06);
+    linear-gradient(
+          135deg,
+          #7f1d1d,
+          #991b1b
+          
+      );
 
   border:
     1px solid rgba(255,255,255,.12);
@@ -215,27 +222,6 @@
     rgba(56,189,248,.2);
 }
 /* On hover, the card will move up by 8px and display a soft shadow below it for a modern lifting effect. */
-.modern-card-btn {
-  margin-top: 1rem;
-
-  padding:
-    .8rem 1.5rem;
-
-  border: none;
-
-  border-radius: 14px;
-
-  color: white;
-  cursor: pointer;
-
-  background:
-    linear-gradient(
-      135deg,
-      #38bdf8,
-      #9333ea
-    );
-}
-/* A stylish button design with a vibrant gradient background, rounded corners, and no border. The margin-top creates space above the button to separate it from other content. */
 
 .layout-row {
   display: flex;
@@ -340,38 +326,22 @@ is modified from AI suggestion. */
   border-radius: 24px;
 
   background:
-  /* A vibrant diagonal gradient background that transitions from a bright cyan to a rich purple, creating an eye-catching and modern look for the demo box. */ 
-  /* Reference:
-   CSS Gradients
-   https://css-tricks.com/almanac/properties/b/background-image/#gradients
-   https://developer.mozilla.org/en-US/docs/Web/CSS/gradients
-   */
     linear-gradient(
-      135deg,
-      #38bdf8,
-      #9333ea
+          135deg,
+          #7f1d1d,
+          #991b1b
     );
 
   display: flex;
   justify-content: center;
   align-items: center;
-/* Centered content with flexbox */
-/* Reference:
-   CSS Flexbox
-   https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-   https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
-   */
+
 
   font-size: 1.1rem;
   font-weight: bold;
 
   cursor: pointer;
-  /* Indicates interactivity, inviting users to hover and see the transformation. */  
-  /* Reference:
-   CSS Cursors
-   https://css-tricks.com/almanac/properties/c/cursor/
-   */
-
+  
   transition: .4s ease;
   /* Smooth transition for transform and box-shadow on hover. */
 
@@ -380,12 +350,7 @@ is modified from AI suggestion. */
   box-shadow:
     0 20px 50px
     rgba(56,189,248,.25);
-    /* Adds a soft shadow below the box for depth and a glowing effect. */
-    /* Reference:
-     CSS Box Shadow
-     https://css-tricks.com/almanac/properties/b/box-shadow/
-     https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
-     */
+  
 }
 
 .demo-box:hover {
@@ -393,10 +358,7 @@ is modified from AI suggestion. */
     translateY(-15px)
     rotate(5deg)
     scale(1.1);
-    /* On hover, the box will move up, rotate slightly, and scale up for a dynamic effect. */
-    /*  Reference:
-        https://css-tricks.com/almanac/properties/t/transform/*/
-}
+   
 
 /* ====================================================================================================================
     Responsive Code Blocks
