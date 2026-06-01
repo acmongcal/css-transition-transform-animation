@@ -203,19 +203,25 @@
 
             <p>CSS Transform helps create modern and interactive interfaces.</p>
 
-            <div class="modern-ui-card">
-              <h4>Premium Product</h4>
-              <p>Modern card hover effect</p>
-            </div>
+            <div class="modern-ui-card spinner-card">
+              <div class="loading-ring"></div>
+                <p>Rotating UI Element</p>
+              </div>
 
-            <pre><code>.modern-ui-card:hover {
-              transform: translateY(-8px);
+              <pre><code>.loading-ring {
+                animation:
+                  spin 2s linear infinite;
+              }
 
-              box-shadow: 0 20px 40px rgba(56,189,248,.2);
+              @keyframes spin {
+                from {
+                  <span class="highlight-code">transform: rotate(0deg);</span>
+                } 
 
-              /* Lifts the card slightly
-              for a modern UI effect. */
-            }</code></pre>
+                to {
+                  <span class="highlight-code">transform: rotate(360deg);</span>
+                }
+              }</code></pre>
           
         </div>
 
@@ -306,22 +312,41 @@
       <section class="content-section" id="pros">
         <h2>Pros and Cons</h2>
 
-        <h3>Pros</h3>
+        <div class="pros-layout">
 
-        <ul>
-          <li>Easy to use</li>
-          <li>Smooth animation effects</li>
-          <li>Modern user interface</li>
-          <li>Does not affect layout</li>
-        </ul>
+          <div class="pros-content">
+            <h3>Pros</h3>
 
-        <h3>Cons</h3>
+            <ul>
+              <li>Easy to use</li>
+              <li>Smooth animation effects</li>
+              <li>Modern user interface</li>
+              <li>Does not affect layout</li>
+            </ul>
 
-        <ul>
-          <li>Can distract users if overused</li>
-          <li>Rotated text may be harder to read</li>
-          <li>Complex transforms are harder to maintain</li>
-        </ul>
+            <h3>Cons</h3>
+
+            <ul>
+              <li>Can distract users if overused</li>
+              <li>Rotated text may be harder to read</li>
+              <li>Complex transforms are harder to maintain</li>
+            </ul>
+          </div>
+
+          <div class="pros-code">
+            <pre><code>#pros li:hover {
+              <span class="highlight-code">transform: 
+  translateY(-10px)
+  scale(1.08);</span>
+
+color: #f97316;
+text-shadow: 0 0 10px rgba(249,115,22,.45);
+}
+
+/* This page also demonstrates CSS Transform. When hovering over the items on the left, they slightly move upward and become larger. */</code></pre>
+          </div>
+        </div>
+
       </section>
 
       <section class="content-section" id="demo">
@@ -340,15 +365,15 @@
         effects on hover -->
 
         <pre><code>.demo-box:hover {
-          transform:
-          translateY(-15px)
-          rotate(5deg)
-          scale(1.1);
+          <span class="highlight-code">transform:
+            translateY(-15px)
+            rotate(5deg)
+            scale(1.1);</span>
 
           /* Moves the box up 15px, 
-          rotates it 5 degrees, 
-          and scales it to 110% of its original size 
-          on hover. */
+            rotates it 5 degrees, 
+            and scales it to 110% of
+            its original size on hover. */
         }</code></pre>
       </section>
 

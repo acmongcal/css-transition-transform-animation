@@ -7,11 +7,8 @@
 
     .highlight-code {
 
-      display: inline-block;
-      /* Makes the code block an inline-level element 
-      that can be styled with padding and borders, 
-      allowing it to be highlighted effectively. */  
-
+      display: block;
+      width: fit-content;
 
       border: 2px solid red;
 
@@ -21,16 +18,7 @@
 
       margin: .5rem 0;
       background: rgba(255,0,0,.20);
-      /*  
-          255,0,0 = red color (RGB values)
-          .20 = 20% opacity (moderately transparent)
-
-          A moderate-opacity red background is used to
-          subtly highlight the transform code section
-          without overpowering the presentation design
-          or reducing readability. 
-      */      
-
+  
       color: inherit;
 
     } 
@@ -102,12 +90,7 @@
     ==================================================================================================================== */ 
   .why-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* Creates a grid layout with two equal-width columns, 
-    each taking up 1 fraction of the available space. 
-    The repeat function is used to define the column structure, 
-    allowing for easy adjustments if needed. */    
-
+    grid-template-columns: 1fr;
     gap: 2rem;
     margin-top: 2rem;
   } 
@@ -122,9 +105,10 @@
       /* Ensures the card can shrink properly 
       within the grid layout without overflowing. */  
 
-  
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
     }
-    /* A modern card design with a semi-transparent background, subtle border, and rounded corners. The padding creates space inside the card for content. */ 
 
 
   .why-demo-btn,
@@ -188,47 +172,41 @@
 
 
 
+.spinner-card {
+  text-align: center;
+}
 
-/* On hover, the card will move up by 8px and display a soft shadow below it for a modern lifting effect. */
+.loading-ring {
+  width: 80px;
+  height: 80px;
 
-.modern-ui-card {
-  margin-top: 1rem;
-  padding: 1.5rem;
-
-  border-radius: 20px;
-
-  background:
-    linear-gradient(
-          135deg,
-          #7f1d1d,
-          #991b1b
-          
-      );
+  margin: 1rem auto;
 
   border:
-    1px solid rgba(255,255,255,.12);
+    8px solid rgba(255,255,255,.15);
 
-  transition:
-    transform .3s ease,
-    box-shadow .3s ease;
+  border-top:
+    8px solid #38bdf8;
+
+  border-radius: 50%;
+
+  animation:
+    spin 2s linear infinite;
 }
 
-/* A modern card design with a semi-transparent background, subtle border, and rounded corners. The transition property allows for smooth animations on transform and box-shadow when the card is hovered. */
-.modern-ui-card:hover {
-  transform: translateY(-8px);
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
 
-  box-shadow:
-    0 20px 40px
-    rgba(56,189,248,.2);
+  to {
+    transform: rotate(360deg);
+  }
 }
-/* On hover, the card will move up by 8px and display a soft shadow below it for a modern lifting effect. */
 
-.layout-row {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
+
+
+
 /* A horizontal layout using flexbox with centered alignment, a gap of 1rem between items, and a margin-top to create space above the row. */
 .margin-move:hover {
   margin-left: 20px;
@@ -284,9 +262,6 @@ is modified from AI suggestion. */
      for a gradual appearance of shadows on hover. */  
 
 }
- /* Ensures the image fills the card width, 
-  has rounded corners, and includes smooth transitions 
-  for transform and box-shadow on hover. */ 
 
 
 
@@ -358,7 +333,7 @@ is modified from AI suggestion. */
     translateY(-15px)
     rotate(5deg)
     scale(1.1);
-   
+}
 
 /* ====================================================================================================================
     Responsive Code Blocks
@@ -416,4 +391,42 @@ is modified from AI suggestion. */
   }
 
 
+}
+
+/*  ====================================================================================================================
+    Pros and Cons
+    ==================================================================================================================== */ 
+
+#pros li {
+  transition:
+    transform .3s ease,
+    color .3s ease,
+    text-shadow .3s ease;
+
+    margin: .5rem 0;
+    transform-origin: left center;
+}
+
+
+#pros li:hover {
+  transform:
+    translateY(-6px)
+    scale(1.05);
+  /*  transform: */
+
+  color: #f97316;
+  text-shadow:
+    0 0 10px rgba(249,115,22,.45);
+
+}
+
+.pros-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.pros-code pre {
+  margin-top: 0;
 }
