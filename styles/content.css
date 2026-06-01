@@ -373,13 +373,10 @@ to fit this project.
 .presentation-section, .side-nav, .content-panel, .content-section{
   min-width: 0;
 }
+  /* Prevents overflow
+   in responsive layouts. */
 
 .content-panel {
-  /* The content panel has a semi-transparent background with a blur effect, creating a frosted glass look. It also has padding and rounded corners for a modern design. */ 
-  /* Reference:
-   https://magicui.design/ 
-   https://www.apple.com/apple-vision-pro
-   */
   background:
     rgba(255,255,255,.08);
 
@@ -392,9 +389,23 @@ to fit this project.
   padding: 3rem;
 
   min-height: 700px;
+    /* Sets a minimum height
+    to keep the content panel
+    visually balanced. */
 }
 
-/* Hide Sections */
+/*  ====================================================================================================================
+    Hide Sections 
+    ==================================================================================================================== */
+
+  /* AI Prompt:
+    Suggest CSS to hide inactive sections
+    and use CSS transition, tranfrom, or animation for smooth
+    content transitions.
+
+    The following content-section content-section.active were modified
+    from AI suggestions.
+    */  
 
 .content-section {
   display: none;
@@ -404,42 +415,56 @@ to fit this project.
   display: block;
   animation:
     fadeIn .35s ease;
-    /* When a content section becomes active, it will fade in smoothly over 0.35 seconds, creating a pleasant transition effect for the user. */
-    /* Reference:
-     CSS Animations
-     https://css-tricks.com/almanac/properties/a/animation/
-     https://www.w3schools.com/csS/css3_animations.asp
-     */
+    /* When a content section becomes active, 
+    it will fade in smoothly over 0.35 seconds, 
+    creating a pleasant transition effect for the user. */
+ 
 }
+
+/* 
+  Explanation: Why use animation
+  for active and hidden section transitions
+  instead of transition or transform?
+
+  Transition is usually used
+  for smooth changes between states,
+  such as hover effects,
+  color changes, or movement.
+
+  However, transition is not used here
+  because display: none and display: block
+  switch instantly and cannot
+  transition smoothly.
+
+  Transform is used to change
+  an element's appearance,
+  such as moving, scaling,
+  rotating, or skewing elements.
+
+  However, transform alone
+  cannot create a full
+  content entrance effect.
+
+  Animation is used here
+  to create a smoother fade-in effect
+  when switching between content sections.
+
+*/
 
 /* ==================================================================================================================== 
   Headings 
   ==================================================================================================================== */
 
-.content-panel h1 {
-  /* The main heading uses a vibrant cyan color and a responsive font size that scales between 2rem and 3rem based on the viewport width, ensuring it looks great on all screen sizes. */ 
-  /* Reference:
-   CSS Colors
-   https://css-tricks.com/almanac/properties/c/color/
-   https://developer.mozilla.org/en-US/docs/Web/CSS/color
-   */
-
-    /*
-    The clamp() function allows you to set a responsive font size 
-    that scales between a defined minimum and maximum value based on the viewport width.
-    In this case, the font size will be 2rem on small screens, scale up to 3rem on larger screens, 
-    and adjust responsively in between. 
-    */
-
-   /* Reference:
-    CSS clamp() function
-    https://css-tricks.com/almanac/functions/c/clamp/
-    https://developer.mozilla.org/en-US/docs/Web/CSS/clamp
-    FWDP-1000-Day-06-Slides.pdf
-    */
+.content-panel h2 {
   font-size:
     clamp(2rem, 5vw, 3rem);
-    /* The font size will be 2rem on small screens, scale up to 3rem on larger screens, and adjust responsively in between. */  
+    /* The font size will be 2rem on 
+    small screens, scale up to 3rem on larger screens, 
+    and adjust responsively in between. 
+    
+    5vw = 5% of the viewport width.
+    This allows the font size to scale
+    responsively as the screen size changes.*/  
   
 
   color: #38bdf8;
