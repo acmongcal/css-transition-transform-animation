@@ -235,6 +235,9 @@
   border-radius: 20px;
   padding: 1.5rem;
   min-width: 0;
+
+  display:flex;
+  flex-direction: column;
 }
 
 
@@ -246,7 +249,7 @@ is modified from AI suggestion. */
   width: 100%;
   display: block;
   border-radius: 16px;
-  margin-top: 1rem;
+  margin-top: auto;
   transition: transform .3s ease, box-shadow .3s ease;
   /* transform .3s ease: Smoothly animates any transform changes 
   (like scaling or translating) over 0.3 seconds 
@@ -263,7 +266,6 @@ is modified from AI suggestion. */
 .use-card img:hover {
   transform: scale(1.06);
   box-shadow: 0 20px 40px rgba(56,189,248,.25);
-  /* On hover, the image scales up to 106% of its original size and a soft shadow appears below it for a subtle zoom effect. */ 
 
 }
 
@@ -365,7 +367,8 @@ is modified from AI suggestion. */
     display: block;
     font-family: monospace;
     text-align: left;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 5rem;
+   
    }
 
   .code-comment {

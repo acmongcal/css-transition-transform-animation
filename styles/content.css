@@ -83,7 +83,10 @@ background:
     /* creats a semi-transparent background with 8% opacity,
      allowing the underlying dark background and glow effects to subtly show through, 
      creating a frosted glass effect that adds depth and visual interest to the navigation panel. */    
-
+  
+  min-width: 0;
+  /*  Prevents overflow
+      in responsive layouts. */
 
   border:
     1px solid
@@ -114,11 +117,13 @@ background:
 
 }
 
+
 @media (max-width: 1100px) {
   .side-nav {
     position: static;
   }
 } 
+
 
 
 
@@ -132,6 +137,27 @@ background:
   margin-bottom: 1rem;
 }
 
+/* ====================================================================================================================
+   Mobile: side nav 
+  ==================================================================================================================== */
+
+@media (max-width: 768px) {
+ 
+
+
+  .side-nav {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .side-nav {
+   padding: 1.5rem;
+  }
+
+
+
+
+}
 
 /*  ====================================================================================================================
     Navigation Buttons 
@@ -216,6 +242,25 @@ to fit this project.
 }
 
 
+/* ====================================================================================================================
+   Mobile: nav-btn
+  ==================================================================================================================== */
+
+@media (max-width: 768px) {
+ 
+
+  .nav-btn {
+    width: 100%;
+  }
+
+  .nav-btn:hover:not(.active) {
+    transform:
+      translateY(-2px);
+  }
+
+
+
+}
 
 
 
@@ -367,10 +412,10 @@ to fit this project.
 }
 
 
-/* ====================================================================================================================
-   Right Content
- ==================================================================================================================== */
-.presentation-section, .side-nav, .content-panel, .content-section{
+/*  ====================================================================================================================
+    Right Content
+    ==================================================================================================================== */
+.presentation-section, .content-panel, .content-section{
   min-width: 0;
 }
   /* Prevents overflow
@@ -415,45 +460,42 @@ to fit this project.
   display: block;
   animation:
     fadeIn .35s ease;
-    /* When a content section becomes active, 
+    /*  When a content section becomes active, 
     it will fade in smoothly over 0.35 seconds, 
     creating a pleasant transition effect for the user. */
  
 }
 
-/* 
-  Explanation: Why use animation
-  for active and hidden section transitions
-  instead of transition or transform?
+/*  Explanation: Why use animation
+for active and hidden section transitions
+instead of transition or transform?
 
-  Transition is usually used
-  for smooth changes between states,
-  such as hover effects,
-  color changes, or movement.
+Transition is usually used
+for smooth changes between states,
+such as hover effects,
+color changes, or movement.
 
-  However, transition is not used here
-  because display: none and display: block
-  switch instantly and cannot
-  transition smoothly.
+However, transition is not used here
+because display: none and display: block
+switch instantly and cannot
+transition smoothly.
 
-  Transform is used to change
-  an element's appearance,
-  such as moving, scaling,
-  rotating, or skewing elements.
+Transform is used to change
+an element's appearance,
+such as moving, scaling,
+rotating, or skewing elements.
 
-  However, transform alone
-  cannot create a full
-  content entrance effect.
+However, transform alone
+cannot create a full
+content entrance effect.
 
-  Animation is used here
-  to create a smoother fade-in effect
-  when switching between content sections.
-
-*/
+Animation is used here
+to create a smoother fade-in effect
+when switching between content sections.  */
 
 /* ==================================================================================================================== 
   Headings 
-  ==================================================================================================================== */
+==================================================================================================================== */
 
 .content-panel h2 {
   font-size:
@@ -481,7 +523,7 @@ to fit this project.
 
 /* ==================================================================================================================== 
   Paragraph 
-  ====================================================================================================================*/
+====================================================================================================================*/
 
 .content-panel p {
   font-size: 1.1rem;
@@ -492,7 +534,9 @@ to fit this project.
   max-width: 850px;
 }
 
-/* Lists */
+/*  ==================================================================================================================== 
+  Lists 
+====================================================================================================================  */
 
 .content-panel ul {
   margin-left: 1.5rem;
@@ -580,7 +624,7 @@ to fit this project.
 }
 
 /* ====================================================================================================================
-   Mobile
+   Mobile: content 
   ==================================================================================================================== */
 
 @media (max-width: 768px) {
@@ -598,14 +642,12 @@ to fit this project.
   }
 
 
-  .side-nav, .content-panel {
+  .content-panel {
     width: 100%;
     max-width: 100%;
   }
 
-  .side-nav {
-   padding: 1.5rem;
-  }
+ 
 
   .content-panel {
     /* Removes the fixed minimum height and reduces
@@ -615,29 +657,7 @@ to fit this project.
     padding: 1.5rem;
   }
 
-  .nav-btn {
-    width: 100%;
-  }
-
-  
  
-
-
-
-  /* On mobile devices, the navigation buttons 
-  have a subtle upward movement on hover to indicate interactivity, 
-  while the active button remains visually distinct with its vibrant 
-  gradient background and glowing animation. This ensures that users 
-  can easily identify the current page and interact with the 
-  navigation even on smaller screens. */
-  /* Reference:   
-   CSS Transitions
-   https://css-tricks.com/almanac/properties/t/transition/    */
-
-  .nav-btn:hover:not(.active) {
-    transform:
-      translateY(-2px);
-  }
 
 
 
