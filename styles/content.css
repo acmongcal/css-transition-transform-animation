@@ -15,17 +15,12 @@
     position: relative;
     display: grid;
     grid-template-columns: 280px 1fr;
-      /* column 1 = 280px, column 2 = remaining space   
-      <aside class="side-nav"></aside> ----> column 1
-
-      <main class="content-panel"></main> ----> column 2
-    
-      */
+    /* column 1 = 280px, column 2 = remaining space   
+    <aside class="side-nav"></aside> ----> column 1
+    <main class="content-panel"></main> ----> column 2 */
 
     gap: 3rem;
-
     padding: 6rem 8% 4rem;
-
 
 /* AI Prompt:
 Suggest a modern dark presentation UI
@@ -42,14 +37,12 @@ background:
     rgba(56,189,248,.18),
     transparent 25%
   ),
-    /* 
-    creates a soft blue glow with 18% opacity,
+    /* creates a soft blue glow with 18% opacity,
     while transparent 25% means the glow will fade out 
     to transparent at 25% of the radius, creating a smooth 
     transition from the glow to the background. 
     This radial gradient is positioned at the top left corner,  
-    adding a subtle lighting effect.
-    */
+    adding a subtle lighting effect. */
 
   radial-gradient(
     circle at bottom right,
@@ -61,15 +54,11 @@ background:
     to transparent at 25% of the radius, creating a smooth
     transition from the glow to the background.
     This radial gradient is positioned at the bottom right corner,
-    adding a complementary lighting effect that balances the design.
-
-    */
+    adding a complementary lighting effect that balances the design. */
 
   #080b16;
     /* A very dark background color (#080b16) is used to 
     provid a strong contrast for the glowing gradient effects. */
-
-
 
 }
 
@@ -93,9 +82,7 @@ background:
     rgba(255,255,255,.18);
 
   border-radius: 28px;
-
   padding: 2rem;
-
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -112,20 +99,13 @@ background:
     The align-self: start; property ensures that the sticky element aligns 
     to the top of its container, providing a consistent and user-friendly 
     navigation experience. */ 
-
-
-
 }
-
 
 @media (max-width: 1100px) {
   .side-nav {
     position: static;
   }
 } 
-
-
-
 
 /*  ====================================================================================================================
     Nav Title 
@@ -142,9 +122,6 @@ background:
   ==================================================================================================================== */
 
 @media (max-width: 768px) {
- 
-
-
   .side-nav {
     width: 100%;
     max-width: 100%;
@@ -153,10 +130,6 @@ background:
   .side-nav {
    padding: 1.5rem;
   }
-
-
-
-
 }
 
 /*  ====================================================================================================================
@@ -184,12 +157,9 @@ were modified from AI suggestions
 to fit this project.
 */
 
-
 .nav-btn {
   border: 1px solid rgba(255,255,255,.08);
-    /* Creates a subtle semi-transparent border
-     to give the button more definition
-     while keeping the soft glassmorphism look. */
+   /* Subtle border for glassmorphism effect */
 
   border-radius: 16px;
   box-shadow: 0 0 8px rgba(56, 189, 248, .08);
@@ -244,11 +214,9 @@ to fit this project.
 
 /* ====================================================================================================================
    Mobile: nav-btn
-  ==================================================================================================================== */
+==================================================================================================================== */
 
 @media (max-width: 768px) {
- 
-
   .nav-btn {
     width: 100%;
   }
@@ -257,16 +225,11 @@ to fit this project.
     transform:
       translateY(-2px);
   }
-
-
-
 }
 
-
-
-/*  ====================================================================================================================
+/* ====================================================================================================================
     Hover (not active) 
-    ==================================================================================================================== */
+==================================================================================================================== */
 
 .nav-btn:hover:not(.active) {
   background:
@@ -276,7 +239,6 @@ to fit this project.
    .2 means 20% opacity */
 
   color: #38bdf8;
-
   transform:
     translateX(8px);
     /* Moves the button 8px to the right on hover,
@@ -291,7 +253,6 @@ to fit this project.
      https://developer.mozilla.org/en-US/docs/Web/CSS/:not
   */
 }
-
 
 /* Some discover want to share when writing the above code:
 
@@ -311,12 +272,9 @@ to fit this project.
   hover out animations stay smooth.
 */   
 
-
-
-
-/*  ====================================================================================================================
+/* ====================================================================================================================
     Active Buttons when the corrosponding page is active
-    ==================================================================================================================== */
+==================================================================================================================== */
 .nav-btn.active {
   background:
     linear-gradient(
@@ -331,14 +289,10 @@ to fit this project.
         from top-left to bottom-right
      */
 
-
   border: none;
-
   box-shadow:
     0 0 12px rgba(56,189,248,.18);
-  
     color: white;
-
   font-weight: 600;
 
   animation:
@@ -359,7 +313,6 @@ to fit this project.
 
      2 = animation repeats
      2 times only */
-
 }
     @keyframes glowPulse { 
   /* Reference:
@@ -414,7 +367,7 @@ to fit this project.
 
 /*  ====================================================================================================================
     Right Content
-    ==================================================================================================================== */
+==================================================================================================================== */
 .presentation-section, .content-panel, .content-section{
   min-width: 0;
 }
@@ -424,24 +377,20 @@ to fit this project.
 .content-panel {
   background:
     rgba(255,255,255,.08);
-
   border:
     1px solid
     rgba(255,255,255,.12);
-
   border-radius: 30px;
-
   padding: 3rem;
-
   min-height: 700px;
     /* Sets a minimum height
     to keep the content panel
     visually balanced. */
 }
 
-/*  ====================================================================================================================
+/* ====================================================================================================================
     Hide Sections 
-    ==================================================================================================================== */
+==================================================================================================================== */
 
   /* AI Prompt:
     Suggest CSS to hide inactive sections
@@ -493,89 +442,7 @@ Animation is used here
 to create a smoother fade-in effect
 when switching between content sections.  */
 
-/* ==================================================================================================================== 
-  Headings 
-==================================================================================================================== */
-
-.content-panel h2 {
-  font-size:
-    clamp(2rem, 5vw, 3rem);
-    /* The font size will be 2rem on 
-    small screens, scale up to 3rem on larger screens, 
-    and adjust responsively in between. 
-    
-    5vw = 5% of the viewport width.
-    This allows the font size to scale
-    responsively as the screen size changes.*/  
-  
-
-  color: #38bdf8;
-
-  margin-bottom: 1.5rem;
-}
-
-.content-panel h3 {
-  color: #facc15;
-
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-/* ==================================================================================================================== 
-  Paragraph 
-====================================================================================================================*/
-
-.content-panel p {
-  font-size: 1.1rem;
-  color: #dbeafe;
-
-  margin-bottom: 1.3rem;
-
-  max-width: 850px;
-}
-
-/*  ==================================================================================================================== 
-  Lists 
-====================================================================================================================  */
-
-.content-panel ul {
-  margin-left: 1.5rem;
-}
-
-.content-panel li {
-  color: #dbeafe;
-  margin-bottom: .8rem;
-}
-
-
-
-/*  ====================================================================================================================
-    Code Block
-    ==================================================================================================================== */
-/* The code block has a dark background with light text for readability, along with padding and rounded corners to create a distinct and visually appealing section for displaying code snippets. It also allows horizontal scrolling for long lines of code. */  
-/* Reference:
-   CSS Box Model
-   https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model
-   
-*/
-
-
-/*  ====================================================================================================================
-    Animation
-    ==================================================================================================================== */
- 
-    /* When a content section becomes active, it will fade in smoothly over 0.35 seconds, creating a pleasant transition effect for the user. */ 
- /* Reference:
-  CSS Animations
-  https://css-tricks.com/almanac/properties/a/animation/
-  https://www.w3schools.com/csS/css3_animations.asp
-  */
-
-
-
-@keyframes fadeIn {
-    
-
+@keyframes fadeIn {    
   from {
     opacity: 0;
     transform:
@@ -597,68 +464,93 @@ when switching between content sections.  */
    */
 }
 
-/*  ====================================================================================================================
-    Tablet
-    ==================================================================================================================== */
+/* ==================================================================================================================== 
+  Headings 
+==================================================================================================================== */
 
-@media (max-width: 1100px ) {
-
-  .presentation-section {
+.content-panel h2 {
+  font-size:
+    clamp(2rem, 5vw, 3rem);
+    /* The font size will be 2rem on 
+    small screens, scale up to 3rem on larger screens, 
+    and adjust responsively in between. 
+    
+    5vw = 5% of the viewport width.
+    This allows the font size to scale
+    responsively as the screen size changes.*/  
   
-      grid-template-columns: 1fr;
+  color: #38bdf8;
+  margin-bottom: 1.5rem;
+}
 
-      gap: 2rem;
-      padding: 4rem 1rem 3rem;
-  }
- 
-  
+.content-panel h3 {
+  color: #facc15;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
 
-  .content-panel {
-    /* Removes the fixed minimum height and reduces
-     padding on smaller screens so the content
-     fits more naturally and remains readable. */
-    min-height: auto;
-    padding: 2rem;
-  }
-  
+/* ==================================================================================================================== 
+  Paragraph 
+====================================================================================================================*/
+
+.content-panel p {
+  font-size: 1.1rem;
+  color: #dbeafe;
+  margin-bottom: 1.3rem;
+  max-width: 850px;
+}
+
+/* ==================================================================================================================== 
+  Lists 
+==================================================================================================================== */
+
+.content-panel ul {
+  margin-left: 1.5rem;
+}
+
+.content-panel li {
+  color: #dbeafe;
+  margin-bottom: .8rem;
 }
 
 /* ====================================================================================================================
-   Mobile: content 
-  ==================================================================================================================== */
+    Tablet
+==================================================================================================================== */
 
-@media (max-width: 768px) {
- 
-
+@media (max-width: 1100px ) {
   .presentation-section {
   
-    grid-template-columns: 1fr;
-
-    gap: 2rem;
-    
-    padding: 4rem 1rem 3rem;
-    
-    
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 4rem 1rem 3rem;
   }
 
+  .content-panel {
+    min-height: auto;
+    /* Allow panel height to adjust to content */
+    padding: 2rem;
+  }
+}
+
+/* ====================================================================================================================
+   Mobile: content: content-panel and presentation-section
+==================================================================================================================== */
+
+@media (max-width: 768px) {
+  .presentation-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 4rem 1rem 3rem;    
+  }
 
   .content-panel {
     width: 100%;
     max-width: 100%;
   }
 
- 
-
   .content-panel {
-    /* Removes the fixed minimum height and reduces
-     padding on smaller screens so the content
-     fits more naturally and remains readable. */
     min-height: auto;
+    /* Allow panel height to adjust to content */
     padding: 1.5rem;
   }
-
- 
-
-
-
 }
