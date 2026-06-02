@@ -367,7 +367,8 @@ is modified from AI suggestion. */
     display: block;
     font-family: monospace;
     text-align: left;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 5rem;
+   
    }
 
   .code-comment {
