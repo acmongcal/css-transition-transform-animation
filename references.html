@@ -4,91 +4,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>References & credits</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Round&family=Press+Start+2P&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Story+Script&family=Tilt+Neon&display=swap" rel="stylesheet">
+   
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize-fwd.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/references.css">
+    <!-- JavaScript -->
+    <script src="scripts/scripts.js" defer></script>
 </head>
 <body>
-    <header></header>
+    <header class="site-header">
+        <div class="site-header-width">
+            <a href="index.html"><img class="home" src="images/css-home-logo.png" alt="css logo"></a>
+
+            <nav class="site-navigation" id="site-navigation">
+
+                <button class="menu-toggle" aria-controls="header-menu" aria-expanded="false" aria-label="Menu Toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24">
+                    <title>Menu Icon</title>
+                    <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"></path>
+                </svg>
+                </button>
+                <ul class="nav-menu" id="header-menu">
+                    <li><a href="transform.html">Transform</a></li>
+                    <li><a href="transition.html">Transition</a></li>
+                    <li><a href="animation.html">Animation</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
     <body>
-        <section class="hero">
+        <main>
+            <section class="hero">
             
-            <h1>References & credits</h1>
+                <h1>References & credits</h1>
 
-        </section>
+            </section>
 
-        <section class="ref-section">
-            
-            <h2 class="ref-section__title">References</h2>
-
-            <div class="ref-grid">
-
-                <article class="ref-credids-card">
-                    <h3>Transitions</h3>
-                    <div class="card-item">
-                        <p>Read more on...</p>
-                        <ul>
-                            <li><a href="https://www.w3schools.com/css/css3_transitions.asp" target="_blank" rel="noopener noreferrer">https://www.w3schools.com/css/css3_transitions.asp</a></li>
-                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transitions" target="_blank" rel="noopener noreferrer">https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transitions</a></li>
-                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transitions/Using" target="_blank" rel="noopener noreferrer">https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transitions/Using</a></li>
-                            <li><a href="https://www.joshwcomeau.com/animation/css-vs-javascript/" target="_blank" rel="noopener noreferrer">https://www.joshwcomeau.com/animation/css-vs-javascript/</a></li>
-                            <li><a href="https://easings.net/" target="_blank" rel="noopener noreferrer">https://easings.net/</a></li>
-                        </ul>
-                    </div>
-                    <div class="card-item">
-                        <p>Video to watch...</p>
-                        <ul>
-                            <li><a href="https://www.youtube.com/watch?v=5p7_DlApKBA" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=5p7_DlApKBA</a></li>
-                        </ul>
-                    </div>
-                </article>
+            <section class="ref-section">
                 
-                
-                <article class="ref-credids-card">
-                    <h3>Animations</h3>
-                    <div class="card-item">
-                         <p>Read more on...</p>
-                         <ul>
-                             <li><a href="https://www.w3schools.com/csS/css3_animations_properties.asp" target="_blank" rel="noopener noreferrer">https://www.w3schools.com/csS/css3_animations_properties.asp</a></li>
-                             <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation" target="_blank" rel="noopener noreferrer">https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation</a></li>
-                             <li><a href="https://mimo.org/glossary/css/animation" target="_blank" rel="noopener noreferrer">https://mimo.org/glossary/css/animation</a></li>
-                             <li><a href="https://css-tricks.com/almanac/properties/a/animation/" target="_blank" rel="noopener noreferrer">https://css-tricks.com/almanac/properties/a/animation/</a></li>
-                             <li><a href="https://dev.to/arsalanmee/what-does-css-animation-do-6h" target="_blank" rel="noopener noreferrer">https://dev.to/arsalanmee/what-does-css-animation-do-6h</a></li>
-                             <li><a href="https://www.blott.com/blog/post/pros-and-cons-of-css-animations" target="_blank" rel="noopener noreferrer">https://www.blott.com/blog/post/pros-and-cons-of-css-animations</a></li>
-                             <li><a href="https://stephaniewalter.design/blog/enhancing-user-experience-with-css-animations/" target="_blank" rel="noopener noreferrer">https://stephaniewalter.design/blog/enhancing-user-experience-with-css-animations/</a></li>
+                <h2 class="ref-section__title">References</h2>
+
+                <div class="ref-grid">
+
+                    <article class="ref-credids-card">
+                        <h3>Transforms</h3>
+                        <div class="card-item">
+                            <p>Read more on...</p>
+                            <ul>
+                                <li><a href="https://www.w3schools.com/cssref/css3_pr_transform.php" target="_blank" rel="noopener noreferrer">CSS Transform - W3Schools</a></li>
+                                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform" target="_blank" rel="noopener noreferrer">CSS transform - CSS: Cascading Style Sheets | MDN</a></li>
+                                <li><a href="https://css-tricks.com/almanac/properties/t/transform/" target="_blank" rel="noopener noreferrer">CSS Transform - CSS-Tricks</a></li>
                             </ul>
-                    </div>
+                        </div>
+                        <div class="card-item">
+                            <p>Video to watch...</p>
+                            <ul>
+                                <li><a href="https://youtu.be/qdeIy9_fbxE?si=FvxrgzjUgrzIUqot" target="_blank" rel="noopener noreferrer">Learn CSS Transform In 9 Minutes (YouTube)</a></li>
+                            </ul>
+                        </div>
+
+                    </article>
+
+                    <article class="ref-credids-card">
+                        <h3>Transitions</h3>
+                        <div class="card-item">
+                            <p>Read more on...</p>
+                            <ul>
+                                <li><a href="https://www.w3schools.com/css/css3_transitions.asp" target="_blank" rel="noopener noreferrer">CSS Transitions - W3Schools</a></li>
+                                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transitions" target="_blank" rel="noopener noreferrer">CSS transitions - CSS: Cascading Style Sheets | MDN</a></li>
+                                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transitions/Using" target="_blank" rel="noopener noreferrer">Using CSS transitions - CSS: Cascading Style Sheets | MDN</a></li>
+                                <li><a href="https://www.joshwcomeau.com/animation/css-vs-javascript/" target="_blank" rel="noopener noreferrer">CSS vs JavaScript Animations | Josh W. Comeau</a></li>
+                                <li><a href="https://easings.net/" target="_blank" rel="noopener noreferrer">Easing Functions Cheat Sheet</a></li>
+                            </ul>
+                        </div>
+                        <div class="card-item">
+                            <p>Video to watch...</p>
+                            <ul>
+                                <li><a href="https://www.youtube.com/watch?v=5p7_DlApKBA" target="_blank" rel="noopener noreferrer">Learn CSS Transition In 10 Minutes (YouTube)</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                    
+                    <article class="ref-credids-card">
+                        <h3>Animations</h3>
+                        <div class="card-item">
+                            <p>Read more on...</p>
+                            <ul>
+                                <li><a href="https://www.w3schools.com/csS/css3_animations_properties.asp" target="_blank" rel="noopener noreferrer">CSS animation-properties - W3Schools</a></li>
+                                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation" target="_blank" rel="noopener noreferrer">animation - CSS: Cascading Style Sheets | MDN</a></li>
+                                <li><a href="https://mimo.org/glossary/css/animation" target="_blank" rel="noopener noreferrer">CSS animation Property Glossary | Mimo</a></li>
+                                <li><a href="https://css-tricks.com/almanac/properties/a/animation/" target="_blank" rel="noopener noreferrer">animation | CSS-Tricks</a></li>
+                                <li><a href="https://dev.to/arsalanmee/what-does-css-animation-do-6h" target="_blank" rel="noopener noreferrer">What does CSS Animation do? - DEV Community</a></li>
+                                <li><a href="https://www.blott.com/blog/post/pros-and-cons-of-css-animations" target="_blank" rel="noopener noreferrer">Pros and cons of CSS animations | Blott Studio</a></li>
+                                <li><a href="https://stephaniewalter.design/blog/enhancing-user-experience-with-css-animations/" target="_blank" rel="noopener noreferrer">Enhancing User Experience with CSS Animations - Stephanie Walter</a></li>
+                            </ul>
+                        </div>
+                        <div class="card-item">
+                            <p>Video to watch...</p>
+                            <ul>
+                                <li><a href="https://www.youtube.com/watch?v=SgmNxE9lWcY&t=289s" target="_blank" rel="noopener noreferrer">CSS Animation Tutorial for Beginners (YouTube)</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            
+            <section class="credits-section">
+                
+                <h2 class="credits-section__title">Credits</h2>
+
+                <article class="ref-credids-card">
+                    <h3 class="card__title">Image</h3>
                     <div class="card-item">
-                        <p>Video to watch...</p>
+                        <p>Visit site...</p>
                         <ul>
-                            <li><a href="https://www.youtube.com/watch?v=SgmNxE9lWcY&t=289s" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=SgmNxE9lWcY&t=289s</a></li>
+                            <li><a href="https://unsplash.com/illustrations/man-sitting-at-desk-working-on-computer-r34EqL8nrlk" target="_blank" rel="noopener noreferrer">Man Sitting at Desk Working on Computer | Unsplash</a></li>
                         </ul>
                     </div>
                 </article>
-             </div>
-        </section>
-        
-        <section class="credits-section">
-            
-            <h2 class="credits-section__title">Credits</h2>
 
-            <article class="ref-credids-card">
-                <h3 class="card__title">Image</h3>
-                <div class="card-item">
-                    <p>Visit site...</p>
-                    <ul>
-                        <li><a href="https://unsplash.com/illustrations/man-sitting-at-desk-working-on-computer-r34EqL8nrlk" target="_blank" rel="noopener noreferrer">https://unsplash.com/illustrations/man-sitting-at-desk-working-on-computer-r34EqL8nrlk</a></li>
-                    </ul>
-                </div>
-            </article>
+                <article class="ref-credids-card">
+                    <h3 class="card__title">Design Inspiration</h3>
+                    <div class="card-item">
+                        <p>Visit site...</p>
+                        <ul>
+                            <li><a href="https://magicui.design/" target="_blank" rel="noopener noreferrer">Magic UI</a></li>
+                            <li><a href="https://www.apple.com/apple-vision-pro/" target="_blank" rel="noopener noreferrer">Apple Vision Pro</a></li>
+                        </ul>
+                    </div>
+                </article>
 
-        </section>
+                <article class="ref-credids-card">
+                    <h3 class="card__title">AI Assistance</h3>
+                    <div class="card-item">
+                        <p>Used tools...</p>
+                        <ul>
+                            <li><a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">ChatGPT (OpenAI)</a> — Used for coding suggestions and troubleshooting.</li>
+                            <li><a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">ChatGPT (OpenAI Image Generation)</a> — Used for creating visual example illustrations for presentation purposes.</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </section>
+        </main>
+
 
     </body>
 
-    <footer class="site-footer">
-        <p>Created by Alan Christopher Mongcal, Erimo Taniguchi, and Jade Liao</p>
-        <a href="references.html">references</a>
-    </footer>
+  <footer class="site-footer">
+      <p>Created by Alan Christopher Mongcal, Erimo Taniguchi, and Jade Liao.</p>
+      <a href="references.html">References & Credits</a>
+  </footer>
+  
 </body>
 </html> 

@@ -1,12 +1,473 @@
-/* 
-   Mobile
- */
 
-@media (max-width: 768px) {
+/* ====================================================================================================================
+  Section on What is CSS Transform?
+==================================================================================================================== */
+    /* AI prompt: what is the best way to red circle a block of code in css <pre><code> area? 
+      the following .highlight-code is modified from AI suggestion */  
+
+    .highlight-code {
+
+      display: block;
+      width: fit-content;
+
+      border: 0.125rem solid rgb(239, 68, 68);
+
+      border-radius: 0.75rem;
+
+      padding: .75rem 1rem;
+
+      margin: 1rem 0;
+      background: rgba(127,29,29,.35);
   
+      color: inherit;
 
+    } 
+
+
+/* ====================================================================================================================
+  Section on What Does It Do?
+==================================================================================================================== */
+
+    .demo-btn {
+      display: inline-block;
+      padding: .75rem 1.5rem;
+      border-radius: 0.75rem;
+      border: 0.1875rem solid transparent;
+      background:
+        linear-gradient(
+          135deg,
+          rgb(127, 29, 29),
+          rgb(153, 27, 27)
+          
+      );
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      cursor: pointer;
+      transition: .3s ease;
+    }
+
+    .translate-btn:hover {
+
+      transform: translateX(1.875rem);
+           
+       /* Moves the button 30px to the right on hover,
+   creating a dynamic and engaging effect. */
+    } 
+
+    .rotate-btn:hover {
+
+      transform: rotate(15deg);
+      /* Rotates the button 15 degrees on hover for a playful effect. */
+    } 
+
+    .scale-btn:hover {
+
+      transform: scale(1.2);
+      /* Scales the button to 120% of its original size on hover. */
+    }
+    .skew-xy-btn:hover {
+
+      transform: skew(20deg, 10deg);
+      /* Skews the button by 20 degrees horizontally and 10 degrees vertically on hover. */
+    }
+
+    .skew-x-btn:hover {
+
+      transform: skewX(20deg);
+      /* Skews the button 20 degrees horizontally on hover. */
+    }   
+
+    .skew-y-btn:hover {
+
+      transform: skewY(10deg);
+      /* Skews the button 10 degrees vertically on hover. */
+    } 
+
+
+
+/* ====================================================================================================================
+  Why to Use It?
+==================================================================================================================== */ 
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  } 
+
+
+  .why-card {
+    background: rgba(255,255,255,.05);
+    border: 0.0625rem solid rgba(255,255,255,.12);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    min-width: 0; 
+      /* Ensures the card can shrink properly 
+      within the grid layout without overflowing. */  
+
+    width: 100%;
+    max-width: 43.75rem;
+    margin: 0 auto;
+    }
+
+
+  .why-demo-btn,
+  .layout-btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.875rem;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    background:
+        linear-gradient(
+          135deg,
+          rgb(127, 29, 29),
+          rgb(153, 27, 27)
+          
+      );
+    transition: transform .3s ease, box-shadow .3s ease, margin-left .3s ease;
+  }
+  /* A stylish button design with a vibrant gradient background, rounded corners, and smooth transitions for transform, box-shadow, and margin-left on hover. */
+
+.smooth-demo:hover {
+  transform: translateY(-0.5rem);
+}
+
+/* Moves the button up by 8px on hover for a smooth lifting effect. */
+
+/* AI prompt: how to add a smooth transition for transform and box-shadow properties on hover in css? 
+   The following .feedback-demo:hover is modified from AI suggestion. */
+.feedback-demo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 1.25rem rgba(56,189,248,.6);
+  /* Scales the button up to 108% of its original size 
+  and adds a glowing box shadow on hover for interactive feedback. */  
+
+  /* box-shadow: 0 0 20px rgba(56,189,248,.6); 
+  creates a glowing effect around the button by applying a shadow 
+  that is 20px blurred and has a color with 60% opacity. 
+  This enhances the visual feedback when the user hovers over the button. */  
+
+
+}
+/* Scales the button up to 108% of its original size and adds a glowing box shadow on hover for interactive feedback. */  
+
+
+
+@media (max-width: 68.75em) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.spinner-card {
+  text-align: center;
+}
+
+.loading-ring {
+  width: 5rem;
+  height: 5rem;
+
+  margin: 1rem auto;
+
+  border:
+    0.5rem solid rgba(255,255,255,.15);
+
+  border-top:
+    0.5rem solid #38bdf8;
+
+  border-radius: 50%;
+
+  animation:
+    spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+/* A horizontal layout using flexbox with centered alignment, a gap of 1rem between items, and a margin-top to create space above the row. */
+.margin-move:hover {
+  margin-left: 1.25rem;
+}
+/* Adds 20px of empty space to the
+   left side of the element on hover.
+
+   Because margin affects the normal
+   layout flow, nearby content also
+   shifts position, causing
+   layout shift. */
+   
+   .transform-move:hover {
+  transform: translateX(1.25rem);
+}
+
+.layout-row {
+  margin: 2rem 0;
+}
+
+/* ====================================================================================================================
+    Where Would You Use It?
+==================================================================================================================== */ 
+
+.use-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.use-card {
+  background: rgba(255,255,255,.05);
+  border: 0.0625rem solid rgba(255,255,255,.12);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  min-width: 0;
+
+  display:flex;
+  flex-direction: column;
+}
+
+
+/* AI prompt: how to add a smooth transform 
+and box-shadow transition to images in css? 
+The following .use-card img{}  and use-card img:hover{} 
+is modified from AI suggestion. */
+.use-card img {
+  width: 100%;
+  display: block;
+  border-radius: 1rem;
+  margin-top: auto;
+  transition: transform .3s ease, box-shadow .3s ease;
+  /* transform .3s ease: Smoothly animates any transform changes 
+  (like scaling or translating) over 0.3 seconds 
+  with an easing function for a natural feel. 
+
+     box-shadow .3s ease: Smoothly animates any changes 
+     to the box-shadow property over 0.3 seconds, allowing 
+     for a gradual appearance of shadows on hover. */  
+
+}
+
+
+
+.use-card img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 1.25rem 2.5rem rgba(56,189,248,.25);
+
+}
+
+
+@media (max-width: 68.75em) {
+  .use-grid {
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    /* Prevents horizontal overflow 
+    on smaller screens when the grid 
+    changes to a single column. */ 
+
+  }
+}
+
+
+
+
+/* ====================================================================================================================
+   Demo Box
+==================================================================================================================== */
+
+.demo-box {
+  width: 13.75rem;
+  height: 8.75rem;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  border-radius: 1.5rem;
+
+  background:
+    linear-gradient(
+          135deg,
+          rgb(127, 29, 29),
+          rgb(153, 27, 27)
+    );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+  
+  transition: .4s ease;
+  /* Smooth transition for transform and box-shadow on hover. */
+
+
+
+  box-shadow:
+    0 1.25rem 3.125rem
+    rgba(56,189,248,.25);
+  
+}
+
+.demo-box:hover {
+  transform:
+    translateY(-0.9375rem)
+    rotate(5deg)
+    scale(1.1);
+}
+
+/* Smaller hover effect for tablet and mobile */
+@media (max-width: 68.75em) {
+  .demo-box:hover {
+    transform:
+      translateY(-10px)
+      rotate(3deg)
+      scale(1.03);
+  }
+}
+
+/* ====================================================================================================================
+    General Responsive Code Blocks
+==================================================================================================================== */ 
+  
+  /* AI prompt: how to make code blocks responsive in css? 
+    The following pre{} and pre code{} are modified from AI suggestions. */
+
+  /* Prevents long code examples
+   from overflowing on smaller screens.
+   Code can wrap or scroll horizontally
+   when needed. */
+
+   pre {
+    max-width: 100%;
+    /* Ensures the code block does not exceed 
+    the width of its container, allowing it to adapt 
+    to different screen sizes. */  
+
+    white-space: pre-wrap;
+    /* Allows code to wrap onto multiple lines 
+    if it exceeds the container width, preventing 
+    horizontal scrolling and improving readability on smaller screens. */  
+
+    overflow-wrap: break-word;
+    /* Breaks long words in code to prevent 
+    overflow and maintain layout integrity. */  
+
+    text-align: left;
+
+   }
+
+  pre code {
+    display: block;
+    font-family: monospace;
+    text-align: left;
+    padding: 1.5rem;
+    padding-left: 2.5rem;
+   
+   }
+
+  .code-comment {
+    color:rgba(255, 230, 140, .75);
+  }
+
+@media (max-width: 68.75em) { 
   .demo-box {
     width: 100%;
-    max-width: 240px;
+    max-width: 15rem;
   }
+  pre{
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+
+}
+
+/* ====================================================================================================================
+    Pros and Cons
+==================================================================================================================== */ 
+
+#pros li {
+  transition:
+    transform .3s ease,
+    color .3s ease,
+    text-shadow .3s ease;
+
+    margin: .5rem 0;
+    transform-origin: left center;
+}
+
+
+#pros li:hover {
+  transform:
+    translateY(-0.375rem)
+    scale(1.05);
+  /*  transform: */
+
+  color: rgb(249, 115, 22);
+  text-shadow:
+    0 0 0.625rem rgba(249,115,22,.45);
+
+}
+
+.pros-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.pros-code pre {
+  margin-top: 0;
+  padding: 1rem 1.5rem;
+}
+
+@media (max-width: 68.75em) {
+  .pros-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+}
+
+
+/* ====================================================================================================================
+    Code Demo
+==================================================================================================================== */ 
+
+.demo-layout {
+  display: grid;
+  grid-template-columns: 16.25rem 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.demo-preview {
+  min-width: 0;
+}
+
+.demo-code {
+   min-width: 0;
+}
+
+@media (max-width: 68.75em) {
+  .demo-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
 }

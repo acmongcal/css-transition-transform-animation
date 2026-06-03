@@ -1,0 +1,255 @@
+
+
+/* Source: 1. Simple text animation https://prismic.io/blog/css-animation-examples */
+#animation-1{
+    margin-top:8rem;
+    color:rgb(153, 153, 153);
+    text-transform: uppercase;
+    font-size:2.25rem;
+    font-weight:bold;
+    position:relative;
+    width:80%;
+    bottom:45%;
+    display:block;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+
+#flip{
+    height:3.125rem;
+    overflow:hidden;
+}
+
+#flip > div > div{
+    color:rgb(255, 255, 255);
+    padding:0.25rem 0.75rem; 
+    height:2.8125rem;
+    margin-bottom:2.8125rem;
+    display:inline-block;
+}
+
+#flip div:first-child{
+    animation: show 5s linear infinite;
+}
+
+#flip div div{
+    background:rgb(66, 197, 138);
+}
+#flip div:first-child div{
+    background:rgb(78, 199, 243);
+}
+#flip div:last-child div{
+    background:rgb(220, 20, 60);
+}
+
+@keyframes show{
+    0% {margin-top:-16.875rem;}
+    5% {margin-top:-11.25rem;}
+    33% {margin-top:-11.25rem;}
+    38% {margin-top:-5.625rem;}
+    66% {margin-top:-5.625rem;}
+    71% {margin-top:0rem;}
+    99.99% {margin-top:0rem;}
+    100% {margin-top:-16.875rem;}
+}
+
+
+/* Source: 21. Newton’s cradle https://prismic.io/blog/css-animation-examples */
+
+#animation-2{
+  background-color: rgb(152, 207, 178);
+  width: 30%;
+}
+.pendulum{
+    position:relative; 
+    width: 13.75rem;
+    height: 11.25rem;
+    background-color: rgb(248, 198, 207);
+    top: 5.6rem;
+    left: 10rem;
+    border-radius: 5%;
+    align-items: center;
+    border-top: 0.9375rem solid rgb(238, 231, 213);
+    transform: translate(-50%, -50%);
+}
+.pendulum_box{
+    display: flex;
+    padding: 7.5rem 0 0 0.625rem;
+    position: absolute;
+    flex: 1;
+}
+.ball{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    background-color: rgb(69, 86, 129);
+    position: relative;
+    transform-origin: 50% -300%;
+}
+.ball::before{
+    content: '';
+    width: 0.125rem;
+    height: 7.5rem;
+    background-color: rgb(255, 254, 255);
+    left: 1.125rem;
+    top: -7.5rem;
+    position: absolute;
+}
+
+.ball.first{
+  animation: firstball .9s alternate ease-in infinite;
+}
+
+@keyframes firstball{
+    0%{ transform: rotate(35deg); }
+    50%{ transform: rotate(0deg);}
+}
+
+.ball.last{ animation: lastball .9s alternate ease-out infinite; }
+
+@keyframes lastball{
+    50%{ transform: rotate(0deg); }
+    100%{ transform: rotate(-35deg); }
+}
+
+
+/* 22. Glowing loader ring https://prismic.io/blog/css-animation-examples */
+.ring{
+  position:relative;
+  top: 5.6rem;
+  left: 10rem;
+  transform:translate(-50%,-50%);
+  width:9.375rem;
+  height:9.375rem;
+  background:transparent;
+  border:0.1875rem solid rgb(60, 60, 60);
+  border-radius:50%;
+  text-align:center;
+  line-height:9.375rem;
+  font-family:sans-serif;
+  font-size:1.25rem;
+  color:rgb(255, 240, 0);
+  letter-spacing:0.25rem;
+  text-transform:uppercase;
+  text-shadow:0 0 0.625rem #fff000;
+  box-shadow:0 0 1.25rem rgba(0,0,0,.5);
+}
+.ring:before{
+  content:'';
+  position:absolute;
+  top:-0.1875rem;
+  left:-0.1875rem;
+  width:100%;
+  height:100%;
+  border:0.1875rem solid transparent;
+  border-top:0.1875rem solid rgb(255, 240, 0);
+  border-right:0.1875rem solid rgb(255, 240, 0);
+  border-radius:50%;
+  animation:animateC 2s linear infinite;
+}
+span{
+  display:block;
+  position:absolute;
+  top:calc(50% - 0.125rem);
+  left:50%;
+  width:50%;
+  height:0.25rem;
+  background:transparent;
+  transform-origin:left;
+  animation:animate 2s linear infinite;
+}
+span:before{
+  content:'';
+  position:absolute;
+  width:1rem;
+  height:1rem;
+  border-radius:50%;
+  background:rgb(255, 240, 0);
+  top:-0.375rem;
+  right:-0.5rem;
+  box-shadow:0 0 1.25rem rgb(255, 240, 0);
+}
+@keyframes animateC{
+  0%{ transform:rotate(0deg); }
+  100%{ transform:rotate(360deg); }
+}
+@keyframes animate{
+  0%{ transform:rotate(45deg); }
+  100%{ transform:rotate(405deg); }
+}
+
+
+/* Demo code  */
+
+@keyframes my-animation {
+  from{
+    background-color: rgb(255, 122, 89);
+    width: 18.75rem;
+    top: 0.625rem;
+  }
+  to{
+    background-color: rgb(51, 71, 91);
+    width: 3.125rem;
+    top: 6.25rem;
+  }
+}
+
+.animation-box{
+  /* animation properties */
+  animation-name: my-animation;
+  animation-duration: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  
+  /* other properties */
+  width: 18.75rem;
+  height: 6.25rem;
+  border-radius: 0.625rem;
+  position: relative;
+  left: 0; 
+  right: 0; 
+  margin-left: auto;
+  margin-right: auto; 
+  margin-bottom: 10rem;
+}
+
+
+
+
+
+
+/* Timing-functions demo Source: https://stephaniewalter.design/blog/enhancing-user-experience-with-css-animations/  */
+#go {
+  border: 0.0625rem solid rgb(217, 217, 217);
+  border-radius: 0.25rem;
+	width: 15rem;
+	padding: 1.25rem;
+}
+
+#go a {
+	padding: 0.3125rem 0.625rem;
+	background: rgb(56, 189, 248);
+  transition: all .3s;
+  color: rgb(255, 255, 255);
+	border-radius: 0.1875rem;
+	text-decoration: none;
+	font-size: 1.2em;
+	margin: 0.625rem 0;
+	display: inline-block;
+}
+#go a:hover { opacity: 0.6; }
+
+.box {
+	background: rgb(56, 189, 248);
+  width: 1.25rem;
+	height: 1.25rem;
+	transition-duration: 2s;
+}
+.linear .box { transition-timing-function: linear; }
+.ease-in .box { transition-timing-function: ease-in; }
+.ease-out .box { transition-timing-function: ease-out; }
+.ease-in-out .box { transition-timing-function: ease-in-out; }
+.steps .box { transition-timing-function: steps(4); }
+
+#go:target .box { transform: translate(12rem); }

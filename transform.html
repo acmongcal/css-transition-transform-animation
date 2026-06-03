@@ -6,21 +6,52 @@
         content="width=device-width, initial-scale=1.0">
 
   <title>CSS Transform Presentation</title>
-
-<link rel="stylesheet" href="styles/normalize-fwd.css">
-
-<link rel="stylesheet" href="styles/base.css">
-
-<link rel="stylesheet" href="styles/content.css">
-
-<link rel="stylesheet" href="styles/menu.css">
-
-<link rel="stylesheet" href="styles/footer.css">
-
-<link rel="stylesheet" href="styles/transform.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Round&family=Press+Start+2P&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Story+Script&family=Tilt+Neon&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/normalize-fwd.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/content.css">
+  <link rel="stylesheet" href="styles/transform.css">
+  <!-- JavaScript -->
+  <script src="scripts/scripts.js" defer></script>
 </head>
 
 <body>
+  <header class="site-header">
+    <div class="site-header-width">
+      <a href="index.html"><img class="home" src="images/css-home-logo.png" alt="css logo"></a>
+
+      <nav class="site-navigation" id="site-navigation">
+        <button class="menu-toggle" aria-controls="header-menu" aria-expanded="false" aria-label="Menu Toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24">
+            <title>Menu Icon</title>
+            <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z"></path>
+        </svg>
+        </button>
+        <ul class="nav-menu" id="header-menu">
+          <li><a href="transform.html">Transform</a></li>
+          <li><a href="transition.html">Transition</a></li>
+          <li><a href="animation.html">Animation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+   <main>
+
+  <h1 class="screen-reader-text">CSS Transform</h1>
+  <!-- To keep an SEO-friendly and accessible h1 structure without affecting the visual design. -->
+
 
   <section class="presentation-section">
 
@@ -31,33 +62,30 @@
       <button class="nav-btn active" data-section="what">What is it</button>
       <button class="nav-btn" data-section="does">What does it do</button>
       <button class="nav-btn" data-section="why">Why use it</button>
-      <button class="nav-btn" data-section="where">Where use it</button>
+      <button class="nav-btn" data-section="where">Where to use it</button>
       <button class="nav-btn" data-section="pros">Pros and Cons</button>
       <button class="nav-btn" data-section="demo">Code Demo</button>
     </aside>
 
-    <main class="content-panel">
+    <div class="content-panel">
 
       
       <section class="content-section active" id="what">
-        <h1>What is CSS Transform?</h1>
+        <h2>What is CSS Transform?</h2>
 
-        <p>
-          CSS Transform is a property that lets developers move, rotate,
-          resize, or skew HTML elements.
-        </p>
-          <!-- Example CSS code
-          showing a 15-degree
-          rotation effect -->
+        <p>CSS Transform is a property that allows developers to move, rotate, resize, or skew HTML elements. For example, the navigation buttons on this page use CSS Transform to create a dynamic hover effect.</p>
 
-          <pre><code>.box {
-            transform: rotate(15deg);
-          }</code></pre>
-
+          <pre><code>.nav-btn:hover:not(.active) {
+              background: rgba(56,189,248,.2); 
+              color: #38bdf8;
+              <span class="highlight-code">transform: translateX(8px);</span>
+              <span class="code-comment">/*  Moves the button 8px 
+                  to the right on hover */</span>
+            }</code></pre>
       </section>
 
       <section class="content-section" id="does">
-        <h1>What Does It Do?</h1>
+        <h2>What Does It Do?</h2>
 
         <p>
           CSS Transform changes the visual appearance of an element without
@@ -65,91 +93,287 @@
         </p>
 
         <ul>
-          <li>translate() moves elements</li>
-          <li>rotate() turns elements</li>
-          <li>scale() resizes elements</li>
-          <li>skew() tilts elements</li>
+          <li><h3>translate()</h3>
+            <p>Moves an element without affecting layout.</p>
+            <button class="demo-btn translate-btn">Hover me</button>
+                        <pre><code>.translate-btn:hover {
+              <span class="highlight-code">transform: translateX(30px);</span>
+              <span class="code-comment">/*  Moves the button 30px 
+                  to the right on hover. */</span>
+            }</code></pre>
+          </li>
+
+          <li><h3>rotate()</h3>
+            <p>Rotates an element around a fixed point.</p>
+            <button class="demo-btn rotate-btn">Hover me</button>
+            <pre><code>.rotate-btn:hover {
+  <span class="highlight-code">transform: rotate(15deg);</span>
+  <span class="code-comment">/* Rotates the button 
+  15 degrees clockwise on hover. */</span>
+}</code></pre>
+          </li>
+          
+          <li><h3>scale()</h3>
+            <p>Resizes an element while maintaining its proportions.</p>
+            <button class="demo-btn scale-btn">Hover me</button>
+            <pre><code>.scale-btn:hover {
+  <span class="highlight-code">transform: scale(1.2);</span>
+  <span class="code-comment">/*  Scales the button to 120% of 
+      its original size on hover. */</span>
+}</code></pre>
+          </li>
+          
+          <li><h3>skew()</h3>
+            <p>Skews an element to create a tilted appearance.</p>
+            <button class="demo-btn skew-xy-btn">Hover me</button>
+            <pre><code>.skew-xy-btn:hover {
+  <span class="highlight-code">transform: skew(20deg, 10deg);</span>
+  <span class="code-comment">/*  Skews the button  
+      20 degrees along the X-axis 
+      and 10 degrees 
+      along the Y-axis on hover. */</span>
+}</code></pre>
+            
+                          
+        </li>  
         </ul>
       </section>
 
       <section class="content-section" id="why">
-        <h1>Why Would You Use It?</h1>
 
-        <p>
-          CSS Transform helps create interactive and modern websites.
-        </p>
+        <h2>Why Would You Use It?</h2>
 
-        <ul>
-          <li>Smooth hover effects</li>
-          <li>Better visual feedback</li>
-          <li>Modern UI design</li>
-          <li>No layout shift</li>
-        </ul>
+        <p>CSS Transform helps create interactive and modern websites.</p>
+
+        <div class="why-grid">
+
+          <!-- Smooth hover effects -->
+          <div class="why-card">
+
+            <h3>Smooth hover effects</h3>
+
+            <button class="why-demo-btn smooth-demo">Hover Me</button>
+
+            <pre><code>.smooth-demo:hover {
+  <span class="highlight-code">transform: translateY(-8px);</span>
+  <span class="code-comment">/*  Moves the button upward */</span>
+}</code></pre>
+
+          </div>
+
+          <!-- Better visual feedback -->
+          <div class="why-card">
+
+          <h3>Better visual feedback</h3>
+
+          <button class="why-demo-btn feedback-demo">Hover Me</button>
+
+          <pre><code>.feedback-demo:hover {
+  <span class="highlight-code">transform: scale(1.08);</span>
+  <span class="code-comment">/*  Enlarges the button */</span>
+
+  box-shadow: 0 0 20px rgba(56,189,248,.6);
+}</code></pre>
+
+        </div>
+
+        <!-- Modern UI design -->
+        <div class="why-card">
+        
+            <h3>Modern UI design</h3>
+
+            <p>CSS Transform helps create modern and interactive interfaces.</p>
+
+            <div class="modern-ui-card spinner-card">
+              <div class="loading-ring"></div>
+                <p>Rotating UI Element</p>
+              </div>
+
+              <pre><code>.loading-ring {
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  from {
+    <span class="highlight-code">transform: rotate(0deg);</span>
+  } 
+  to {
+    <span class="highlight-code">transform: rotate(360deg);</span>
+  }
+}</code></pre>
+          
+        </div>
+
+        <!-- No layout shift -->
+        <div class="why-card layout-shift-demo">
+          <h3>No layout shift</h3>
+          <p>Comparing the following two approaches: using margin vs. transform</p>
+          <div class="layout-row">
+            <button class="layout-btn margin-move">Margin</button>
+            <span>Text moves as the button is hovered</span>
+          </div>
+            <pre><code>/* Causes layout shift */
+.margin-move:hover {
+  <span class="highlight-code">margin-left: 20px;</span>
+  <span class="code-comment">/*  Adds 20px of empty space 
+      to the left side 
+      of the button on hover.
+                  
+      As a result, 
+      the nearby text
+      shifts together, 
+      causing a layout shift. */</span>
+}</code></pre>
+
+
+            <div class="layout-row">
+              <button class="layout-btn transform-move">Transform</button>
+              <span>Text stays as the button is hovered</span>
+            </div>
+            <pre><code><span class="code-comment">/* No layout shift */</span>
+.transform-move:hover {
+  <span class="highlight-code">transform: translateX(20px);</span>
+  <span class="code-comment">/*  Moves the button 
+      20px to the right 
+      on hover,
+      without affecting surrounding content, 
+      preventing layout shift.  */</span>
+}</code></pre>
+          </div>
+
+        </div>
+
       </section>
+
 
       <section class="content-section" id="where">
-        <h1>Where Would You Use It?</h1>
+  <h2>Where Would You Use It?</h2>
 
-        <ul>
-          <li>Buttons</li>
-          <li>Product cards</li>
-          <li>Image galleries</li>
-          <li>Navigation menus</li>
-          <li>Loading animations</li>
-          <li>Mobile interfaces</li>
-        </ul>
-      </section>
+  <div class="use-grid">
+
+    <article class="use-card">
+      <h3>Buttons</h3>
+      <p>CSS Transform can create engaging hover effects for buttons, making them more interactive and visually appealing.</p>
+      <img src="images/buttons-transform.jpg" alt="Button hover transform example">
+    </article>
+
+    <article class="use-card">
+      <h3>Product Cards</h3>
+      <p>CSS Transform can lift and highlight product cards on hover, helping important items stand out.</p>
+      <img src="images/product-cards-transform.jpg" alt="Product card hover transform example">
+    </article>
+
+    <article class="use-card">
+      <h3>Image Galleries</h3>
+      <p>CSS Transform can zoom, slide, or rotate images to create a smoother gallery experience.</p>
+      <img src="images/image-galleries-transform.jpg" alt="Image gallery transform example">
+    </article>
+
+    <article class="use-card">
+      <h3>Navigation Menus</h3>
+      <p>CSS Transform can animate menu items to guide users and improve navigation feedback.</p>
+      <img src="images/navigation-menus-transform.jpg" alt="Navigation menu transform example">
+    </article>
+
+    <article class="use-card">
+      <h3>Loading Animations</h3>
+      <p>CSS Transform can rotate or scale loading elements to create smooth and engaging loading animations.</p>
+      <img src="images/loading-animations-transform.jpg" alt="Loading animation transform example">
+    </article>
+
+    <article class="use-card">
+      <h3>Mobile Interfaces</h3>
+      <p>CSS Transform can enhance touch interactions, sliding panels, and transitions in mobile interfaces.</p>
+      <img src="images/mobile-interfaces-transform.jpg" alt="Mobile interface transform example">
+    </article>
+
+  </div>
+</section>
 
       <section class="content-section" id="pros">
-        <h1>Pros and Cons</h1>
+        <h2>Pros and Cons</h2>
 
-        <h2>Pros</h2>
+        <div class="pros-layout">
 
-        <ul>
-          <li>Easy to use</li>
-          <li>Smooth animation effects</li>
-          <li>Modern user interface</li>
-          <li>Does not affect layout</li>
-        </ul>
+          <div class="pros-content">
+            <h3>Pros</h3>
 
-        <h2>Cons</h2>
+            <ul>
+              <li>Easy to use</li>
+              <li>Smooth animation effects</li>
+              <li>Modern user interface</li>
+              <li>Does not affect layout</li>
+            </ul>
 
-        <ul>
-          <li>Can distract users if overused</li>
-          <li>Rotated text may be harder to read</li>
-          <li>Complex transforms are harder to maintain</li>
-        </ul>
+            <h3>Cons</h3>
+
+            <ul>
+              <li>Can distract users if overused</li>
+              <li>Rotated text may be harder to read</li>
+              <li>Complex transforms are harder to maintain</li>
+            </ul>
+          </div>
+
+          <div class="pros-code">
+            <pre><code>#pros li:hover {
+              <span class="highlight-code">transform: 
+    translateY(-10px)
+    scale(1.08);</span>
+
+  color: #f97316;
+  text-shadow: 0 0 10px rgba(249,115,22,.45);
+}
+<span class="code-comment">/* This page also demonstrates CSS Transform. 
+When hovering over the items on the left, 
+they slightly move upward and become larger. */</span></code></pre>
+          </div>
+        </div>
+
       </section>
 
       <section class="content-section" id="demo">
-        <h1>Code Demo</h1>
+        <h2>Code Demo</h2>
 
         <p>
           Hover over the box below to see CSS Transform in action.
         </p>
+        <div class="demo-layout">
+          <div class="demo-preview">
+            <div class="demo-box">
+              Hover Me
+            </div>
+          </div>
 
-        <div class="demo-box">
-          Hover Me
+          <div class="demo-code">
+
+            <pre><code>.demo-box:hover {
+  <span class="highlight-code">transform:
+    translateY(-15px)
+    rotate(5deg)
+    scale(1.1);</span>
+
+<span class="code-comment">/*  Moves the box up 15px, 
+    rotates it 5 degrees, 
+    and scales it to 110% 
+    of its original size 
+    on hover. */</span>
+
+        
+}</code></pre>
+          </div>
         </div>
-
-        <!-- Example CSS code
-        showing combined transform
-        effects on hover -->
-
-        <pre><code>.demo-box:hover {
-        transform:
-        translateY(-15px)
-        rotate(5deg)
-        scale(1.1);
-        }</code></pre>
+        
       </section>
 
-    </main>
+    </div>
 
   </section>
 
-  <!-- JavaScript -->
-  <script src="scripts/content.js"></script>
+  </main>
+
+  <footer class="site-footer">
+      <p>Created by Alan Christopher Mongcal, Erimo Taniguchi, and Jade Liao.</p>
+      <a href="references.html">References & Credits</a>
+  </footer>
 
 </body>
 </html>

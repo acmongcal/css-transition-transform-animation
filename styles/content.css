@@ -1,56 +1,35 @@
 
 
-/* 
-   Layout
+/*  ========================================================== ==========================================================
+    Content Styles
+    ==================================================================================================================== */ 
+  
+/* Design Reference:
+   https://magicui.design/
+   https://linear.app/
+   https://cssgradient.io/gradient-backgrounds/
 */
 
+/* 2 columns layout with a gap of 3rem between them: */
 .presentation-section {
-    /* 2 columns layout with a gap of 3rem between them: */
-  
+    position: relative;
     display: grid;
-  
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 17.5rem 1fr;
     /* column 1 = 280px, column 2 = remaining space   
-      <aside class="side-nav"></aside> ----> column 1
-
-      <main class="content-panel"></main> ----> column 2
-    
-    */
+    <aside class="side-nav"></aside> ----> column 1
+    <main class="content-panel"></main> ----> column 2 */
 
     gap: 3rem;
+    padding: 6rem 8% 4rem;
 
-    /*  Reference:
-        https://css-tricks.com/snippets/css/complete-guide-grid/
-        FWDP-1000-Day-08-Slides.pdf
-        FWDP-1000-Day-09-Slides.pdf
-    */
+/* AI Prompt:
+Suggest a modern dark presentation UI
+with glass cards and gradient buttons.
 
- 
-
-  
-
-  padding: 4rem 8%; 
-  /* = 4rem top/bottom, 8% left/right, 4rem ≈ 64px */
-
-  /* reference: 
-    CSS Box Model
-    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model
-     */
-
-
-/* ========================================================== */
-  
-/* Reference : 
-https://magicui.design/ 
-https://cssgradient.io/gradient-backgrounds/
-https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/gradient/radial-gradient
-
-Animated Aurora Gradient Background with CSS -Build a Website with Animated Aurora Background
-https://youtu.be/MxpDrULwejY?si=mtVXDCAWjr_FQN2v
-
-AI Prompt: Suggest a modern tech-style CSS design using a dark UI, an aurora-inspired gradient background,
-and subtle radial glow effects.
+The following background style and left navigation style 
+was modified from the AI suggestion.
 */
+
 
 background:
   radial-gradient(
@@ -58,74 +37,104 @@ background:
     rgba(56,189,248,.18),
     transparent 25%
   ),
-  /* Blue radial glow
-   placed at top left
-   for subtle lighting effect */
+    /* creates a soft blue glow with 18% opacity,
+    while transparent 25% means the glow will fade out 
+    to transparent at 25% of the radius, creating a smooth 
+    transition from the glow to the background. 
+    This radial gradient is positioned at the top left corner,  
+    adding a subtle lighting effect. */
 
   radial-gradient(
     circle at bottom right,
     rgba(147,51,234,.18),
     transparent 25%
   ),
-  /* Purple radial glow
-   placed at bottom right
-   for subtle lighting effect */
+    /* creates a purple glow with 18% opacity,
+    while transparent 25% means the glow will fade out
+    to transparent at 25% of the radius, creating a smooth
+    transition from the glow to the background.
+    This radial gradient is positioned at the bottom right corner,
+    adding a complementary lighting effect that balances the design. */
 
-  #080b16;
+  rgb(8, 11, 22);
+    /* A very dark background color (#080b16) is used to 
+    provid a strong contrast for the glowing gradient effects. */
 
-
-    /* ========================================================== */
 }
 
-/* 
-   Left Navigation
- */
+/*  ====================================================================================================================
+    Left Navigation
+    ====================================================================================================================*/
 
 .side-nav {
   background:
     rgba(255,255,255,.08);
+    /* creats a semi-transparent background with 8% opacity,
+     allowing the underlying dark background and glow effects to subtly show through, 
+     creating a frosted glass effect that adds depth and visual interest to the navigation panel. */    
+  
+  min-width: 0;
+  /*  Prevents overflow
+      in responsive layouts. */
 
   border:
-    1px solid
+    0.0625rem solid
     rgba(255,255,255,.18);
 
-  border-radius: 28px;
-
+  border-radius: 1.75rem;
   padding: 2rem;
-
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  top: 6rem;
 
-  /* Use flexbox to stack
-     navigation items vertically.
-     gap adds consistent spacing
-     between each button to
-     improve readability and layout. */
-
+  /* AI prompt: how to make the left navigation sticky while scrolling? */
   position: sticky;
-  top: 2rem;
+  align-self: start;
+    /* The position: sticky; property allows the side navigation 
+    to remain visible and "stick" to the top of the viewport as 
+    the user scrolls down the page. This ensures that the navigation 
+    is always accessible without taking up extra space when it's not needed. 
 
-  /* Keeps the navigation visible
-     while scrolling through content.
-     top: 2rem adds spacing from
-     the top of the screen so the
-     navigation does not stick
-     directly to the edge. */
+    The align-self: start; property ensures that the sticky element aligns 
+    to the top of its container, providing a consistent and user-friendly 
+    navigation experience. */ 
 }
 
+@media (max-width: 68.75em) {
+  .side-nav {
+    position: static;
+  }
+} 
 
-/* Nav Title */
+/*  ====================================================================================================================
+    Nav Title 
+    ====================================================================================================================*/
 
 .nav-title {
   font-size: 1.8rem;
-  color: #38bdf8;
+  color: rgb(56, 189, 248);
   margin-bottom: 1rem;
 }
 
+/* ====================================================================================================================
+   Mobile: side nav 
+  ==================================================================================================================== */
 
-/* ========================================================== */
-/* Navigation Buttons */
+@media (max-width: 48em) {
+  .side-nav {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .side-nav {
+   padding: 1.5rem;
+  }
+}
+
+/*  ====================================================================================================================
+    Navigation Buttons 
+    ====================================================================================================================*/
 
 /*
 AI prompt: 
@@ -137,112 +146,101 @@ Requirements:
 - use animation for the active button
 - hover should only apply to non-active buttons
 - active button should stay visually distinct
+- use a gradient background and subtle glow effect
+  for the active button
+
+The following .nav-btn {},
+.nav-btn:hover:not(.active),
+.nav-btn.active {},
+and @keyframes glowPulse {}
+were modified from AI suggestions
+to fit this project.
 */
 
 .nav-btn {
-  border: none;
+  border: 0.0625rem solid rgba(255,255,255,.08);
+   /* Subtle border for glassmorphism effect */
 
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem rgba(56, 189, 248, .08);
+      /*Adds a soft blue glow around the button
+      to create depth and a subtle tech-style effect. */
+
+    /* box-shadow: 
+      horizontal-offset vertical-offset blur-radius color; 
+      
+      0 = no horizontal movement(left or right)
+      0 = no vertical movement (up or down)
+      8px = blur radius
+            A larger value creates
+            a softer and wider glow.
+
+      rgba(56,189,248,.08)
+      = light blue glow
+      with 8% opacity
+      for a subtle effect.
+    */
+  
   background: transparent;
-
-  /* Starts with a transparent background,
+    /* Starts with a transparent background,
      which changes on hover
      and active states. */
 
-  color: #cbd5e1;
-
+  color: rgb(203, 213, 225);
   text-align: left;
-
   padding: 1rem;
-
-  border-radius: 16px;
-
   cursor: pointer;
-
-  /* Makes the cursor a hand
-     to indicate clickable items */
-
-  /* Transition for smooth
-     hover and active effects
-
-     Reference:
-     CSS Transitions
-     https://css-tricks.com/almanac/properties/t/transition/
-  */
+    /* Makes the cursor a hand
+      to indicate clickable items */
 
   transition:
     transform .3s ease,
     background-color .3s ease,
     color .3s ease;
 
-  /* Smooth transition effects
+    /* Smooth transition effects
      for hover and active states.
-
      Main points:
-      transform → movement
+      transform → controls movement and scaling animations
+      background-color → smoothly changes the button background color
+      color → smoothly changes the text color
 
-      background-color
-      → background change
+      .3s = transition duration
 
-      color
-      → text color change
-
-     Meaning of values:
-
-      transform:
-      controls movement
-      and scaling animations
-
-      background-color:
-      smoothly changes
-      the button background color
-
-      color:
-      smoothly changes
-      the text color
-
-      .3s
-      = transition duration
-
-      ease
-      = starts and ends smoothly
-  */
+      ease = starts and ends smoothly
+    */
 }
 
 
+/* ====================================================================================================================
+   Mobile: nav-btn
+==================================================================================================================== */
 
-/* ========================================================== */
+@media (max-width: 48em) {
+  .nav-btn {
+    width: 100%;
+  }
 
-/* Hover (not active) */
+  .nav-btn:hover:not(.active) {
+    transform:
+      translateY(-0.125rem);
+  }
+}
 
-/* AI prompt: How should I write CSS hover effects for navigation buttons while keeping the active button visually distinct?
-
-I want hover styles to apply only to non-active buttons.*/
+/* ====================================================================================================================
+    Hover (not active) 
+==================================================================================================================== */
 
 .nav-btn:hover:not(.active) {
-    /* On hover, the navigation button
-     changes to a subtle background color
-     and moves slightly to the right
-     to indicate interactivity.
-
-     The :not(.active) selector ensures
-     the hover effect only applies to
-     non-active buttons, keeping the
-     active button visually distinct
-     and maintaining a clear
-     visual hierarchy. */
-
-
-
   background:
    rgba(56,189,248,.2);
    /* A subtle blue background appears on hover 
    to indicate interactivity. 
    .2 means 20% opacity */
 
-  color: #38bdf8;
-
+  color: rgb(56, 189, 248);
   transform:
-    translateX(8px);
+    translateX(0.5rem);
     /* Moves the button 8px to the right on hover,
      creating a dynamic and engaging effect. */
 
@@ -255,70 +253,68 @@ I want hover styles to apply only to non-active buttons.*/
      https://developer.mozilla.org/en-US/docs/Web/CSS/:not
   */
 }
-/* ========================================================== */
 
-/* Explanation:
+/* Some discover want to share when writing the above code:
 
-    why transition is applied in .nav-btn
-    instead of .nav-btn:hover:not(.active):
+  why transition is applied in .nav-btn
+  instead of .nav-btn:hover:not(.active):
 
-    If transition is written inside :hover,
-    the animation only works when entering
-    the hover state.
+  If transition is written inside :hover,
+  the animation only works when entering
+  the hover state.
 
-    When the cursor leaves the button,
-    there is no transition to animate
-    the element back to its original state.
+  When the cursor leaves the button,
+  there is no transition to animate
+  the element back to its original state.
 
-    Therefore, transition is placed in
-   .nav-btn so both hover in and
-   hover out animations stay smooth.
+  Therefore, transition is placed in
+  .nav-btn so both hover in and
+  hover out animations stay smooth.
 */   
 
-
-
-
-/* 
-   Active Page
- */
-
+/* ====================================================================================================================
+    Active Buttons when the corrosponding page is active
+==================================================================================================================== */
 .nav-btn.active {
-  /* Active button has a vibrant gradient background, white text, and a glowing animation to indicate the current page. */  
-  /* The glowPulse animation creates a subtle pulsing effect on the active button,
-   drawing attention to it without being too distracting. */  
-  /* Reference:
-   CSS Animations
-   https://css-tricks.com/almanac/properties/a/animation/ 
-   https://www.w3schools.com/csS/css3_animations.asp
-   */
-
   background:
     linear-gradient(
-      135deg,
-      #38bdf8,
-      #9333ea
+      100deg,
+      rgb(56, 189, 248),
+      rgb(147, 51, 234)
     );
+    /*  linear-gradient()
+        = creates a smooth color transition
 
-  color: white;
+       100deg = gradient direction
+        from top-left to bottom-right
+     */
 
+  border: none;
+  box-shadow:
+    0 0 0.75rem rgba(56,189,248,.18);
+    color: white;
   font-weight: 600;
 
   animation:
     glowPulse 1s ease-in-out 2;
+    
+    /* glowPulse
+     = animation name
+     defined in @keyframes
+
+     1s = animation duration
+     (1 second per cycle)
+
+     ease-in-out
+     = starts slowly,
+     speeds up,
+     then slows down again
+     for a smoother effect
+
+     2 = animation repeats
+     2 times only */
 }
-
-/* Glow Animation */
-/* Creates a pulsing glow effect on the active navigation button. */
-/* The button scales up slightly and the box-shadow intensifies, 
-then returns to normal, creating a subtle attention-grabbing effect. */
-
-/* ========================================================== */
-
-
-
-@keyframes glowPulse {
-  /* 0% and 100%: Normal state with a subtle glow. */
-  /* 50%: Scaled up with a stronger glow. */  
+    @keyframes glowPulse { 
   /* Reference:
    CSS Animations
    https://css-tricks.com/almanac/properties/a/animation/ 
@@ -327,49 +323,83 @@ then returns to normal, creating a subtle attention-grabbing effect. */
   0% {
     transform: scale(1);
     box-shadow:
-      0 0 8px rgba(56,189,248,.35),
-      0 0 16px rgba(147,51,234,.25);
+      0 0 0.5rem rgba(56,189,248,.35),
+      0 0 1rem rgba(147,51,234,.25);
   }
 
   50% {
     transform: scale(1.03);
     box-shadow:
-      0 0 18px rgba(56,189,248,.75),
-      0 0 35px rgba(147,51,234,.55);
+      0 0 1.125rem rgba(56,189,248,.75),
+      0 0 2.1875rem rgba(147,51,234,.55);
   }
 
   100% {
     transform: scale(1);
     box-shadow:
-      0 0 8px rgba(56,189,248,.35),
-      0 0 16px rgba(147,51,234,.25);
+      0 0 0.5rem rgba(56,189,248,.35),
+      0 0 1rem rgba(147,51,234,.25);
   }
+
+  /* The glowPulse animation has three stages:
+
+   0%
+   = starting state.
+   The button stays at its normal size
+   with a small cyan and purple glow.
+
+   50%
+   = middle state.
+   The button becomes slightly larger
+   with scale(1.03), and the glow becomes
+   stronger and wider.
+
+   100%
+   = ending state.
+   The button returns to its normal size
+   and the glow returns to the original
+   subtle effect.
+
+   This creates a short pulsing glow effect
+   for the active navigation button. */
 }
-/* 
-   Right Content
- */
+
+
+/*  ====================================================================================================================
+    Right Content
+==================================================================================================================== */
+.presentation-section, .content-panel, .content-section{
+  min-width: 0;
+}
+  /* Prevents overflow
+   in responsive layouts. */
 
 .content-panel {
-  /* The content panel has a semi-transparent background with a blur effect, creating a frosted glass look. It also has padding and rounded corners for a modern design. */ 
-  /* Reference:
-   https://magicui.design/ 
-   https://www.apple.com/apple-vision-pro/?utm_source=chatgpt.com
-   */
   background:
     rgba(255,255,255,.08);
-
   border:
-    1px solid
+    0.0625rem solid
     rgba(255,255,255,.12);
-
-  border-radius: 30px;
-
+  border-radius: 1.875rem;
   padding: 3rem;
-
-  min-height: 700px;
+  min-height: 43.75rem;
+    /* Sets a minimum height
+    to keep the content panel
+    visually balanced. */
 }
 
-/* Hide Sections */
+/* ====================================================================================================================
+    Hide Sections 
+==================================================================================================================== */
+
+  /* AI Prompt:
+    Suggest CSS to hide inactive sections
+    and use CSS transition, tranfrom, or animation for smooth
+    content transitions.
+
+    The following content-section content-section.active were modified
+    from AI suggestions.
+    */  
 
 .content-section {
   display: none;
@@ -379,180 +409,44 @@ then returns to normal, creating a subtle attention-grabbing effect. */
   display: block;
   animation:
     fadeIn .35s ease;
-    /* When a content section becomes active, it will fade in smoothly over 0.35 seconds, creating a pleasant transition effect for the user. */
-    /* Reference:
-     CSS Animations
-     https://css-tricks.com/almanac/properties/a/animation/
-     https://www.w3schools.com/csS/css3_animations.asp
-     */
+    /*  When a content section becomes active, 
+    it will fade in smoothly over 0.35 seconds, 
+    creating a pleasant transition effect for the user. */
+ 
 }
 
-/* Headings */
+/*  Explanation: Why use animation
+for active and hidden section transitions
+instead of transition or transform?
 
-.content-panel h1 {
-  /* The main heading uses a vibrant cyan color and a responsive font size that scales between 2rem and 3rem based on the viewport width, ensuring it looks great on all screen sizes. */ 
-  /* Reference:
-   CSS Colors
-   https://css-tricks.com/almanac/properties/c/color/
-   https://developer.mozilla.org/en-US/docs/Web/CSS/color
-   */
+Transition is usually used
+for smooth changes between states,
+such as hover effects,
+color changes, or movement.
 
-   /* AI prompt:display:  what is the best way to create responsive typography in css?; 
-   4. Fluid Typography: Use CSS functions like clamp() to create fluid typography that scales smoothly between a minimum and maximum size based on the viewport width.
-  
-   
-   The clamp() function allows you to set a responsive font size 
-   that scales between a defined minimum and maximum value based on the viewport width.
-    In this case, the font size will be 2rem on small screens, scale up to 3rem on larger screens, 
-    and adjust responsively in between. */
-   /* Reference:
-    CSS clamp() function
-    https://css-tricks.com/almanac/functions/c/clamp/
-    https://developer.mozilla.org/en-US/docs/Web/CSS/clamp
-    FWDP-1000-Day-06-Slides.pdf
-    */
-  font-size:
-    clamp(2rem, 5vw, 3rem);
-    /* The font size will be 2rem on small screens, scale up to 3rem on larger screens, and adjust responsively in between. */  
-    /* Reference:
+However, transition is not used here
+because display: none and display: block
+switch instantly and cannot
+transition smoothly.
 
-     */
+Transform is used to change
+an element's appearance,
+such as moving, scaling,
+rotating, or skewing elements.
 
-  color: #38bdf8;
+However, transform alone
+cannot create a full
+content entrance effect.
 
-  margin-bottom: 1.5rem;
-}
+Animation is used here
+to create a smoother fade-in effect
+when switching between content sections.  */
 
-.content-panel h2 {
-  color: #facc15;
-
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-/* Paragraph */
-
-.content-panel p {
-  font-size: 1.1rem;
-  color: #dbeafe;
-
-  margin-bottom: 1.3rem;
-
-  max-width: 850px;
-}
-
-/* Lists */
-
-.content-panel ul {
-  margin-left: 1.5rem;
-}
-
-.content-panel li {
-  color: #dbeafe;
-  margin-bottom: .8rem;
-}
-
-/* 
-   Demo Box
- */
-
-.demo-box {
-  width: 220px;
-  height: 140px;
-
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-
-  border-radius: 24px;
-
-  background:
-  /* A vibrant diagonal gradient background that transitions from a bright cyan to a rich purple, creating an eye-catching and modern look for the demo box. */ 
-  /* Reference:
-   CSS Gradients
-   https://css-tricks.com/almanac/properties/b/background-image/#gradients
-   https://developer.mozilla.org/en-US/docs/Web/CSS/gradients
-   */
-    linear-gradient(
-      135deg,
-      #38bdf8,
-      #9333ea
-    );
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-/* Centered content with flexbox */
-/* Reference:
-   CSS Flexbox
-   https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-   https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
-   */
-
-  font-size: 1.1rem;
-  font-weight: bold;
-
-  cursor: pointer;
-  /* Indicates interactivity, inviting users to hover and see the transformation. */  
-  /* Reference:
-   CSS Cursors
-   https://css-tricks.com/almanac/properties/c/cursor/
-   */
-
-  transition: .4s ease;
-  /* Smooth transition for transform and box-shadow on hover. */
-
-
-
-  box-shadow:
-    0 20px 50px
-    rgba(56,189,248,.25);
-    /* Adds a soft shadow below the box for depth and a glowing effect. */
-    /* Reference:
-     CSS Box Shadow
-     https://css-tricks.com/almanac/properties/b/box-shadow/
-     https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
-     */
-}
-
-.demo-box:hover {
-  transform:
-    translateY(-15px)
-    rotate(5deg)
-    scale(1.1);
-    /* On hover, the box will move up, rotate slightly, and scale up for a dynamic effect. */
-    /*  Reference:
-        https://css-tricks.com/almanac/properties/t/transform/*/
-}
-
-/* 
-   Code Block
- */
-/* The code block has a dark background with light text for readability, along with padding and rounded corners to create a distinct and visually appealing section for displaying code snippets. It also allows horizontal scrolling for long lines of code. */  
-/* Reference:
-   CSS Box Model
-   https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model
-   */
-
-
-/* 
-   Animation
- */
- /* When a content section becomes active, it will fade in smoothly over 0.35 seconds, creating a pleasant transition effect for the user. */ 
- /* Reference:
-  CSS Animations
-  https://css-tricks.com/almanac/properties/a/animation/
-  https://www.w3schools.com/csS/css3_animations.asp
-  */
-
-
-
-@keyframes fadeIn {
-    
-
+@keyframes fadeIn {    
   from {
     opacity: 0;
     transform:
-      translateY(8px);
+      translateY(0.5rem);
   }
 
   to {
@@ -570,98 +464,93 @@ then returns to normal, creating a subtle attention-grabbing effect. */
    */
 }
 
-/*
-   Tablet
- */
+/* ==================================================================================================================== 
+  Headings 
+==================================================================================================================== */
 
-@media (max-width: 992px) {
-/* For tablet screens, the layout adjusts to a single column for better readability and usability. The side navigation becomes a top navigation bar, and the content panel takes up the full width below it. This ensures that the design remains clean and functional on smaller screens. */ 
-/* Reference:
-   CSS Media Queries
-   https://css-tricks.com/css-media-queries/
-   https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
-   */
-  .presentation-section {
-    /* Switch to a single column layout for tablet devices, stacking the navigation and content vertically. The navigation will be at the top, followed by the content panel. This ensures that the layout is optimized for smaller screens and remains user-friendly. */
-    /* Reference:     
-      CSS Grid         
-        https://css-tricks.com/snippets/css/complete-guide-grid/
-        */
-    grid-template-columns:
-      220px 1fr;
-
-    padding: 3rem 5%;
-  }
-  /* The side navigation is made narrower to fit better on smaller screens, while still providing enough space for the navigation items. The content panel is given more padding to ensure that the content remains readable and visually appealing on tablet devices. */
-  /* Reference:
-     CSS Grid
-     https://css-tricks.com/snippets/css/complete-guide-grid/
-     */
-
-  .content-panel {
-    padding: 2rem;
-  }
+.content-panel h2 {
+  font-size:
+    clamp(2rem, 5vw, 3rem);
+    /* The font size will be 2rem on 
+    small screens, scale up to 3rem on larger screens, 
+    and adjust responsively in between. 
+    
+    5vw = 5% of the viewport width.
+    This allows the font size to scale
+    responsively as the screen size changes.*/  
+  
+  color: rgb(56, 189, 248);
+  margin-bottom: 1.5rem;
 }
 
-/* 
-   Mobile
- */
+.content-panel h3 {
+  color: rgb(250, 204, 21);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
 
-@media (max-width: 768px) {
-  /* On mobile devices, the layout switches to a single column format where the side navigation becomes a horizontal top navigation bar, and the content panel is displayed below it. This ensures that the design is optimized for smaller screens, providing a user-friendly experience without sacrificing functionality. The demo box also adjusts to fit the narrower screen width while maintaining its visual appeal. */
-  /* Reference:
-   CSS Media Queries
-   https://css-tricks.com/css-media-queries/
-   https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
-   */
+/* ==================================================================================================================== 
+  Paragraph 
+====================================================================================================================*/
 
+.content-panel p {
+  font-size: 1.1rem;
+  color: rgb(219, 234, 254);
+  margin-bottom: 1.3rem;
+  max-width: 53.125rem;
+}
+
+/* ==================================================================================================================== 
+  Lists 
+==================================================================================================================== */
+
+.content-panel ul {
+  margin-left: 1.5rem;
+}
+
+.content-panel li {
+  color: rgb(219, 235, 255);
+  margin-bottom: .8rem;
+}
+
+/* ====================================================================================================================
+    Tablet
+==================================================================================================================== */
+
+@media (max-width: 68.75em ) {
   .presentation-section {
-    /* Switch to a single column layout for mobile devices, stacking the navigation and content vertically. The navigation will be at the top, followed by the content panel. This ensures that the layout is optimized for smaller screens and remains user-friendly. */ 
-    /* Reference:
-     CSS Grid         
-      https://css-tricks.com/snippets/css/complete-guide-grid/
-      */  
-    grid-template-columns: 1fr;
-
-    gap: 2rem;
-
-    padding: 2rem 5%;
-  }
-
-  /* The side navigation is set to full width and positioned statically to create a horizontal navigation bar at the top of the page. The content panel's minimum height is removed to allow it to adjust based on the content, and padding is reduced for better fit on smaller screens. The demo box is set to a maximum width of 240px to ensure it remains visually appealing without overwhelming the screen. */
-  /* Reference:
-     CSS Grid
-     https://css-tricks.com/snippets/css/complete-guide-grid/
-     */
-
-  .side-nav {
-    position: static;
-    width: 100%;
+  
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 4rem 1rem 3rem;
   }
 
   .content-panel {
     min-height: auto;
+    /* Allow panel height to adjust to content */
     padding: 2rem;
   }
-  /* On mobile devices, the navigation buttons have a subtle upward movement on hover to indicate interactivity, while the active button remains visually distinct with its vibrant gradient background and glowing animation. This ensures that users can easily identify the current page and interact with the navigation even on smaller screens. */
-  /* Reference:   
-   CSS Transitions
-   https://css-tricks.com/almanac/properties/t/transition/    */
+}
 
-  .nav-btn:hover:not(.active) {
-    transform:
-      translateY(-2px);
+/* ====================================================================================================================
+   Mobile: content: content-panel and presentation-section
+==================================================================================================================== */
+
+@media (max-width: 48em) {
+  .presentation-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 4rem 1rem 3rem;    
   }
 
-  /* The demo box is set to a maximum width of 240px to ensure it remains visually appealing without overwhelming the screen on mobile devices. This allows the box to scale appropriately while maintaining its design integrity across different screen sizes. */
-   /* Reference:
-    CSS Media Queries
-    https://css-tricks.com/css-media-queries/
-    https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
-    */
-
-  .demo-box {
+  .content-panel {
     width: 100%;
-    max-width: 240px;
+    max-width: 100%;
+  }
+
+  .content-panel {
+    min-height: auto;
+    /* Allow panel height to adjust to content */
+    padding: 1.5rem;
   }
 }

@@ -1,14 +1,130 @@
-
-.demo-box {
-  background-image: none !important;
-  background-color: #38bdf8 !important;
-  transition: background-color 0.5s ease !important;
-  transform: none !important;
+.syntax-demo-box {
+  width: 100%;
+  max-width: 18.75rem;
+  height: 5rem;
+  background-color: rgb(255, 122, 89);
+  color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  margin: 1.25rem 0;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
 }
 
-
-.demo-box:hover {
-  transform: none !important;
-  background-color: #ec4899 !important;
+.syntax-demo-box:hover {
+  background-color: rgb(51, 71, 91);
 }
 
+.codedemo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9375rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  margin: 2.5rem auto;
+  padding: 1.25rem;
+  background-color: rgb(30, 41, 59);
+}
+
+.interect-box {
+  display: inline-block;
+  width: 7.5rem;
+  padding: 0.625rem 0;
+  background-color: rgb(255, 122, 89);
+  border-radius: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out 0.1s,
+              width 0.5s ease-in-out 0.1s,
+              transform 0.5s ease-in-out 0.1s;
+}
+
+.interect-text {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: block;
+  transition: color 0.5s ease-in-out 0.1s;
+}
+
+.interect-box:hover {
+  background-color: rgb(168, 85, 247);
+  width: 9.375rem;
+  transform: scale(1.05);
+}
+
+.interect-box:hover  {
+  color: rgb(15, 23, 42);
+}
+
+.transition-container {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+.where-btn {
+  padding: 0.625rem 1.25rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 122, 89);
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out 0s;
+}
+
+.where-btn:hover {
+  background-color: rgb(51, 71, 91);
+}
+
+.where-link {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out 0s;
+}
+
+.where-link:hover {
+  color: rgb(255, 122, 89);
+}
+
+.where-input {
+  width: 80%;
+  padding: 0.625rem;
+  background-color: rgb(15, 23, 42);
+  border: 0.125rem solid rgb(51, 65, 85);
+  color: rgb(255, 255, 255);
+  outline: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.3s ease-in-out 0s;
+}
+
+.where-input:focus {
+  border-color: rgb(255, 255, 255);
+}
+
+.transition-box {
+  background-color: rgb(255, 122, 89);
+  width: 10rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0.1s;
+}
+
+.transition-box:hover {
+  background-color: rgb(51, 71, 91);
+}
