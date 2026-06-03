@@ -40,7 +40,7 @@
           rgb(153, 27, 27)
           
       );
-      color: white;
+      color: rgb(255, 255, 255);
       font-weight: bold;
       cursor: pointer;
       transition: .3s ease;
@@ -155,7 +155,7 @@
 
 
 
-@media (max-width: 68.75rem) {
+@media (max-width: 68.75em) {
   .why-grid {
     grid-template-columns: 1fr;
   }
@@ -268,7 +268,7 @@ is modified from AI suggestion. */
 }
 
 
-@media (max-width: 68.75rem) {
+@media (max-width: 68.75em) {
   .use-grid {
     grid-template-columns: 1fr;
     overflow: hidden;
@@ -331,7 +331,7 @@ is modified from AI suggestion. */
 }
 
 /* Smaller hover effect for tablet and mobile */
-@media (max-width: 68.75rem) {
+@media (max-width: 68.75em) {
   .demo-box:hover {
     transform:
       translateY(-10px)
@@ -384,7 +384,7 @@ is modified from AI suggestion. */
     color:rgba(255, 230, 140, .75);
   }
 
-@media (max-width: 68.75rem) { 
+@media (max-width: 68.75em) { 
   .demo-box {
     width: 100%;
     max-width: 15rem;
@@ -418,7 +418,7 @@ is modified from AI suggestion. */
     scale(1.05);
   /*  transform: */
 
-  color: #f97316;
+  color: rgb(249, 115, 22);
   text-shadow:
     0 0 0.625rem rgba(249,115,22,.45);
 
@@ -436,7 +436,7 @@ is modified from AI suggestion. */
   padding: 1rem 1.5rem;
 }
 
-@media (max-width: 68.75rem) {
+@media (max-width: 68.75em) {
   .pros-layout {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -451,7 +451,7 @@ is modified from AI suggestion. */
 
 .demo-layout {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 16.25rem 1fr;
   gap: 2rem;
   align-items: start;
 }
@@ -464,7 +464,7 @@ is modified from AI suggestion. */
    min-width: 0;
 }
 
-@media (max-width: 68.75rem) {
+@media (max-width: 68.75em) {
   .demo-layout {
     grid-template-columns: 1fr;
     gap: 2rem;
