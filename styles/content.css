@@ -14,7 +14,7 @@
 .presentation-section {
     position: relative;
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 17.5rem 1fr;
     /* column 1 = 280px, column 2 = remaining space   
     <aside class="side-nav"></aside> ----> column 1
     <main class="content-panel"></main> ----> column 2 */
@@ -56,7 +56,7 @@ background:
     This radial gradient is positioned at the bottom right corner,
     adding a complementary lighting effect that balances the design. */
 
-  #080b16;
+  rgb(8, 11, 22);
     /* A very dark background color (#080b16) is used to 
     provid a strong contrast for the glowing gradient effects. */
 
@@ -78,10 +78,10 @@ background:
       in responsive layouts. */
 
   border:
-    1px solid
+    0.0625rem solid
     rgba(255,255,255,.18);
 
-  border-radius: 28px;
+  border-radius: 1.75rem;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -101,7 +101,7 @@ background:
     navigation experience. */ 
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 68.75em) {
   .side-nav {
     position: static;
   }
@@ -113,7 +113,7 @@ background:
 
 .nav-title {
   font-size: 1.8rem;
-  color: #38bdf8;
+  color: rgb(56, 189, 248);
   margin-bottom: 1rem;
 }
 
@@ -121,7 +121,7 @@ background:
    Mobile: side nav 
   ==================================================================================================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
   .side-nav {
     width: 100%;
     max-width: 100%;
@@ -158,11 +158,11 @@ to fit this project.
 */
 
 .nav-btn {
-  border: 1px solid rgba(255,255,255,.08);
+  border: 0.0625rem solid rgba(255,255,255,.08);
    /* Subtle border for glassmorphism effect */
 
-  border-radius: 16px;
-  box-shadow: 0 0 8px rgba(56, 189, 248, .08);
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem rgba(56, 189, 248, .08);
       /*Adds a soft blue glow around the button
       to create depth and a subtle tech-style effect. */
 
@@ -186,7 +186,7 @@ to fit this project.
      which changes on hover
      and active states. */
 
-  color: #cbd5e1;
+  color: rgb(203, 213, 225);
   text-align: left;
   padding: 1rem;
   cursor: pointer;
@@ -216,14 +216,14 @@ to fit this project.
    Mobile: nav-btn
 ==================================================================================================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
   .nav-btn {
     width: 100%;
   }
 
   .nav-btn:hover:not(.active) {
     transform:
-      translateY(-2px);
+      translateY(-0.125rem);
   }
 }
 
@@ -238,9 +238,9 @@ to fit this project.
    to indicate interactivity. 
    .2 means 20% opacity */
 
-  color: #38bdf8;
+  color: rgb(56, 189, 248);
   transform:
-    translateX(8px);
+    translateX(0.5rem);
     /* Moves the button 8px to the right on hover,
      creating a dynamic and engaging effect. */
 
@@ -279,8 +279,8 @@ to fit this project.
   background:
     linear-gradient(
       100deg,
-      #38bdf8,
-      #9333ea
+      rgb(56, 189, 248),
+      rgb(147, 51, 234)
     );
     /*  linear-gradient()
         = creates a smooth color transition
@@ -291,7 +291,7 @@ to fit this project.
 
   border: none;
   box-shadow:
-    0 0 12px rgba(56,189,248,.18);
+    0 0 0.75rem rgba(56,189,248,.18);
     color: white;
   font-weight: 600;
 
@@ -323,22 +323,22 @@ to fit this project.
   0% {
     transform: scale(1);
     box-shadow:
-      0 0 8px rgba(56,189,248,.35),
-      0 0 16px rgba(147,51,234,.25);
+      0 0 0.5rem rgba(56,189,248,.35),
+      0 0 1rem rgba(147,51,234,.25);
   }
 
   50% {
     transform: scale(1.03);
     box-shadow:
-      0 0 18px rgba(56,189,248,.75),
-      0 0 35px rgba(147,51,234,.55);
+      0 0 1.125rem rgba(56,189,248,.75),
+      0 0 2.1875rem rgba(147,51,234,.55);
   }
 
   100% {
     transform: scale(1);
     box-shadow:
-      0 0 8px rgba(56,189,248,.35),
-      0 0 16px rgba(147,51,234,.25);
+      0 0 0.5rem rgba(56,189,248,.35),
+      0 0 1rem rgba(147,51,234,.25);
   }
 
   /* The glowPulse animation has three stages:
@@ -378,11 +378,11 @@ to fit this project.
   background:
     rgba(255,255,255,.08);
   border:
-    1px solid
+    0.0625rem solid
     rgba(255,255,255,.12);
-  border-radius: 30px;
+  border-radius: 1.875rem;
   padding: 3rem;
-  min-height: 700px;
+  min-height: 43.75rem;
     /* Sets a minimum height
     to keep the content panel
     visually balanced. */
@@ -446,7 +446,7 @@ when switching between content sections.  */
   from {
     opacity: 0;
     transform:
-      translateY(8px);
+      translateY(0.5rem);
   }
 
   to {
@@ -479,12 +479,12 @@ when switching between content sections.  */
     This allows the font size to scale
     responsively as the screen size changes.*/  
   
-  color: #38bdf8;
+  color: rgb(56, 189, 248);
   margin-bottom: 1.5rem;
 }
 
 .content-panel h3 {
-  color: #facc15;
+  color: rgb(250, 204, 21);
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -495,9 +495,9 @@ when switching between content sections.  */
 
 .content-panel p {
   font-size: 1.1rem;
-  color: #dbeafe;
+  color: rgb(219, 234, 254);
   margin-bottom: 1.3rem;
-  max-width: 850px;
+  max-width: 53.125rem;
 }
 
 /* ==================================================================================================================== 
@@ -509,7 +509,7 @@ when switching between content sections.  */
 }
 
 .content-panel li {
-  color: #dbeafe;
+  color: hwb(214 86% 0%);
   margin-bottom: .8rem;
 }
 
@@ -517,7 +517,7 @@ when switching between content sections.  */
     Tablet
 ==================================================================================================================== */
 
-@media (max-width: 1100px ) {
+@media (max-width: 68.75em ) {
   .presentation-section {
   
       grid-template-columns: 1fr;
@@ -536,7 +536,7 @@ when switching between content sections.  */
    Mobile: content: content-panel and presentation-section
 ==================================================================================================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
   .presentation-section {
     grid-template-columns: 1fr;
     gap: 2rem;
