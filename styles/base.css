@@ -156,7 +156,7 @@ li {
 
 .menu-toggle:focus {
 	border: 0;
-	outline: 1px dotted;
+	outline: 0.0625rem dotted;
 }
 
 
@@ -173,7 +173,7 @@ pre {
   background: rgb(2, 6, 23);
   color: rgb(224, 242, 254); 
   padding: 1.2rem;
-  border-radius: 18px;
+  border-radius: 1.125rem;
   overflow-x: auto;
   margin-top: 1.5rem;
   border:
@@ -209,7 +209,7 @@ a:visited {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(8px); 
+    transform: translateY(0.5rem); 
   }
   to {
     opacity: 1;
@@ -242,7 +242,7 @@ a:visited {
   font-family: 'Press Start 2P';
   font-size: 0.7rem;
 }
-@media (min-width: 57.125rem) {
+@media (min-width: 57.125em) {
   .menu-toggle {
 		display: none;
 	}

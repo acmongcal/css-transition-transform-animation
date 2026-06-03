@@ -509,7 +509,7 @@ when switching between content sections.  */
 }
 
 .content-panel li {
-  color: hwb(214 86% 0%);
+  color: rgb(219, 235, 255);
   margin-bottom: .8rem;
 }
 
